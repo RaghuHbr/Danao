@@ -1,0 +1,114 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="MDG.Help.controller.quotationFragmentView"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Page id="page" title="{customerQuotModel>/attributes/DProduct_Name}" showFooter="true" class="textSize" showNavButton="true" navButtonPress="onNavBack">
+		<l:BlockLayout background="Dashboard" id="BlockLayout">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="" titleAlignment="Center">
+					<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="6" labelSpanL="6" labelSpanM="6" labelSpanS="6"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+						singleContainerFullSize="false" class="simpleFormCartClass">
+						<!--<f:content>
+							<core:Title text="Specifications"/>
+							<Label text="Product Number"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Number}"/>
+							<Label text="Description"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/DESCRIPTION}"/>
+							<Label text="Height"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/HEIGHT}"/>
+							<Label text="Width"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/WIDTH}"/>
+							<Label text="Length or Depth"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/LENGTH OR DEPTH}"/>
+							<Label text="Seat Height"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/SEAT HEIGHT}"/>
+							<Label text="Arm Height"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/ARM HEIGHT}"/>
+							<Label text="Unit Weight"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/UNIT WEIGHT}"/>
+							<Label text="Nest"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/NEST}"/>
+							<Label text="Shipping Carton"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/SHIPPING CARTON}"/>
+							<Label text="Cube"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/CUBE}"/>
+							<Label text="Units Per Carton"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/UNITS PER CARTON}"/>
+							<Label text="Com Yeild"/>
+							<Text text="{cartItemSummary>/itemDetails/DProduct_Specifications/COM YIELD}"/>
+						</f:content>-->
+						<f:content>
+							<core:Title text="Specifications"/>
+							<Label text="Product Number"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Number}"/>
+							<Label text="Description"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/DESCRIPTION}"/>
+							<Label text="Height"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/HEIGHT}"/>
+							<Label text="Width"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/WIDTH}"/>
+							<Label text="Length or Depth"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/LENGTH OR DEPTH}"/>
+							<Label text="Seat Height"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/SEAT HEIGHT}"/>
+							<Label text="Arm Height"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/ARM HEIGHT}"/>
+							<Label text="Unit Weight"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/UNIT WEIGHT}"/>
+							<Label text="Nest"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/NEST}"/>
+							<Label text="Shipping Carton"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/SHIPPING CARTON}"/>
+							<Label text="Cube"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/CUBE}"/>
+							<Label text="Units Per Carton"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/UNITS PER CARTON}"/>
+							<Label text="Com Yeild"/>
+							<Text text="{customerQuotModel>/attributes/DProduct_Specifications/COM YIELD}"/>
+						</f:content>
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell id="cell-2" title="">
+					<Carousel showPageIndicator="false" loop="true" pageChanged=".onCarouselPageChanged" visible="{=!${device>/system/phone}}"
+						tooltip="{i18n>welcomeDescription}">
+						<VBox alignItems="Center" renderType="Div">
+							<Image id="productImage" src="{cartItemSummary>/itemDetails/DProduct_Image/data/0/attributes/name}" decorative="true" densityAware="false"
+								class="sapUiSmallMargin" width="100%" height="100%"/>
+						</VBox>
+					</Carousel>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+		<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="6" labelSpanL="6" labelSpanM="6" labelSpanS="6"
+			adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false" class="simpleFormCartClass">
+			<f:content>
+				<core:Title class="titleClass" text="Configure Your Items"/>
+				<Label text="Select Frames" labelFor="groupB"/>
+				<!--<RadioButtonGroup editable="true" select="handleGradeButtonSelect" id="d_frames" buttons="{customerQuotModel>/}" selectedIndex="-1" valueState="Success">-->
+					<RadioButton text="{cartItemSummary>/frame}" editable="false" select="handleGradeButtonSelect" id="d_frames" selected="true"/>
+				<!--</RadioButtonGroup>-->
+				<Label text="Select Quantity" wrapping="true"/>
+				<StepInput value="{cartItemSummary>/Qty}" id="quantity" displayValuePrecision="{displayValuePrecision}" min="0" width="60%" step="1"/>
+				<Label text="Select Straps"/>
+				<!--<RadioButtonGroup editable="false" id="d_frameStraps" select="handleGradeButtonSelect" buttons="{customerQuotModel>/}" selectedIndex="0" valueState="Success">-->
+					<RadioButton text="{cartItemSummary>/straps}" editable="false" select="handleGradeButtonSelect" id="d_frameStraps" selected="true"/>
+				<!--</RadioButtonGroup>-->
+				<Label text="Select Accent"/>
+				<!--<RadioButtonGroup editable="false" id="d_accents" select="handleGradeButtonSelect" buttons="{customerQuotModel>/}" selectedIndex="0" valueState="Success">-->
+					<RadioButton text="{cartItemSummary>/accent}" editable="false" select="handleGradeButtonSelect" id="d_accents" selected="true"/>
+				<!--</RadioButtonGroup>-->
+				<Label text="Select Grade"/>
+				<!--<RadioButtonGroup editable="false" id="d_fabric_grades" select="handleGradeButtonSelect" buttons="{customerQuotModel>/}" selectedIndex="0" valueState="Success">-->
+					<RadioButton text="{cartItemSummary>/grade}" editable="false" select="handleGradeButtonSelect" id="d_fabric_grades" selected="true"/>
+				<!--</RadioButtonGroup>-->
+			</f:content>
+		</f:SimpleForm>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Save" press="handleUpdatePress"/>
+				<Button text="Cancel" press="handleUpdateCancel"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

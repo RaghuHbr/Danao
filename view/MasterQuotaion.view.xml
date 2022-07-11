@@ -1,0 +1,64 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="MDG.Help.controller.MasterQuotaion"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:semantic="sap.f.semantic">
+	<!--<semantic:SemanticPage id="Quotation" mvc:title="Quotation Details" class="textSize" mvc:showNavButton="true" mvc:navButtonPress="onNavBack">-->
+	<!--	<semantic:titleHeading>-->
+	<!--		<Title text="Quotation Details"/>-->
+	<!--	</semantic:titleHeading>-->
+	<!--	<semantic:content>-->
+	<Page title="Quotation Details" id="Quotation" class="textSize" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<Table id="QuotationsTable" items="{QuotationMasterModel>/}" growing="true" growingThreshold="10">
+				<headerToolbar>
+					<Toolbar design="Transparent">
+						<SearchField liveChange="onSearch" id="quotId" width="25%"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://action-settings" type="Transparent" press="handleOpenDialog"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Quotation No."/>
+					</Column>
+					<Column>
+						<Text text="Customer Name"/>
+					</Column>
+					<Column>
+						<Text text="Project Name"/>
+					</Column>
+					<Column>
+						<Text text="Created Date"/>
+					</Column>
+					<Column>
+						<Text text="Total Quantity"/>
+					</Column>
+					<Column>
+						<Text text="Total Amount"/>
+					</Column>
+					<Column>
+						<Text text="Status"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="onPress">
+						<cells>
+							<Text text="{QuotationMasterModel>id}"/>
+							<Text text="{QuotationMasterModel>dCustomerName}"/>
+							<Text text="{QuotationMasterModel>dCustomer_ProjectName}"/>
+							<Text text="{path:'QuotationMasterModel>createdAt',formatter:'.formatter.dateFormatter'}"/>
+							<Text text="{QuotationMasterModel>dQuotation_Item_Quantity}"/>
+							<ObjectNumber class="sapMObjectNumberLarge" id="Grand_Total_Price"
+								number="{ parts: [{path: 'QuotationMasterModel>dQuotation_Item_Price'}, {path: 'USD'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+								unit="USD" state="Success"/>
+							<!--<Text text="{QuotationMasterModel>dQuotation_Item_Price}"/>-->
+							<!--<Text text="{QuotationMasterModel>DQuotation_Status}"/>-->
+							<ObjectStatus id="status" text="{QuotationMasterModel>DQuotation_Status}"
+								state="{path:'QuotationMasterModel>DQuotation_Status', formatter:'.formatter.getQuotationState'}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<!--	</semantic:content>-->
+			<!--</semantic:SemanticPage>-->
+		</content>
+	</Page>
+</mvc:View>

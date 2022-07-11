@@ -1,0 +1,23 @@
+<template data-controller-name="MDG.Help.controller.login">
+	<form class="formClass" id="signinFormClass"  onsubmit="return false;">
+		<center>Welcome to Estimator Tool, Sign in to continue</center>
+		<img src="image/UserLogin.jpg" class="avatar sapUiSmallMarginBottom">
+			<div class="svgContainer">
+	</div>
+	<div class="inputGroup inputGroup1">
+		<label for="email1">User Name</label>
+		<input type="text" id="email" class="email" maxlength="256" oninput="onEmailFocus"/>
+		<span class="indicator"></span>
+	</div>
+	<div class="inputGroup inputGroup2">
+		<label for="password">Password</label>
+		<input type="password" id="password" class="password" />
+	</div>
+	<div class="inputGroup3">
+		<button id="login">Log in</button>
+	</div>	
+	<div class="inputGroup4">
+		<a onClick="handleSignUpPress">New Users, Sign Up</a>
+	</div>	
+</form>
+</template>

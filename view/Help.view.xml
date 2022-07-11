@@ -1,0 +1,33 @@
+<mvc:View controllerName="MDG.Help.controller.Help" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:grid="sap.ui.layout.cssgrid"
+	xmlns:f="sap.ui.layout.form">
+	<Page showHeader="false" class="pageClass">
+		<HBox justifyContent="Center" renderType="Bare">
+			<VBox justifyContent="Center">
+				<HBox justifyContent="Center">
+					<grid:CSSGrid id="grid2" gridTemplateColumns="1fr 1fr 1fr" gridTemplateRows=" 100px 100px 100px" gridGap="1rem">
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Customers" press="press">
+							<TileContent >
+								<NumericContent id="customerValue" value="3" icon="sap-icon://customer" withMargin="true"/>
+							</TileContent>
+						</GenericTile>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Quotation" press="pressQuotationTile">
+							<TileContent>
+							<NumericContent id="quotationValue" value="2" withMargin="true" icon="sap-icon://activities"/>
+							</TileContent>
+						</GenericTile>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Display/Approve Users" press="handleApproveUserPress">
+							<TileContent>
+								<NumericContent id="userValue" value="1" withMargin="true" icon="sap-icon://approvals"/>
+							</TileContent>
+						</GenericTile>
+						<!--<VBox>-->
+						<!--<Image src="image/download.jpg"></Image>-->
+						<!--<Image src="image/img-3.jpg"></Image>-->
+						<!--<Image src="../image/img-3.jpg"></Image>-->
+						<!--</VBox>-->
+					</grid:CSSGrid>
+				</HBox>
+			</VBox>
+		</HBox>
+	</Page>
+</mvc:View>

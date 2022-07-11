@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog title="Select Collection">
+		<content>
+			<List id="ListId" class="sapUiResponsiveMargin" width="auto" items="{Inquiry>/d/results}">
+				<StandardListItem id="stdId" title="{Inquiry>CreatedFirstName} {Inquiry>CreatedLastName}" description="{Inquiry>Description}"
+					info="{Inquiry>Street}" press="onPress"/>
+			</List>-->
+		</content>
+		<endButton>
+			<Button type="Reject" text="Cancel" press="onCloseCollection"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

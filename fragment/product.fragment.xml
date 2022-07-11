@@ -1,0 +1,80 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+	xmlns:l="sap.ui.layout">
+	<Dialog title="Product Description" contentWidth="75%" class="sapUiSizeCompact">
+		<endButton>
+			<Button text="Cancel" press="handleproductCancelPress"/>
+		</endButton>
+		<l:BlockLayout background="Light">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell class="sapUiNoContentPadding">
+					<Carousel  showPageIndicator="false" loop="true" pageChanged=".onCarouselPageChanged"
+						visible="{=!${device>/system/phone}}" tooltip="{i18n>welcomeDescription}">
+						<pages>
+							<VBox renderType="Bare">
+								<Image class="imageFitContent" src="image/topanga-collection-danao-03.jpg" width="100%" height="20em"/>
+							</VBox>
+							<VBox renderType="Bare">
+								<Image class="imageFitContent" src="image/cuff-collection-danao-16.jpg" width="100%" height="20em"/>
+							</VBox>
+							<VBox renderType="Bare">
+								<Image class="imageFitContent" src="image/img2.jpg" width="100%" height="20em"/>
+							</VBox>
+						</pages>
+					</Carousel>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+		<Panel width="auto" class="sapUiResponsiveMargin" accessibleRole="Region">
+			<content>
+				<Text
+					text="If a single piece of furniture has the ability to define the style of a personal living space, that piece would be the sofa. Available in a range of styles -- with a variety of functions -- a sofa can be functional or whimsical, period or contemporary, single or sectional. In each instance the sofa, as a signature object, defines the space in which it sits."/>
+				<Text class="sapUiSmallMarginTop"
+					text="Attributed to a piece of furniture commissioned by the Fourth Earl of Chesterfield, Philip Stanhope, Chesterfield now describes sofas that are comfortable, usually upholstered in quilted leather, and detailed with a buttoned back. The name now denotes sofas that include some or all of these characteristics, as well as over-stuffing or rolled arms. Part of its allure is its universal appeal -- and as Ralph Lauren has described it -- its casual grandeur. The timeless style and universal appeal of the Chesterfield make it a versatile and suitable sofa for a diverse range of interiors"/>
+			</content>
+		</Panel>
+		<!--<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+			adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+			singleContainerFullSize="false" visible="true" class="removeTitle">-->
+				<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="6" labelSpanL="6" labelSpanM="6" labelSpanS="6"
+			adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<core:Title text="General"/>
+				<Label text="Product Name"/>
+				<Text text="Hudson Sofa "></Text>
+				<Label text="Seater "/>
+				<Text text="2+1"></Text>
+				<Label text="Material"/>
+				<Text text="Wood"></Text>
+				<Label text="Frame Material Subtype"/>
+				<Text text="Plywood"></Text>
+				<Label text="Type"/>
+				<Text text="Cushion"></Text>
+				<Label text="Color"/>
+				<Text text="White"></Text>
+				<Label text="Model Number"/>
+				<Text text="HD258"></Text>
+				<Label text="Dimensions"/>
+				<Text text="24 cm x 34 cm"></Text>
+				<core:Title text="Product Details"/>
+				<Label text="Wheels Included"/>
+				<Text text="No "></Text>
+				<Label text="Maximum Load Capacity "/>
+				<Text text="200kg"></Text>
+				<Label text="Origin of Manufacture"/>
+				<Text text="India"></Text>
+				<core:Title text="Reviews"/>
+				<VBox>
+					<Label text="1. Peter"/>
+					<Text text="Good Product with Good Quality"></Text>
+					<RatingIndicator   maxValue="5" class="sapUiSmallMarginBottom" value="3.5" iconSize="20px" tooltip="4"/>
+				<!--</VBox>
+				<VBox>-->
+					<Label text="2. Aleo David"/>
+					<Text text="Best Product with Awesome Price"></Text>
+					<RatingIndicator maxValue="5" class="sapUiSmallMarginBottom" value="4" iconSize="20px" tooltip="4"/>
+				</VBox>
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

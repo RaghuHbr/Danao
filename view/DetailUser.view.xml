@@ -1,0 +1,66 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="MDG.Help.controller.DetailUser"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:semantic="sap.f.semantic" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" height="100%"
+	xmlns:suite="sap.suite.ui.commons">
+	<semantic:SemanticPage id="detailPage" showFooter="true" class="hideSemanticPage">
+		<semantic:titleHeading>
+			<Title text="User Details"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<ObjectHeader class="objHeaderClass" title="{/firstName}">
+				<attributes>
+					<ObjectAttribute title="Company" text="{/company}"/>
+				</attributes>
+				<statuses>
+					<ObjectStatus title="Status" text="{/status}" state="{path:'/status', formatter:'.formatter.getuserShowStatus'}"/>
+				</statuses>
+			</ObjectHeader>
+		</semantic:headerContent>
+		<semantic:content>
+			<IconTabBar id="itb1" selectedKey="key3" upperCase="false" class="sapUiResponsiveContentPadding">
+				<items>
+					<!--<IconTabFilter icon="sap-icon://activity-items">-->
+					<IconTabFilter text="{i18n>generalinfo}" icon="sap-icon://business-card" class="tabWidthClass">
+						<l:BlockLayoutCell width="2" title="{i18n>General}">
+							<f:SimpleForm id="sform1" layout="ResponsiveGridLayout" editable="false" width="auto">
+								<f:content>
+									<core:Title text="User Details"/>
+									
+									<Label text="Company Name"/>
+									<Text text="{/company}"></Text>
+									<Label text="User Name"/>
+									<Text text="{/firstName}, {/lastName}"></Text>
+									<Label text="Contact Number"/>
+									<Text text="{/phone}"></Text>
+									<Label text="Email"/>
+									<Text text="{/email}"></Text>
+									<!--<Label text="Sales User Type"/>-->
+									<!--<Text id="SalesUserTypeId" text=""></Text>-->
+								</f:content>
+							</f:SimpleForm>
+						</l:BlockLayoutCell>
+					</IconTabFilter>
+					<IconTabFilter ></IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press="onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction id="enterFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="fullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction id="exitFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="exitFullScreen"/>
+		</semantic:exitFullScreenAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction id="approveButtonId" text="Approve" press="onApprovePress"
+				visible="{parts:['/status'],formatter:'.formatter.getApproveButtonVisibility'}"/>
+		</semantic:positiveAction>
+		<semantic:negativeAction>
+			<semantic:NegativeAction id="rejectButtonId" text="Reject" press="onRejectPress"
+				visible="{parts:['/status'],formatter:'.formatter.getApproveButtonVisibility'}"/>
+		</semantic:negativeAction>
+	</semantic:SemanticPage>
+</mvc:View>

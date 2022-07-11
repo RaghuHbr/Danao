@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="viewSetting" confirm="handleConfirm" filterDetailPageOpened="handleChangeItem">
+		<sortItems>
+			<ViewSettingsItem text="Customer Name" key="dCustomerName"/>
+			<ViewSettingsItem text="Id" key="id"/>
+            <ViewSettingsItem text="Website" key="dWebsite"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

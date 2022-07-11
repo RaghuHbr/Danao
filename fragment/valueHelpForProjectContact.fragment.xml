@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog title="Add Contact">
+		<endButton>
+			<Button text="Cancel" press="handleAddProjectCancel"/>
+		</endButton>
+		<beginButton>
+			<Button text="Save" press="handleAddProjectContactPost"/>
+		</beginButton>
+		<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+			emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" class="editableForm">
+			<f:content>
+				<Label text="Contact Name"/>
+				<Input value="" id="dCustomerContact_Name" type="Text"/>
+				<Label text="Contact Email"/>
+				<Input value="" id="dCustomer_ContactEmail" type="Text"/>
+				<Label text="Contact Phone"/>
+				<Input value="" id="dCustomer_Conact_DirectPhone" type="Text"/>
+				<Label text="Contact Type"/>
+				<!--<Input value="" id="dCustomer_Conact_Type" type="Text"/>-->
+				<ComboBox items="{contactTypeModel>/}" id="dCustomer_Conact_Type" valueStateText="Select Contact Type" placeholder="Select Contact Type">
+					<core:Item text="{contactTypeModel>DCustomerContact_type}" key="{contactTypeModel>id}"/>
+				</ComboBox>
+				<!--<ComboBox items="{DetailContactModel>/}" id="contactAdd" valueStateText="Select Contact Type" placeholder="Select Contact Type">-->
+				<!--<core:Item text="{DetailContactModel>DCustomerContact_type}" key="{DetailContactModel>id}"/>-->
+				<!--</ComboBox>-->
+				<Label text="Contact Mobile"/>
+				<Input value="" id="dCustomer_ContactMobile" type="Text"/>
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,166 @@
+<mvc:View controllerName="MDG.Help.controller.projectDetail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.f.semantic" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" height="100%" xmlns:suite="sap.suite.ui.commons"
+	xmlns:upload="sap.m.upload">
+	<semantic:SemanticPage id="detailPage" showFooter="true" class="detailPageClass">
+		<semantic:titleHeading>
+			<Title text="{i18n>Project Details}"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<ObjectHeader class="objHeaderClass" title="{ProjectsDataModel>/dCustomer_ProjectName}"
+				number="{path: 'DetailProjectsModel>/0/dProject_ExpectedStartDate', formatter:'.formatter.dateFormatter'}">
+				<attributes id="id24">
+					<ObjectAttribute title="Project Type" text="{ProjectsDataModel>/d_project_type/data/attributes/DProject_Type}"/>
+				</attributes>
+			</ObjectHeader>
+		</semantic:headerContent>
+		<semantic:content>
+			<IconTabBar id="itb1" selectedKey="key3" upperCase="false" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="{i18n>generalinfo}" icon="sap-icon://business-card" class="tabWidthClass">
+						<l:VerticalLayout id="containerLayout" width="100%">
+							<l:BlockLayout id="BlockLayout" background="Dashboard">
+								<l:BlockLayoutRow >
+									<l:BlockLayoutCell width="2" title="{i18n>General}">
+										<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+											adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+											singleContainerFullSize="false" visible="true" class="removeTitle">
+											<f:content>
+												<core:Title text="Project Details"/>
+												<Label text="Project Category"/>
+												<Text text="{ProjectsDataModel>/d_project_category/data/attributes/DProject_Category}"></Text>
+												<Label text="Sales Type"/>
+												<Text text="{ProjectsDataModel>/d_project_sales_stage/data/attributes/DProject_Sales_Stage}"></Text>
+												<Label text="Project Type"/>
+												<Text text="{ProjectsDataModel>/d_project_type/data/attributes/DProject_Type}"></Text>
+												<Label text="Expected Start Date"/>
+												<Text text="{path: 'ProjectsDataModel>/dProject_ExpectedStartDate', formatter:'.formatter.dateFormatter'}"></Text>
+												<Label text="Expected Close Date"/>
+												<Text text="{path: 'ProjectsDataModel>/dProject_Expected_CloseDate', formatter:'.formatter.dateFormatter'}"></Text>
+												<Label text="Expected End Date"/>
+												<Text text="{path:'ProjectsDataModel>/dProject_CompletionDate', formatter:'.formatter.dateFormatter'}"></Text>
+											</f:content>
+										</f:SimpleForm>
+									</l:BlockLayoutCell>
+								</l:BlockLayoutRow>
+							</l:BlockLayout>
+						</l:VerticalLayout>
+					</IconTabFilter>
+					<IconTabFilter text="Contact Details" icon="sap-icon://contacts">
+						<Toolbar>
+							<ToolbarSpacer></ToolbarSpacer>
+							<Button type="Transparent" icon="sap-icon://add" iconFirst="true" press="handleAddNewContact" tooltip="Add Contact"/>
+						</Toolbar>
+						<Table items="{path:'newContactModel>/'}" id="addNewTableID" growing="true" growingThreshold="10">
+							<columns>
+								<Column>
+									<Text text="{i18n>Contact Name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Contact Email}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Contact Phone}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Contact Type}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Contact Mobile}"/>
+								</Column>
+								<Column>
+									<Label text=""/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{newContactModel>DCustomerContact_type/dCustomerContact_Name}"/>
+										<Text text="{newContactModel>DCustomerContact_type/dCustomer_ContactEmail}"/>
+										<Text text="{newContactModel>DCustomerContact_type/dCustomer_Conact_DirectPhone}"/>
+										<Text text="{newContactModel>DCustomerContact_type/d_customer_contact_type/data/attributes/DCustomerContact_type}"/>
+										<Text text="{newContactModel>DCustomerContact_type/dCustomer_ContactMobile}"/>
+										<Button type="Transparent" icon="sap-icon://delete" press="handleDeleteContact"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="Project Notes " icon="sap-icon://notes">
+						<Table id="CustomersTable" >
+							<columns>
+								<Column>
+									<Text text="Project Notes"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Inactive" press="handlePartiesInvolvedPress">
+									<cells>
+										<Text text="{ProjectsDataModel>/dProject_Add_Notes}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="Quotations" icon="sap-icon://activity-items">
+						<Table id="QuotationsTable" items="{QuotaionDetailsModel>/}">
+							<columns>
+								<Column>
+									<Text text="Quotaion Id"/>
+								</Column>
+								<Column>
+									<Text text="Created Date"/>
+								</Column>
+								<Column>
+									<Text text="Quantity"/>
+								</Column>
+								<Column>
+									<Text text="Price"/>
+								</Column>
+								<Column>
+									<Text text="Status"/>
+								</Column>
+								<Column width="3rem">
+									<Text text=""/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Navigation" press="onPressQuotation">
+									<cells>
+										<Text text="{QuotaionDetailsModel>id}" id="Id"/>
+										<Text text="{path:'QuotaionDetailsModel>createdAt',formatter:'.formatter.dateFormatter'}" id="created_date"/>
+										<Text text="{QuotaionDetailsModel>dQuotation_Item_Quantity}" id="quantity"/>
+										<ObjectNumber class="sapMObjectNumberLarge" id="price"
+											number="{ parts: [{path: 'QuotaionDetailsModel>dQuotation_Item_Price'}, {path: 'USD'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+											unit="USD" state="Success"/>
+										<ObjectStatus id="status" text="{QuotaionDetailsModel>DQuotation_Status}"
+											state="{path:'QuotaionDetailsModel>DQuotation_Status', formatter:'.formatter.getQuotationState'}"/>
+										<Button type="Transparent" id="QuodeleteButtonId" press="handleDeleteQuotationPress" iconFirst="true" icon="sap-icon://delete"/>
+										<!--<Text text="{QuotaionDetails>dCustomer_ContactMobile}"/>-->
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press="onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction id="enterFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="fullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction id="exitFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="exitFullScreen"/>
+		</semantic:exitFullScreenAction>
+		<semantic:footerCustomActions>
+			<Button type="Transparent" text="Add Quotation" id="addButtonId" visible="true" press="handlenewQuotation" icon="sap-icon://add"/>
+			<Button type="Transparent" text="{i18n>save}" id="saveButtonId" visible="false" press="handleSaveUserAccess"/>
+			<Button type="Transparent" text="{i18n>cancel}" id="cancelButtonId" visible="false" press="handleCancelUser"/>
+			<Button type="Transparent" text="{i18n>edit}" id="editButtonId" press="handleEditUserPress" iconFirst="true" icon="sap-icon://edit"/>
+			<Button type="Transparent" text="{i18n>delete}" id="deleteButtonId" press="handleDeleteUserPress" iconFirst="true" icon="sap-icon://delete"/>
+		</semantic:footerCustomActions>
+	</semantic:SemanticPage>
+</mvc:View>

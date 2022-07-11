@@ -1,0 +1,290 @@
+.QuotationClass .welcomePrice  {
+	width: 100%;
+	padding: 0;
+	border-bottom-width: 0;
+}
+.QuotationImageClass {
+	object-fit: cover;
+}
+.QuotationClass .welcomeCarouselText {
+	color: white;
+	display: block;
+	position: fixed;
+	bottom: 0;
+	padding: 1rem;
+	font-size: 1.5rem;
+	width: 100%;
+	text-shadow: 0 0 0.125rem black;
+}
+
+.productPrice {
+    background-color: transparent;
+}
+
+.comparebox > div {
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+
+.simpleFormCartClass div.sapUiRespGridOverflowHidden[class*="sapUiRespGrid"]>div[class*="sapUiRespGridSpan"] {
+    overflow: visible;
+}
+.sapUiBtnS {
+padding: 4px 58px 19px !important;
+height: 22px;
+font-size: 100px;
+}
+
+
+.textSize {
+    font-size: 10px;
+    color: red;
+}
+.siginInClass{
+/*	background-color : mediumaquamarine !important;*/
+	background-color : aquamarine !important;
+	width : 20rem;
+}
+.welcomeTitleClass>.sapMLabelTextWrapper bdi {
+	font-weight: bold;
+	font-size: 1rem;
+}
+.loginPageClass{
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), 
+	url('https://www.expteam.net/interiordesign/media/com_expgallery/images/big/furniture_wallpaper_21467_22381_hd_wallpapers_5571d7363738a.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.shellBarClass>.sapFShellBarOLHB>.sapMFlexBox>.sapMFlexItemAlignAuto>.sapMTitle{
+	color :black !important;
+	font-size : 1rem;
+}
+.itemSummaryPanel>.sapMPanelContent:not(.sapMPanelBGTransparent) {
+    border-bottom: 0px !important;
+}
+
+.itemSummaryPanel>.sapMPanelContent>.sapMFlexBox {
+    border-bottom: 1px solid #333;
+}
+
+.sapMObjLItem {
+    border-bottom: 0px !important;
+}
+
+.imageFitContent {
+    object-fit: cover;
+
+}
+
+.blockBackground>.sapUiBlockCellContent>.sapUiVlt>.sapUiVltCell>.sapUiIcon {
+    color: #427cac !important;
+}
+
+.blockBackgroundAlt>.sapUiBlockCellContent>.sapUiVlt>.sapUiVltCell>.sapUiIcon {
+    color: #427cac !important;
+}
+
+.browseByCellClass .sapUiBlockCellContent {
+    padding: 1rem !important;
+}
+
+.sapMHBox {
+    margin-top: 0px !important;
+}
+
+.banner_image {
+    background-image: url('https://ii2.pepperfry.com/media/wysiwyg/banners/HB02_Web_2x-n.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+    object-fit: cover;
+}
+
+div#__content1-footer-text {
+    color: red;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+div#__content3-footer-text {
+    color: red;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-size: 18px
+}
+
+span#__tile0-title-inner {
+    font-size: 18px;
+    font-weight: bolder;
+}
+span#__tile2-title-inner {
+    font-size: 18px;
+    font-weight: bolder;
+}
+span#__tile1-title-inner {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+div#container-Help---Help--grid2 {
+    width: 639px ! important;
+}
+
+/*div#container-Help---Help--grid2 {*/
+/*     margin-left: 217px; */
+/*    display: flex ! important;*/
+/*    text-align: center;*/
+/*    justify-content: center;*/
+/*    margin-top: 228px;*/
+
+/*}*/
+.pageClass>.sapMPageEnableScrolling {
+    background-image: url("../image/img1.jpg");
+    background-size: cover;
+
+}
+
+span#__page0-title-inner {
+    font-size: 40px;
+    padding: 58px;
+    font-weight: bolder;
+}
+
+span#__content0-icon-image {
+    color: yellowgreen;
+    font-size: 46px;
+}
+
+span#__content4-icon-image {
+    color: yellowgreen;
+    font-size: 46px;
+}
+
+span#__content2-icon-image {
+    color: yellowgreen;
+    font-size: 46px;
+}
+
+span#__content0-value-inner {
+    font-weight: bolder;
+}
+span#__content4-value-inner {
+    font-weight: bolder;
+}
+span#__content2-value-inner {
+    font-weight: bolder;
+}
+
+div#__hbox1 {
+    margin-top: 250px;
+}
+
+/*img#__image0 {
+    width: 48px;
+    height: 46px;
+    background-color: blue !important;
+}*/
+
+/*span#__title0-inner {*/
+/*    font-size: 42px;*/
+/*    text-align: center;*/
+/*    margin-left: 533px;*/
+/* background-color: currentColor; */
+/*    color: currentColor;*/
+/*    padding: 8px;*/
+/*    border-radius: 54px;*/
+/*}*/
+.sapUiDemoCart .welcomeCarouselText {
+    color: white;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    width: 100%;
+    text-shadow: 0 0 0.125rem black;
+}
+
+.svgContainer {
+    text-align: center;
+    /* Align center inline elements */
+    font: 0/0 a;
+    /* Hide the characters like spaces */
+}
+
+.svgContainer:before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.svgContainer img {
+    vertical-align: middle;
+    display: inline-block;
+    width: 15rem;
+    margin-bottom: 2rem !important;
+    margin-top: 1rem !important;
+}
+
+
+
+.avatar {
+	    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    width: 95px;
+    height: 85px;
+    border-radius: 50%;
+}
+.boldFont {
+    font-weight: Bold !important;
+}
+
+.largeText {
+    font-size: medium !important;
+}
+
+.sapUxAPObjectPageSectionTitleUppercase {
+    text-transform: capitalize !important;
+}
+
+.messageText {
+    color: #fabd64 !important;
+}
+
+.sapMInputBaseInner {
+    background-color: white !important;
+}
+
+.sapMSltLabel {
+    background-color: white !important;
+}
+
+.objHeaderClass {
+    padding: 0rem !important;
+}
+
+.contentClaimItemDetail {
+    padding-top: 0rem !important;
+}
+
+.sapMOH {
+    padding: 0rem !important;
+}
+
+#__toolbar0 {
+    padding-left: 0rem !important;
+}
+
+#__page2-page-content {
+    padding-top: 0rem !important;
+}
+
+#__page3-page-content {
+    padding-top: 0rem !important;
+}

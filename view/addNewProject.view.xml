@@ -1,0 +1,117 @@
+<mvc:View controllerName="MDG.Help.controller.addNewProject" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.f"
+	xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:u="sap.ui.unified" xmlns:layout="sap.ui.layout" xmlns:l="sap.ui.layout"
+	xmlns:upload="sap.m.upload" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<content>
+			<Wizard class="sapUiResponsivePadding--header sapUiResponsivePadding--content" id="wizardId" complete="wizardCompletedHandler">
+				<steps>
+					<WizardStep title="Project Basic Information" validated="true">
+						<form:SimpleForm editable="true">
+							<form:content>
+								<Label text="Project Name" required="true"/>
+								<Input value="{/dCustomer_ProjectName}" id="proName" valueStateText="Enter Project Name" liveChange="additionalInfoValidation"
+									placeholder="Enter Project Name"/>
+								<Label text="Project Type" required="true"/>
+								<ComboBox items="{ProjectTypeModel>/}" id="proTypeName" valueStateText="Select Project Type" placeholder="Select Project Type">
+									<core:Item text="{ProjectTypeModel>DProject_Type}" key="{ProjectTypeModel>id}"/>
+								</ComboBox>
+								<Label text="Project Category"/>
+								<ComboBox items="{ProjectCategoryModel>/}" id="catgoryName" valueStateText="Select Project Category" placeholder="Select Project Category">
+									<core:Item text="{ProjectCategoryModel>DProject_Category}" key="{ProjectCategoryModel>id}"/>
+								</ComboBox>
+								<Label text="Project Probability"/>
+								<Input value="{/dProject_Probability}" id="Probability" valueStateText="Enter Project Probability" liveChange="additionalInfoValidation"
+									placeholder="Enter Project Probability"/>
+								<Label text="Project Sales Stage"/>
+								<ComboBox items="{ProjectModel>/}" id="salesName" valueStateText="Select Project Sales" placeholder="Select Project Sales">
+									<core:Item text="{ProjectModel>DProject_Sales_Stage}" key="{ProjectModel>id}"/>
+								</ComboBox>
+								<Label text="Expected Close Date" required="true"/>
+								<DatePicker valueFormat="yyyy-MM-dd" id="startDate" displayFormat="MM-dd-yyyy" value="{/dProject_ExpectedStartDate}"
+									valueStateText="Enter Expected Start Date" placeholder="Enter Expected Start Date"/>
+								<Label text="Expected Start Date" required="true"/>
+								<DatePicker valueFormat="yyyy-MM-dd" id="closeDate" displayFormat="MM-dd-yyyy" value="{/dProject_Expected_CloseDate}"
+									valueStateText="Enter Expected Close Date" placeholder="Enter Expected Close Date"/>
+								<Label text="Completion Date" required="true"/>
+								<DatePicker valueFormat="yyyy-MM-dd" id="cDate" displayFormat="MM-dd-yyyy" value="{/dProject_CompletionDateAtD}"
+									valueStateText="Enter Project Completion Date" placeholder="Enter Project Completion Date"/>
+								<Label text="Project Notes"/>
+								<TextArea value="{/dProject_Add_Notes}" id="ProNotes" valueStateText="Enter Project Notes" liveChange="additionalInfoValidation"
+									placeholder="Enter Project Notes"/>
+								<Label text="Load Dock?" required="true"/>
+								<CheckBox id="ld_dock_true" selected="true"/>
+							</form:content>
+						</form:SimpleForm>
+					</WizardStep>
+					<WizardStep title="Contact Information" validated="true">
+						<form:SimpleForm editable="true">
+							<Label text="Contact Name" required="true"/>
+							<ComboBox items="{contactNameModel>/}" change="handleSelectContact" id="contName" valueStateText="Select Contact Name"
+								placeholder="Select Full Name" editable="false">
+								<core:Item text="{contactNameModel>dCustomerContact_Name}" key="{contactNameModel>id}"/>
+							</ComboBox>
+							<Label text="Contact Email" required="true"/>
+							<Input editable="false" id="ceml" valueStateText="Enter Contact Email" liveChange="additionalInfoValidation"
+								placeholder="Enter Contact Email"/>
+							<Label text="Contact Direct Phone" required="true"/>
+							<Input editable="false" id="crty" valueStateText="Enter Direct Phone" liveChange="additionalInfoValidation" placeholder="Enter Direct Phone"/>
+							<Label text="Contact Mobile"/>
+							<Input editable="false" type="Number" id="contNum" valueStateText="Enter Mobile Number" liveChange="additionalInfoValidation"
+								placeholder="Enter Mobile Number"/>
+						</form:SimpleForm>
+					</WizardStep>
+					<WizardStep validated="false" title="Project Documents" activate="additionalInfoValidation">
+						<UploadCollection id="UploadCollectionView" maximumFilenameLength="55" maximumFileSize="50" multiple="false" showSeparators="All"
+							change="onChange" fileDeleted="onFileDeleted" filenameLengthExceed="onFilenameLengthExceed" fileRenamed="onFileRenamed"
+							fileSizeExceed="onFileSizeExceed" typeMissmatch="onTypeMissmatch" uploadComplete="onUploadComplete"
+							beforeUploadStarts="onBeforeUploadStarts" uploadTerminated="onUploadTerminated" items="{SchemeCPDocuments>/}"
+							noDataText="{ppcutili18n>common.NoAttachments}" uploadUrl="/sap/opu/odata/ARTEC/SSGW_MM/MaterialDocDocuments" uploadEnabled="true">
+							<toolbar>
+								<OverflowToolbar id="myId">
+									<Title id="attachmentTitle" text="{LocalViewSetting>/AttachmentCount} Attachments">
+										<layoutData>
+											<OverflowToolbarLayoutData priority="NeverOverflow"/>
+										</layoutData>
+									</Title>
+									<Text text="{i18n>AttachmentVal}" visible="{LocalViewSetting>/CreateVisibility}"/>
+									<ToolbarSpacer/>
+									<Button visible="{LocalViewSetting>/CreateVisibility}" tooltip="{i18n>SchemeCPDocuments.Page.UploadCollection.Dialog.Title}"
+										type="Emphasized" text="Add Document" press="selectDocumentType" enabled="{= ${POs>/StatusID} === 'C' ? false : true }">
+										<layoutData>
+											<OverflowToolbarLayoutData priority="NeverOverflow"/>
+										</layoutData>
+									</Button>
+								</OverflowToolbar>
+							</toolbar>
+							<items press="getDetails">
+								<UploadCollectionItem id="UploadCollectionItem" documentId="{SchemeCPDocuments>MatDocDocumentGUID}" fileName="{SchemeCPDocuments>FileName}"
+									url="{SchemeCPDocuments>DocumentUrl}" enableEdit="false" enableDelete="{LocalViewSetting>/CreateVisibility}"
+									visibleDelete="{LocalViewSetting>/CreateVisibility}" visibleEdit="false">
+									<attributes>
+										<ObjectAttribute title="{i18n>SchemeCPDocumentsA.label.DocumentType}" text="{SchemeCPDocuments>DocumentTypeDesc}" active="false"/>
+										<ObjectAttribute title="{i18n>SchemeCPDocuments.Page.UploadCollectionItem.ObjectAttribute.UploadedOn}"
+											text="{path:'SchemeCPDocuments>CreatedOn',type: 'sap.ui.model.type.Date'}" active="false"/>
+										<!--<ObjectAttribute title="{i18n>SchemeCPDocuments.Page.UploadCollectionItem.ObjectAttribute.UploadedBy}"-->
+										<!--	text="{= ${SchemeCPDocuments>CreatedByName} ? ${SchemeCPDocuments>CreatedByName} : ${SchemeCPDocuments>CreatedBy}}" active="false"></ObjectAttribute>-->
+										<ObjectAttribute title="{i18n>SchemeCPDocuments.Page.UploadCollectionItem.ObjectAttribute.FileSize}"
+											text="{path : 'SchemeCPDocuments>DocumentSize', formatter : 'com.arteriatech.ppc.utils.js.Common.fileSizeFormatter'}"></ObjectAttribute>
+									</attributes>
+									<!--<statuses>
+					<ObjectStatus title="{i18n>SchemeCPDocumentsA.label.DocumentType}" text="{SchemeCPDocuments>DocumentTypeDesc}"/>
+				</statuses>-->
+								</UploadCollectionItem>
+							</items>
+						</UploadCollection>
+					</WizardStep>
+				</steps>
+			</Wizard>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Save" press="handleAddProjectPress"/>
+				<Button text="Cancel" press="handleProjectCancel"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

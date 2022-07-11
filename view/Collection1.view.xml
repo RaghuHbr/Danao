@@ -1,0 +1,158 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="MDG.Help.controller.Collection" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="page" title="Product Details">
+		<subHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button id="cartIconId" iconFirst="true" press="handleItemSummaryPress" icon="sap-icon://cart-4" type="Transparent"/>
+				<Button press="handlecollectionBack" icon="sap-icon://decline" type="Transparent"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<HBox>
+				<Panel id="panelPromoted" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						</Toolbar>
+					</headerToolbar>
+					<l:BlockLayout background="Dashboard">
+						<l:BlockLayoutRow id="promotedRow">
+							<l:content>
+								<l:BlockLayoutCell>
+									<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+										<FlexBox height="3.5rem" renderType="Bare">
+											<l:VerticalLayout>
+												<ObjectIdentifier title="Hudson-3 Seat Sofa" titleActive="true" titlePress=".onSelectProduct"
+													tooltip="{i18n>openProductDetails} {view>Product/Name}" class="sapUiTinyMarginBottom"/>
+												<ObjectStatus text="Available" state="Success"/>
+											</l:VerticalLayout>
+										</FlexBox>
+										<FlexBox renderType="Bare" justifyContent="Center">
+											<Image src="image/sofa-1.jpg" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="Hudson"/>
+										</FlexBox>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Button type="Emphasized" press=".onAddToCart" text="Add to Cart"></Button>
+											<Button class="sapUiSmallMarginBegin" type="Emphasized" press=".onSelectProduct" text="View Info"></Button>
+										</FlexBox>
+										<ObjectListItem class="welcomePrice" number="$200" numberUnit=""></ObjectListItem>
+									</l:Grid>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</Panel>
+				<Panel id="panelPromoted5" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						</Toolbar>
+					</headerToolbar>
+					<l:BlockLayout background="Dashboard">
+						<l:BlockLayoutRow id="promotedRow1">
+							<l:content>
+								<l:BlockLayoutCell>
+									<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+										<FlexBox height="3.5rem" renderType="Bare">
+											<l:VerticalLayout>
+												<ObjectIdentifier title="Chester-3 Sofa" titleActive="true" titlePress=".onSelectProduct"
+													tooltip="{i18n>openProductDetails} {view>Product/Name}" class="sapUiTinyMarginBottom"/>
+												<ObjectStatus text="Available" state="Success"/>
+											</l:VerticalLayout>
+										</FlexBox>
+										<FlexBox renderType="Bare" justifyContent="Center">
+											<Image src="image/sofa-3.jpg" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="Hudson"/>
+										</FlexBox>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Button type="Emphasized" press=".onAddToCart" text="Add to Cart"></Button>
+											<Button class="sapUiSmallMarginBegin" type="Emphasized" press=".onSelectProduct" text="View Info"></Button>
+										</FlexBox>
+										<ObjectListItem class="welcomePrice" number="$450" numberUnit="">
+											<!--	<layoutData>
+												<l:GridData span="XL8 L8 M8 S8"/>
+											</layoutData>-->
+										</ObjectListItem>
+									</l:Grid>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</Panel>
+			</HBox>
+			<HBox>
+				<Panel id="panelPromoted2" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						</Toolbar>
+					</headerToolbar>
+					<l:BlockLayout background="Dashboard">
+						<l:BlockLayoutRow id="promotedRow2">
+							<l:content>
+								<l:BlockLayoutCell>
+									<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+										<FlexBox height="3.5rem" renderType="Bare">
+											<l:VerticalLayout>
+												<ObjectIdentifier title="Topanga-3 Seat Sofa" titleActive="true" titlePress=".onSelectProduct"
+													tooltip="{i18n>openProductDetails} {view>Product/Name}" class="sapUiTinyMarginBottom"/>
+												<ObjectStatus text="Available" state="Success"/>
+											</l:VerticalLayout>
+										</FlexBox>
+										<FlexBox renderType="Bare" justifyContent="Center">
+											<Image src="image/sofa-3p-chester-danao-420x236.jpg" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="Hudson"/>
+										</FlexBox>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Button type="Emphasized" press=".onAddToCart" text="Add to Cart"></Button>
+											<Button class="sapUiSmallMarginBegin" type="Emphasized" press=".onSelectProduct" text="View Info"></Button>
+										</FlexBox>
+										<ObjectListItem class="welcomePrice" number="180" numberUnit="">
+											<!--	<layoutData>
+												<l:GridData span="XL8 L8 M8 S8"/>
+											</layoutData>-->
+										</ObjectListItem>
+									</l:Grid>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</Panel>
+				<Panel id="panelPromoted3" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						</Toolbar>
+					</headerToolbar>
+					<l:BlockLayout background="Dashboard">
+						<l:BlockLayoutRow id="promotedRow3">
+							<l:content>
+								<l:BlockLayoutCell>
+									<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+										<FlexBox height="3.5rem" renderType="Bare">
+											<l:VerticalLayout>
+												<ObjectIdentifier title="Mozia-3 Seat Sofa" titleActive="true" titlePress=".onSelectProduct"
+													tooltip="{i18n>openProductDetails} {view>Product/Name}" class="sapUiTinyMarginBottom"/>
+												<ObjectStatus text=" Not Available" state="Error"/>
+											</l:VerticalLayout>
+										</FlexBox>
+										<FlexBox renderType="Bare" justifyContent="Center">
+											<Image src="image/sofa-2.jpg" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="Hudson"/>
+										</FlexBox>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Button type="Emphasized" press=".onAddToCart" text="Add to Cart"></Button>
+											<Button class="sapUiSmallMarginBegin" type="Emphasized" press=".onSelectProduct" text="View Info"></Button>
+										</FlexBox>
+										<ObjectListItem class="welcomePrice" number="350" numberUnit="">
+											<!--	<layoutData>
+												<l:GridData span="XL8 L8 M8 S8"/>
+											</layoutData>-->
+										</ObjectListItem>
+									</l:Grid>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</Panel>
+			</HBox>
+		</content>
+	</Page>
+</mvc:View>

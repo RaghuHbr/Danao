@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="MDG.Help.controller.UsersData"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="page" title="User Details" class="textSize" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<Table id="QuotationTable" items="{browseByData>/UserData}">
+				<columns>
+					<Column>
+						<Text text="First Name"/>
+					</Column>
+					<Column>
+						<Text text="Last Name"/>
+					</Column>
+					<Column>
+						<Text text="Email Id"/>
+					</Column>
+					<Column>
+						<Text text="Phone No."/>
+					</Column>
+					<Column>
+						<Text text="Company Name"/>
+					</Column>
+					<Column>
+						<Text text="Discount Value"/>
+					</Column>
+					<Column width="7rem">
+						<Text text="Status"/>
+					</Column>
+					<Column>
+						<Text text=""/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{browseByData>FirstName}"/>
+							<Text text="{browseByData>LastName}"/>
+							<Text text="{browseByData>EmailId}"/>
+							<Text text="{browseByData>PhoneNo}"/>
+							<Text text="{browseByData>CompanyName}"/>
+							<Text text="{browseByData>DiscountValue}"/>
+							<ObjectStatus state="{path:'browseByData>Status', formatter:'.formatter.getUserStatus'}" text="{browseByData>Status}"/>
+							<Button visible="{= ${browseByData>Status} === 'Pending' ? true : false}" text="Approve" type="Emphasized" press="handleApproveUserPress"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<!--<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Create Quotation" type="Emphasized" press="handleCreateQuotation"/>
+			</OverflowToolbar>
+		</footer>-->
+	</Page>
+</mvc:View>

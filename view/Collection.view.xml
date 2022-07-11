@@ -1,0 +1,158 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	controllerName="MDG.Help.controller.Collection" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="page" title="Product Details">
+		<subHeader>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button id="cartIconId" iconFirst="true" press="handleItemSummaryPress" icon="sap-icon://cart-4" type="Transparent"/>
+				<Button press="handlecollectionBack" icon="sap-icon://decline" type="Transparent"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<HBox>
+				<Panel  id="panelPromoted" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						</Toolbar>
+					</headerToolbar>
+					<l:BlockLayout background="Dashboard">
+						<l:BlockLayoutRow id="promotedRow">
+							<l:content>
+								<l:BlockLayoutCell>
+									<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+										<FlexBox height="3.5rem" renderType="Bare">
+											<l:VerticalLayout>
+												<ObjectIdentifier title="{appView>/cartItems/CartProducts/0/title}" titleActive="true" titlePress=".onSelectProduct"
+													tooltip="{i18n>openProductDetails} {view>Product/Name}" class="sapUiTinyMarginBottom"/>
+												<ObjectStatus text="Available" state="Success"/>
+											</l:VerticalLayout>
+										</FlexBox>
+										<FlexBox renderType="Bare" justifyContent="Center">
+											<Image src="{appView>/cartItems/CartProducts/0/src}" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="Hudson"/>
+										</FlexBox>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Button type="Emphasized" id="addToCart1Id" press=".onAddToCart" text="Add to Cart"></Button>
+											<Button class="sapUiSmallMarginBegin" type="Emphasized" press=".onSelectProduct" text="View Info"></Button>
+										</FlexBox>
+										<ObjectListItem class="welcomePrice" number="{appView>/cartItems/CartProducts/0/price}" numberUnit=""></ObjectListItem>
+									</l:Grid>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</Panel>
+				<Panel id="panelPromoted5" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						</Toolbar>
+					</headerToolbar>
+					<l:BlockLayout background="Dashboard">
+						<l:BlockLayoutRow id="promotedRow1">
+							<l:content>
+								<l:BlockLayoutCell>
+									<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+										<FlexBox height="3.5rem" renderType="Bare">
+											<l:VerticalLayout>
+												<ObjectIdentifier title="{appView>/cartItems/CartProducts/1/title}" titleActive="true" titlePress=".onSelectProduct"
+													tooltip="{i18n>openProductDetails} {view>Product/Name}" class="sapUiTinyMarginBottom"/>
+												<ObjectStatus text="Available" state="Success"/>
+											</l:VerticalLayout>
+										</FlexBox>
+										<FlexBox renderType="Bare" justifyContent="Center">
+											<Image src="{appView>/cartItems/CartProducts/1/src}" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="Hudson"/>
+										</FlexBox>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Button type="Emphasized" id="addToCart2Id" press=".onAddToCart" text="Add to Cart"></Button>
+											<Button class="sapUiSmallMarginBegin" type="Emphasized" press=".onSelectProduct" text="View Info"></Button>
+										</FlexBox>
+										<ObjectListItem class="welcomePrice" number="{appView>/cartItems/CartProducts/1/price}" numberUnit="">
+											<!--	<layoutData>
+												<l:GridData span="XL8 L8 M8 S8"/>
+											</layoutData>-->
+										</ObjectListItem>
+									</l:Grid>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</Panel>
+			</HBox>
+			<HBox>
+				<Panel visible="{path:'appView>/cartItems/CartProducts/2/',formatter:'.formatter.getCartVisibility'}" id="panelPromoted2" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						</Toolbar>
+					</headerToolbar>
+					<l:BlockLayout background="Dashboard">
+						<l:BlockLayoutRow id="promotedRow2">
+							<l:content>
+								<l:BlockLayoutCell>
+									<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+										<FlexBox height="3.5rem" renderType="Bare">
+											<l:VerticalLayout>
+												<ObjectIdentifier title="{appView>/cartItems/CartProducts/2/title}" titleActive="true" titlePress=".onSelectProduct"
+													tooltip="{i18n>openProductDetails} {view>Product/Name}" class="sapUiTinyMarginBottom"/>
+												<ObjectStatus text="Available" state="Success"/>
+											</l:VerticalLayout>
+										</FlexBox>
+										<FlexBox renderType="Bare" justifyContent="Center">
+											<Image src="{appView>/cartItems/CartProducts/2/src}" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="Hudson"/>
+										</FlexBox>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Button type="Emphasized" id="addToCart3Id" press=".onAddToCart" text="Add to Cart"></Button>
+											<Button class="sapUiSmallMarginBegin" type="Emphasized" press=".onSelectProduct" text="View Info"></Button>
+										</FlexBox>
+										<ObjectListItem class="welcomePrice" number="{appView>/cartItems/CartProducts/2/price}" numberUnit="">
+											<!--	<layoutData>
+												<l:GridData span="XL8 L8 M8 S8"/>
+											</layoutData>-->
+										</ObjectListItem>
+									</l:Grid>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</Panel>
+				<Panel visible="{path:'appView>/cartItems/CartProducts/3/',formatter:'.formatter.getCartVisibility'}" id="panelPromoted3" accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						</Toolbar>
+					</headerToolbar>
+					<l:BlockLayout  background="Dashboard">
+						<l:BlockLayoutRow id="promotedRow3">
+							<l:content>
+								<l:BlockLayoutCell>
+									<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+										<FlexBox height="3.5rem" renderType="Bare">
+											<l:VerticalLayout>
+												<ObjectIdentifier title="{appView>/cartItems/CartProducts/3/title}" titleActive="true" titlePress=".onSelectProduct"
+													tooltip="{i18n>openProductDetails} {view>Product/Name}" class="sapUiTinyMarginBottom"/>
+												<ObjectStatus text="Available" state="Success"/>
+											</l:VerticalLayout>
+										</FlexBox>
+										<FlexBox renderType="Bare" justifyContent="Center">
+											<Image src="{appView>/cartItems/CartProducts/3/src}" densityAware="false" width="50%" height="50%" press=".onSelectProduct" tooltip="Hudson"/>
+										</FlexBox>
+										<FlexBox alignItems="Start" justifyContent="Start">
+											<Button type="Emphasized" id="addToCart4Id" press=".onAddToCart" text="Add to Cart"></Button>
+											<Button class="sapUiSmallMarginBegin" type="Emphasized" press=".onSelectProduct" text="View Info"></Button>
+										</FlexBox>
+										<ObjectListItem class="welcomePrice" number="{appView>/cartItems/CartProducts/3/price}" numberUnit="">
+											<!--	<layoutData>
+												<l:GridData span="XL8 L8 M8 S8"/>
+											</layoutData>-->
+										</ObjectListItem>
+									</l:Grid>
+								</l:BlockLayoutCell>
+							</l:content>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</Panel>
+			</HBox>
+		</content>
+	</Page>
+</mvc:View>

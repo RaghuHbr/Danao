@@ -1,0 +1,171 @@
+[{
+
+		"id": "CUST101",
+		"indexNo": "0",
+		"customerName": "Software Logistics",
+		"email": "Custometr1@gmail.com",
+		"contact": 1234567890,
+		"contactPerson": "Jhon",
+		"contactEmail": "Jhon@gmail.com",
+		"contactPhone": "988765432",
+		"contactDesignation": "Manager",
+		"description": "A company, abbreviated as co., is a legal entity representing an association of people, whether natural, legal or a mixture of both, with a specific objective. Company members share a common purpose and unite to achieve specific, declared goals.",
+		"country": "India",
+
+		"city": "Bangalore",
+		"collection": "Hudson",
+		"TotalAmount": "$2586",
+		"quotation": "2",
+		"address": "2nd cross rajajinagar 2nd Phase Bangalore 560058",
+
+		"zipCode": 560058,
+		"products": [{
+
+			"productName": "Sofas",
+			"loadCapacity": "50Kg",
+			"dimension": "20x30x10",
+			"material": "Wood",
+			"modelNumber": "WD435",
+			"Qid": "Q101",
+			"product": "SKU123",
+			"Qty": "5",
+			"fabric": "Red",
+			"customerName": "Software Logistics"
+		}],
+		"documents": [{
+			"fileName": "Project Plan Agenda.doc",
+			"mediaType": "application/msword",
+			"url": "demokit/sample/UploadCollection/LinkedDocuments/Business Plan Agenda.doc",
+			"keyword": "Project",
+			"shortDescription": "this documents Belongs to Project "
+		}]
+
+	}, {
+		"id": "CUST102",
+		"indexNo": "1",
+		"customerName": "Johnson & Johnson ",
+		"lastname": "Joan",
+		"email": "Custometr2@gmail.com",
+		"contact": 1234567891,
+		"contactPerson": "Rocky",
+		"contactEmail": "Rocky@gmail.com",
+		"contactPhone": "785424356",
+		"description": "A company, abbreviated as co., is a legal entity representing an association of people, whether natural, legal or a mixture of both, with a specific objective. Company members share a common purpose and unite to achieve specific, declared goals.",
+		"contactDesignation": "Assistant Manager",
+		"country": "India",
+		"city": "Chennai",
+		"collection": "Hopper",
+		"quotation": "1",
+		"address": " No.93 GA ROAD SHOP NO.5 KVN COMPLEX, Chennai, Tamil Nadu 600021",
+
+		"zipCode": 560055,
+		"products": [{
+			"Qid": "Q105",
+			"productName": "SideTables",
+			"loadCapacity": "80Kg",
+			"dimension": "20x30x10",
+			"material": "Metal",
+			"modelNumber": "WD435",
+			"product": "SKU435",
+
+			"Qty": "7",
+			"TotalAmount": "$6785",
+			"fabric": "Brown",
+			"customerName": "Johnson & Johnson "
+		}],
+		"documents": [{
+			"fileName": "Business Plan Agenda.doc",
+			"mediaType": "application/msword",
+			"url": "demokit/sample/UploadCollection/LinkedDocuments/Business Plan Agenda.doc",
+			"keyword": "payment",
+			"shortDescription": "this documents Belongs to project Payments"
+		}]
+
+	}, {
+		"id": "CUST103",
+		"indexNo": "2",
+		"customerName": "Indian Motors",
+		"lastname": "Rose",
+		"email": "Custometr3@gmail.com",
+		"contact": 1234567894,
+		"contactPerson": "Rose",
+
+		"description": "A company, abbreviated as co., is a legal entity representing an association of people, whether natural, legal or a mixture of both, with a specific objective. Company members share a common purpose and unite to achieve specific, declared goals.",
+
+		"contactEmail": "Rose@gmail.com",
+		"contactPhone": "7632434567",
+		"contactDesignation": "Director",
+		"country": "U.S.A",
+		"city": "New York",
+		"collection": "Chester",
+		"address": "near McDonalds, Railway Colony, Andheri East, Mumbai, Maharashtra 400053",
+
+		"zipCode": 560056,
+		"products": [{
+			"Qid": "Q104",
+			"productName": "DiningTables",
+			"loadCapacity": "100Kg",
+			"dimension": "20x30x10",
+			"material": "Wood",
+			"modelNumber": "WD435",
+			"product": "SKU721",
+			"Qty": "4",
+			"TotalAmount": "$4856",
+			"quotation": "3",
+			"fabric": "Black",
+			"customerName": "Indian Motors"
+		}],
+		"documents": [{
+			"fileName": "Payment Plan Agenda.doc",
+			"mediaType": "application/msword",
+			"url": "demokit/sample/UploadCollection/LinkedDocuments/Business Plan Agenda.doc",
+			"keyword": "payment",
+			"shortDescription": "this documents Belongs to Payments"
+		}]
+
+	}, {
+
+		"id": "CUST104",
+		"indexNo": "3",
+		"customerName": "HR Technologies",
+		"lastname": "Sonia",
+		"email": "Custometr4@gmail.com",
+		"contact": 1234567899,
+		"contactPerson": "Sonia",
+
+		"description": "A company, abbreviated as co., is a legal entity representing an association of people, whether natural, legal or a mixture of both, with a specific objective. Company members share a common purpose and unite to achieve specific, declared goals.",
+
+		"contactEmail": "Sonia@gmail.com",
+		"contactPhone": "745656798",
+		"contactDesignation": "Assosicate",
+		"country": "Europe",
+		"city": "Paris",
+		"address": " 8, Reqab Gunj, Madina Market, Madina Market, Hyderabad, Telangana 500002",
+		"collection": "Topanga",
+		"zipCode": 560056,
+		"products": [{
+			"Qid": "Q105",
+			"productName": "BarTables",
+			"loadCapacity": "150Kg",
+			"dimension": "20x30x10",
+			"material": "Metal",
+			"modelNumber": "WD435",
+			"product": "SKU478",
+			"Qty": "7",
+			"TotalAmount": "$8745",
+			"quotation": "1",
+			"fabric": "White",
+			"customerName": "HR Technologies"
+
+		}],
+		"documents": [{
+			"fileName": "Document Plan Agenda.doc",
+			"mediaType": "application/msword",
+			"url": "demokit/sample/UploadCollection/LinkedDocuments/Business Plan Agenda.doc",
+			"keyword": "Document",
+			"shortDescription": "this documents Belongs to Project Documnent"
+		}]
+
+	}
+
+]

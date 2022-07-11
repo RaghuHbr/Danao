@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" class="sapUiSizeCompact">
+	<!--<Popover title="Select Catalogs" contentWidth="320px" contentHeight="500px" placement="Auto" ariaLabelledBy="master-title">
+		<List items="{browseByData>/Catalogs}" mode="SingleSelectMaster" selectionChange="handleCollectionSelection">
+			<items>
+				<StandardListItem type="Navigation" title="{browseByData>title}"></StandardListItem>
+			</items>
+		</List>
+</Popover>-->
+<Popover showHeader="false" title="Select Catalogs" contentWidth="320px" contentHeight="500px" placement="Auto" ariaLabelledBy="master-title">
+	<NavContainer width="100%" height="26em">
+		<Page showNavButton="false" title="Select Categories" showHeader="true">
+			<List items="{browseByData>/Catalogs}" mode="SingleSelectMaster" selectionChange="handleChangeCatalog">
+				<items>
+					<StandardListItem type="Navigation" title="{browseByData>title}"></StandardListItem>
+				</items>
+			</List>
+		</Page>
+		<Page showNavButton="true" title="Browse by" navButtonPress="onPage2CatalogNavPress">
+			<content>
+				<List items="{appView>/catalogItems/Items}" mode="SingleSelectMaster" selectionChange="handleCollectionSelection">
+					<items>
+						<StandardListItem type="Navigation" title="{appView>title}"></StandardListItem>
+					</items>
+				</List>
+			</content>
+		</Page>
+	</NavContainer>
+	</Popover>
+</core:FragmentDefinition>

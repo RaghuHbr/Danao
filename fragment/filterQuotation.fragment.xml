@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog title="Select Filter"  id="viewSetting" confirm="handleConfirm" filterDetailPageOpened="handleChangeItem">
+	<filterItems>
+			<ViewSettingsFilterItem text="Status" key="1">
+				<items>
+					<ViewSettingsItem text="Draft" key="Draft" />
+					<ViewSettingsItem text="Quoted" key="Quoted" />
+					<ViewSettingsItem text="Completed" key="Completed" />
+				</items>
+			</ViewSettingsFilterItem>
+	</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

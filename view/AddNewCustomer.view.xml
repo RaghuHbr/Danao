@@ -1,0 +1,100 @@
+<mvc:View controllerName="MDG.Help.controller.AddNewCustomer" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:upload="sap.m.upload" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page showHeader="false">
+		<content>
+			<Wizard class="sapUiResponsivePadding--header sapUiResponsivePadding--content" complete="wizardCompletedHandler">
+				<steps>
+					<WizardStep title="Basic Information" validated="true">
+						<form:SimpleForm editable="true">
+							<Label text="Customer Name" required="true"/>
+							<Input value="{/dCustomerName}" id="custName" valueStateText="Enter Customer Name" liveChange="additionalInfoValidation"
+								placeholder="Enter Customer Name"/>
+							<Label text="Customer Type"/>
+							<ComboBox items="{customerTypeModel>/}" id="custType" valueStateText="Select Customer Type" placeholder="Select Customer Type">
+								<core:Item text="{customerTypeModel>dCustomerType_Description}" key="{customerTypeModel>id}"/>
+							</ComboBox>
+							<Label text="Website"/>
+							<Input value="{/dWebsite}" id="website" valueStateText="Enter Customer E-mail id" liveChange="additionalInfoValidation"
+								placeholder="Enter Website"/>
+							<Label text="Office Phone"/>
+							<Input value="{/dOfficePhone}" id="abtCust" valueStateText="Enter Office Phone" liveChange="additionalInfoValidation"
+								placeholder="Enter Office Phone"/>
+							<Label text="Address"/>
+							<TextArea value="{/dBillingAddress}" id="addr" valueStateText="Enter Customer Address" liveChange="additionalInfoValidation"
+								placeholder="Enter Customer Address "/>
+						</form:SimpleForm>
+					</WizardStep>
+					<WizardStep title="Contact Information" validated="true">
+						<form:SimpleForm editable="true">
+							<Label text="Contact Name" required="true"/>
+							<Input value="{/dCustomerContact_Name}" id="cname" valueStateText="Enter Full Name" liveChange="additionalInfoValidation"
+								placeholder="Enter Contact Full Name"/>
+							<Label text="Contact Email" required="true"/>
+							<Input value="{/dCustomer_ContactEmail}" id="ceml" valueStateText="Enter Contact Email" liveChange="additionalInfoValidation"
+								placeholder="Enter Contact Email"/>
+							<Label text="Contact Direct Phone" required="true"/>
+							<Input value="{/dCustomer_Conact_DirectPhone}" id="crty" valueStateText="Enter Direct Phone" liveChange="additionalInfoValidation"
+								placeholder="Enter Direct Phone"/>
+							<Label text="Contact Mobile"/>
+							<Input type="Number" value="{/d_customer_contacts}" id="contNum" valueStateText="Enter Mobile Number" liveChange="additionalInfoValidation"
+								placeholder="Enter Mobile Number"/>
+							<!--<Label text="Is Main Contact?" required="true"/>-->
+							<!--<CheckBox id="contMain" selected="true"/>-->
+								<Label text="Contact Type"/>
+							<ComboBox items="{CustomerContactModel>/}" id="conctType" valueStateText="Select Contact Type" placeholder="Select Contact Type">
+								<core:Item text="{CustomerContactModel>DCustomerContact_type}" key="{CustomerContactModel>id}"/>
+							</ComboBox>
+						</form:SimpleForm>
+					</WizardStep>
+					<WizardStep validated="false" title="Documents" activate="additionalInfoValidation">
+						<UploadCollection id="UploadCollectionView" maximumFilenameLength="55" maximumFileSize="50" multiple="false" showSeparators="All"
+							change="onChange" fileDeleted="onFileDeleted" filenameLengthExceed="onFilenameLengthExceed" fileRenamed="onFileRenamed"
+							fileSizeExceed="onFileSizeExceed" typeMissmatch="onTypeMissmatch" uploadComplete="onUploadComplete"
+							beforeUploadStarts="onBeforeUploadStarts" uploadTerminated="onUploadTerminated" items="{SchemeCPDocuments>/}"
+							noDataText="{ppcutili18n>common.NoAttachments}" uploadUrl="/sap/opu/odata/ARTEC/SSGW_MM/MaterialDocDocuments" uploadEnabled="true">
+							<toolbar>
+								<OverflowToolbar id="myId">
+									<Title id="attachmentTitle" text="{LocalViewSetting>/AttachmentCount} Attachments">
+										<layoutData>
+											<OverflowToolbarLayoutData priority="NeverOverflow"/>
+										</layoutData>
+									</Title>
+									<Text text="{i18n>AttachmentVal}" visible="{LocalViewSetting>/CreateVisibility}"/>
+									<ToolbarSpacer/>
+									<Button visible="{LocalViewSetting>/CreateVisibility}" tooltip="{i18n>SchemeCPDocuments.Page.UploadCollection.Dialog.Title}"
+										type="Emphasized" text="Add Document" press="selectDocumentType" enabled="{= ${POs>/StatusID} === 'C' ? false : true }">
+										<layoutData>
+											<OverflowToolbarLayoutData priority="NeverOverflow"/>
+										</layoutData>
+									</Button>
+								</OverflowToolbar>
+							</toolbar>
+							<items press="getDetails">
+								<UploadCollectionItem id="UploadCollectionItem" documentId="{SchemeCPDocuments>MatDocDocumentGUID}" fileName="{SchemeCPDocuments>FileName}"
+									url="{SchemeCPDocuments>DocumentUrl}" enableEdit="false" enableDelete="{LocalViewSetting>/CreateVisibility}"
+									visibleDelete="{LocalViewSetting>/CreateVisibility}" visibleEdit="false">
+									<attributes>
+										<ObjectAttribute title="{i18n>SchemeCPDocumentsA.label.DocumentType}" text="{SchemeCPDocuments>DocumentTypeDesc}" active="false"/>
+										<ObjectAttribute title="{i18n>SchemeCPDocuments.Page.UploadCollectionItem.ObjectAttribute.UploadedOn}"
+											text="{path:'SchemeCPDocuments>CreatedOn',type: 'sap.ui.model.type.Date'}" active="false"/>
+										<!--<ObjectAttribute title="{i18n>SchemeCPDocuments.Page.UploadCollectionItem.ObjectAttribute.UploadedBy}"-->
+										<!--	text="{= ${SchemeCPDocuments>CreatedByName} ? ${SchemeCPDocuments>CreatedByName} : ${SchemeCPDocuments>CreatedBy}}" active="false"></ObjectAttribute>-->
+										<ObjectAttribute title="{i18n>SchemeCPDocuments.Page.UploadCollectionItem.ObjectAttribute.FileSize}"
+											text="{path : 'SchemeCPDocuments>DocumentSize', formatter : 'com.arteriatech.ppc.utils.js.Common.fileSizeFormatter'}"></ObjectAttribute>
+									</attributes>
+								</UploadCollectionItem>
+							</items>
+						</UploadCollection>
+					</WizardStep>
+				</steps>
+			</Wizard>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Save" press="handleAddUserOkPress"/>
+				<Button text="Cancel" press="handleWizardCancel"/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

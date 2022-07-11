@@ -1,0 +1,32 @@
+<mvc:View controllerName="MDG.Help.controller.App" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.f"
+	class="sapUiSizeCompact" xmlns:tnt="sap.tnt">
+	<!--<f:ShellBar homeIcon="image/logo.png">-->
+	<!--<f:ShellBar showLogout="true" class="shellBarClass" title="Estimator">
+		<f:profile>
+			<Avatar initials="SR"/>
+		</f:profile>
+	</f:ShellBar>
+	<App id="app">
+		<f:FlexibleColumnLayout id="layout" layout="{appView>/layout}" />
+	</App>-->
+	<tnt:ToolPage   id="app1" class="sapUiDemoToolPage">
+		<tnt:header>
+			<tnt:ToolHeader visible="{appView>/menuBarVisibility}">
+				<ToolbarSpacer/>
+				<Title text="Estimator"/>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://customer" type="Transparent" press="handleUserPress"/>
+				<Button id="logoutId" icon="sap-icon://log" type="Transparent" press="handleLogoutPress">
+					<layoutData>
+						<OverflowToolbarLayoutData closeOverflowOnInteraction="false"/>
+					</layoutData>
+				</Button>
+				
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:mainContents>
+					<f:FlexibleColumnLayout id="layout" layout="{appView>/layout}" />
+
+		</tnt:mainContents>
+	</tnt:ToolPage>
+</mvc:View>

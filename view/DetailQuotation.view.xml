@@ -1,0 +1,176 @@
+<mvc:View controllerName="MDG.Help.controller.DetailQuotation" xmlns:m="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic"
+	xmlns:form="sap.ui.layout.form" xmlns:f="sap.f" xmlns:l="sap.ui.layout" xmlns:suite="sap.suite.ui.commons" xmlns:core="sap.ui.core"
+	xmlns="sap.uxap">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true" showFooter="true" isChildPage="true" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Quotation Detail" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
+				<snappedHeading>
+					<m:ObjectStatus title="Quotation ID" text="{/QID}"/>
+				</snappedHeading>
+				<expandedContent>
+					<m:ObjectStatus title="Quotation ID" text="{/QID}"/>
+				</expandedContent>
+				<navigationActions>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" id="closeColumn" press="onCloseDetailPress" tooltip="Close column"/>
+				</navigationActions>
+				<actions>
+					<m:Button text="Edit" type="Emphasized" visible="false" press="toggleAreaPriority"/>
+					<m:Button text="Delete" visible="false" type="Transparent"/>
+					<m:Button text="Copy" visible="false" type="Transparent"/>
+					<m:Button text="Toggle Footer" type="Transparent" visible="false" press="onToggleFooter"/>
+					<m:Button icon="sap-icon://action" visible="false" type="Transparent"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true" alignItems="Stretch">
+				<l:VerticalLayout class="sapUiSmallMarginEnd">
+					<m:ObjectStatus title="Customer Name" text="{/CustomerName}"/>
+					<m:ObjectStatus title="Status" text="{/status}"/>
+				</l:VerticalLayout>
+			</m:FlexBox>
+		</headerContent>
+		<sections>
+			<ObjectPageSection title="Quotation Information">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<form:SimpleForm id="SimpleFormDisplay354wideDual" editable="false" layout="ResponsiveGridLayout"  labelSpanXL="4"
+								labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0"
+								columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false">
+								<form:content>
+									<core:Title text="Quotation Details"/>
+									<m:Label text="Quotation Id" class="sapUiTinyMarginBeginEnd"/>
+									<m:Text text="{/QID}"></m:Text>
+									<m:Label text="Product Name" class="sapUiTinyMarginBeginEnd"/>
+									<m:Text text="{/product}"/>
+									<m:Label text="Total Qty" class="sapUiTinyMarginBeginEnd"/>
+									<m:Text text="{/Qty}"/>
+									<m:Label text="Total Price" class="sapUiTinyMarginBeginEnd"/>
+									<m:Text text="${/price}"/>
+									<core:Title text="Customer Details"/>
+									<m:Label text="Customer Name"/>
+									<m:Text text="{/CustomerName}"/>
+									<m:Label text="Email ID"/>
+									<m:Text text="{/EmailID}"/>
+									<m:Label text="Phone Number"/>
+									<m:Text text="{/phoneNo}"/>
+								</form:content>
+							</form:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection title="Items">
+				<subSections>
+					<ObjectPageSubSection>
+						<blocks>
+							<!--"{path: '/'}"-->
+							<m:Table items="{/Items}" id="QuotationTable">
+								<m:headerToolbar>
+									<m:OverflowToolbar>
+										<m:content>
+											<m:ToolbarSpacer/>
+											<m:Button visible="{= ${appView>/status} === 'Draft' ? true : false}" icon="sap-icon://add" press="handleAddNewQuotationItemPress"/>
+										</m:content>
+									</m:OverflowToolbar>
+								</m:headerToolbar>
+								<!--<m:headerToolbar>
+									<m:ToolbarSpacer/>
+									<m:Button icon="sap-icon://add" press="handleAddNewQuotationItemPress"/>
+								</m:headerToolbar>-->
+								<m:columns>
+									<m:Column width="2rem">
+										<m:Text text=""/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="Thumbnail"/>
+									</m:Column>
+									<!--<m:Column>
+										<m:Text text="{i18n>Quotation Id}"/>
+									</m:Column>-->
+									<!--	<m:Column>
+										<m:Text text="{i18n>Quotation Id}"/>
+									</m:Column>-->
+								<!--	<m:Column>
+										<m:Text text="Item Id"/>
+									</m:Column>-->
+									<m:Column>
+										<m:Text text="Item Description"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="{i18n>SKU}"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="{i18n>Type}"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="{i18n>Fabric Type}"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="{i18n>Quantity}"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="{i18n>Price}"/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="{i18n> Total Price}"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem press="handleQuotationDetailPress">
+										<m:cells>
+											<m:Button visible="{= ${appView>/status} === 'Draft' ? true : false}" type="Transparent" icon="sap-icon://delete"
+												press="handleDeleteQuotationPress"/>
+												<m:Image width="100px" height="60px" src="{src}" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/>
+										<!--	<m:Text text="{QID}"/>-->
+											<!--<m:Link text="{ItemId}" press="onSelectProduct"/>-->
+											<m:Text text="{Name}"/>
+											<m:Link text="{SKU}" press="onSelectProduct"/>
+											<m:Text text="{fabricType}"/>
+											<m:Text text="{color}"/>
+											<m:Text text="{Qty}"/>
+											<m:Text text="${price}"/>
+											<m:Text text="${TotalPrice}"/>
+										</m:cells>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+							<m:Panel visible="false" id="panelId" class="itemSummaryPanel" content="{/Items}">
+								<m:FlexBox alignItems="Start" justifyContent="SpaceBetween">
+									<m:HBox>
+										<m:Image width="100px" height="60px" src="{src}" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/>
+										<m:VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+											<m:Title text="{Name}"/>
+											<m:Title text="{ItemId}"/>
+											<m:Title text="Color : {color}"/>
+											<m:Button class="sapUiSMallMarginTop" text="Save For Later" type="Transparent"/>
+										</m:VBox>
+									</m:HBox>
+									<m:VBox>
+										<m:ObjectListItem number="{price}" numberUnit="EUR"/>
+										<m:Label text="Qty : {Qty}"/>
+										<m:Label text="Fabric Type : {fabricType}"/>
+									</m:VBox>
+								</m:FlexBox>
+							</m:Panel>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer/>
+				<m:Button id="submitId" text="Submit" press="handleSubmitPress" type="Emphasized"
+					visible="{= ${appView>/status} === 'Draft' ? true : false}"/>
+				<m:Button id="editid" text="Download" press="downloadPDF" type="Emphasized" iconFirst="true" icon="sap-icon://download"
+					visible="{DetailView>/isEditBtnVisible}"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

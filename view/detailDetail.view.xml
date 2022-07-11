@@ -1,0 +1,567 @@
+<mvc:View controllerName="MDG.Help.controller.detailDetail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.f.semantic" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" height="100%" xmlns:suite="sap.suite.ui.commons"
+	xmlns:u="sap.ui.unified" xmlns:upload="sap.m.upload">
+	<semantic:SemanticPage id="detailPage" showFooter="true" class="detailPageClass">
+		<semantic:titleHeading>
+			<Title text="{i18n>Quotation Details}"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<ObjectHeader class="objHedaerClass" title="{projectname}" number="{id}">
+				<!--<statuses>-->
+				<!--	<ObjectStatus text="{License}" state="{path:'License',formatter:'.formatter.getUserStatus'}"/>-->
+				<!--</statuses>-->
+				<attributes id="id24">
+					<!--<ObjectAttribute title="User Id" text="{UserId}"/>-->
+					<!--<ObjectAttribute title="{i18n>proj_Description}" text="{description}"/>-->
+					<!--<ObjectAttribute title="{i18n>start_date}" text="{startdate}"/>-->
+					<ObjectAttribute title="{i18n>Created On}" text="{/customerName}"/>
+				</attributes>
+			</ObjectHeader>
+		</semantic:headerContent>
+		<semantic:content>
+			<IconTabBar id="itb1" selectedKey="key3" upperCase="false" select="onIconTabSel" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="{i18n>generalinfo}" icon="sap-icon://business-card" class="tabWidthClass">
+						<l:VerticalLayout id="containerLayout" width="100%">
+							<l:BlockLayout id="BlockLayout" background="Dashboard">
+								<l:BlockLayoutRow >
+									<l:BlockLayoutCell width="2" title="{i18n>General}">
+										<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+											adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+											singleContainerFullSize="false" visible="true" class="removeTitle">
+											<f:content>
+												<core:Title text=""/>
+												<Label text="{i18n>Quotation Id}"/>
+												<!--<Text text="{CreatedBy}"></Text>-->
+												<Text text="{projectname}"></Text>
+												<Label text="{i18n>}"/>
+												<Text text="{id}"/>
+												<!--	<Label text="User Role"/>-->
+												<!--<Text text="{userRole}"></Text>-->
+												<!--<Label text="Description"/>
+												<Text text="{Description}"></Text>-->
+												<!--<Label text="Role"/>-->
+												<!--<Text text="{usersList>typevalue}"></Text>-->
+												<core:Title text=""/>
+												<Label text="{i18n>proj_Description}"/>
+												<Text text="{description}"></Text>
+												<!--<Label text="{i18n>contact}"/>-->
+												<!--<Text text="{contact}"></Text>-->
+											</f:content>
+										</f:SimpleForm>
+									</l:BlockLayoutCell>
+								</l:BlockLayoutRow>
+							</l:BlockLayout>
+						</l:VerticalLayout>
+					</IconTabFilter>
+					<!--<IconTabFilter text="{i18n>customers}" icon="sap-icon://customer">-->
+					<!--	<l:VerticalLayout id="containerLayout2" width="100%">-->
+					<!--		<l:BlockLayout id="BlockLayout2" background="Dashboard">-->
+					<!--			<l:BlockLayoutRow >-->
+					<!--				<l:BlockLayoutCell width="2" title="{i18n>GeneralCust}">-->
+					<!--					<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"-->
+					<!--						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"-->
+					<!--						singleContainerFullSize="false" visible="true" class="removeTitle">-->
+					<!--						<f:content>-->
+					<!--							<core:Title text=""/>-->
+					<!--							<Label text="{i18n>customer_Name}"/>-->
+					<!--							<Text text="{customer/customerName}"></Text>-->
+					<!--							<Label text="{i18n>cust_email}"/>-->
+					<!--							<Text text="{customer/email}"/>-->
+					<!--							<Label text="{i18n>cust_phone}"/>-->
+					<!--							<Text text="{customer/contact}"/>-->
+					<!--							<Label text="{i18n>cust_contactperson}"/>-->
+					<!--							<Text text="{customer/contactPerson}"/>-->
+					<!--							<Label text="{i18n>cust_contactDesignation}"/>-->
+					<!--							<Text text="{customer/contactDesignation}"/>-->
+					<!--							<Label text="{i18n>cust_contactPhone}"/>-->
+					<!--							<Text text="{customer/contactPhone}"/>-->
+					<!--							<Label text="{i18n>cust_contactEmail}"/>-->
+					<!--							<Text text="{customer/contactEmail}"/>-->
+					<!--							<core:Title text=""/>-->
+					<!--							<Label text="{i18n>cust_Description}"/>-->
+					<!--							<Text text="{customer/description}"></Text>-->
+					<!--							<Label text="{i18n>cust_address}"/>-->
+					<!--							<Text text="{customer/address}"/>-->
+					<!--							<Label text="{i18n>cust_city}"/>-->
+					<!--							<Text text="{customer/city}"/>-->
+					<!--							<Label text="{i18n>cust_country}"/>-->
+					<!--							<Text text="{customer/country}"/>-->
+					<!--						</f:content>-->
+					<!--					</f:SimpleForm>-->
+					<!--				</l:BlockLayoutCell>-->
+					<!--			</l:BlockLayoutRow>-->
+					<!--		</l:BlockLayout>-->
+					<!--	</l:VerticalLayout>-->
+					<!--<Table items="{path:'assignedCustomers/'}"  mode="MultiSelect">-->
+					<!--		<headerToolbar>-->
+					<!--			<Toolbar design="Transparent">-->
+					<!--				<ToolbarSpacer/>-->
+					<!--				<Button type="Transparent" icon="sap-icon://add" press="addCustomer"/>-->
+					<!--				<Button type="Transparent" press="deleteCustomer" icon="sap-icon://delete"/>-->
+					<!--			</Toolbar>-->
+					<!--		</headerToolbar>-->
+					<!--		<columns>-->
+					<!--			<Column>-->
+					<!--				<Text text="{i18n>customersList}"/>-->
+					<!--			</Column>-->
+					<!--		</columns>-->
+					<!--		<items>-->
+					<!--			<ColumnListItem  type="Inactive" press="handlePartiesInvolvedPress">-->
+					<!--				<cells>-->
+					<!--					<Text text="{customerName}"/>-->
+					<!--				</cells>-->
+					<!--			</ColumnListItem>-->
+					<!--		</items>-->
+					<!--	</Table>-->
+					<!--</IconTabFilter>-->
+					<IconTabFilter text="{i18n>Customers}" icon="sap-icon://customer">
+						<Table id="CustomersTable" items="{path:'customer/'}" mode="MultiSelect">
+							<headerToolbar>
+								<Toolbar design="Transparent">
+									<ToolbarSpacer/>
+									<Button type="Transparent" icon="sap-icon://add" press="addcustomer"/>
+									<Button type="Transparent" press="deletecustomer" icon="sap-icon://delete"/>
+									<Button class="Export" id="downloadButtonIDCustomers" icon="sap-icon://download" text=""
+										tooltip="{i18n>downloadTextForCustomers}" press="onExport" type="Emphasized" iconFirst="true"
+										visible="true"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="{i18n>name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>email}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>contact}"/>
+								</Column>
+								<!--<Column>-->
+								<!--	<Text text="{i18n>address}"/>-->
+								<!--</Column>-->
+								<Column>
+									<Text text="{i18n>city}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>country}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Inactive" press="handlePartiesInvolvedPress">
+									<cells>
+										<Text text="{customerName}"/>
+										<Text text="{email}"/>
+										<Text text="{contact}"/>
+										<!--<Text text="{vendor_address}"/>-->
+										<Text text="{city}"/>
+										<Text text="{country}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>Products}" icon="sap-icon://product">
+						<Table id="vendorTable" items="{path:'assignedVendors/'}" mode="MultiSelect">
+							<headerToolbar>
+								<Toolbar design="Transparent">
+									<ToolbarSpacer/>
+									<Button type="Transparent" icon="sap-icon://add" press="addVendors"/>
+									<Button type="Transparent" press="deleteVendors" icon="sap-icon://delete"/>
+									<Button class="Export" id="downloadButtonIDVendors" icon="sap-icon://download" text=""
+										tooltip="{i18n>downloadTextForVendors}" press="onExport" type="Emphasized" iconFirst="true"
+										visible="true"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="{i18n>name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>email}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>contact}"/>
+								</Column>
+								<!--<Column>-->
+								<!--	<Text text="{i18n>address}"/>-->
+								<!--</Column>-->
+								<Column>
+									<Text text="{i18n>city}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>country}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Inactive" press="handlePartiesInvolvedPress">
+									<cells>
+										<Text text="{vendor_Name}"/>
+										<Text text="{vendor_email}"/>
+										<Text text="{vendor_contact}"/>
+										<!--<Text text="{vendor_address}"/>-->
+										<Text text="{vendor_city}"/>
+										<Text text="{vendor_country}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>Review}" icon="sap-icon://to-be-reviewed">
+						<!--			<Label text="{i18n>assignTeamMembers}"/>-->
+						<!--<Select items="{path: 'teammember/'}" width="100%" enabled="true" >-->
+						<!--	 <items>	-->
+						<!--		<core:Item text="{teamMemberfirstname} {teamMemberlasttname}" key="{teamMemberfirstname} {teamMemberlasttname}" />-->
+						<!--	</items>	-->
+						<!--</Select>-->
+						<Table id="assignTeamMembers" items="{path:'assigned_teammember/'}" mode="MultiSelect">
+							<headerToolbar>
+								<Toolbar design="Transparent">
+									<ToolbarSpacer/>
+									<Button type="Transparent" icon="sap-icon://add" press="assignTeamMember"/>
+									<Button type="Transparent" press="deleteTeamMember" icon="sap-icon://delete"/>
+										<Button class="Export" id="downloadButtonIDteammember" icon="sap-icon://download" text=""
+										tooltip="{i18n>downloadTextForteammember}" press="onExport" type="Emphasized" iconFirst="true"
+										visible="true"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="{i18n>assignedTeamMembersforthisProject}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>contact}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>email}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>role}"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Navigation" press="onTeamMemberItemPress">
+									<cells>
+										<Text text="{firstName} {lastname}"/>
+										<Text text="{contact}"/>
+										<Text text="{email}"/>
+										<Text text="{role}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<!--<Label text="{i18n>assignTask}"/>-->
+						<!--<Select items="{path: 'tasktable/'}" width="100%" enabled="true" >-->
+						<!--	 <items>	-->
+						<!--		<core:Item text="{taskName}" key="{taskName}" />-->
+						<!--	</items>	-->
+						<!--</Select>-->
+						<!--<Button text="Assign Team Member" press="onAssign" />-->
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>Quotation}" icon="sap-icon://activities">
+						<Table items="{path:'tasktable/'}" id="pagesAccessId" mode="MultiSelect">
+							<headerToolbar>
+								<Toolbar design="Transparent">
+									<ToolbarSpacer/>
+									<Button type="Transparent" id="addAccessId" icon="sap-icon://add" press="handleAddPagesAccess"/>
+									<Button type="Transparent" press="handleDeleteTask" icon="sap-icon://delete"/>
+									<Button class="margin_class" id="downloadButtonIDTask" icon="sap-icon://download" text=""
+										tooltip="{i18n>downloadTextForTask}" press="handlePrintTask" type="Emphasized" iconFirst="true"
+										visible="true"/>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="{i18n>taskList}"/>
+								</Column>
+								<!--<Column width="13em">-->
+								<!--	<Text text="Page Title"/>-->
+								<!--</Column>-->
+								<Column>
+									<Text text="{i18n>status}"/>
+								</Column>
+								<Column>
+									<!--<Text text="{i18n>taskdes}"/>-->
+									<Text text="{i18n>MileStoneName}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>start_date}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>end_date}"/>
+								</Column>
+								<!--<Column>-->
+								<!--	<Text text="{i18n>deadline_date}"/>-->
+								<!--</Column>-->
+								<Column>
+									<Text text="{i18n>assigned_team_member}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>assigned_to}"/>
+								</Column>
+								<!--<Column>-->
+								<!--	<Text text="Share Access"/>-->
+								<!--</Column>-->
+							</columns>
+							<items>
+								<ColumnListItem id="cloumnListItemId1" type="Navigation" press="handleListItemPress">
+									<cells>
+										<Text text="{taskName}"/>
+										<Text text="{taskStatus}"/>
+										<!--<Text text="{taskdesp}"/>-->
+										<Text text="{milestoneName}"/>
+										<Text text="{startDate}"/>
+										<Text text="{endDate}"/>
+										<!--<Text text="{deadLineDate}"/>-->
+										<Text text="{assignedTeamMember}"/>
+										<Text text="{assignedTo}"/>
+										<!--<Text text="{pagetitle}"/>-->
+										<!--<CheckBox selected="{path:'createid',formatter:'.formatter.getBooleanCondition'}" select="handleAccessPressed"/>
+										<CheckBox selected="{path:'readid',formatter:'.formatter.getBooleanCondition'}" select="handleAccessPressed"/>
+										<CheckBox selected="{path:'updateid',formatter:'.formatter.getBooleanCondition'}" select="handleAccessPressed"/>
+										<CheckBox selected="{path:'deleteid',formatter:'.formatter.getBooleanCondition'}" select="handleAccessPressed"/>
+										<CheckBox selected="{path:'shareid',formatter:'.formatter.getBooleanCondition'}" select="handleAccessPressed"/>-->
+										<!--<CheckBox selected="{createid}" select="handleAccessPressed"/>
+										<CheckBox selected="{readid}" select="handleAccessPressed"/>
+										<CheckBox selected="{updateid}" select="handleAccessPressed"/>
+										<CheckBox selected="{deleteid}" select="handleAccessPressed"/>
+										-->
+										<!--<CheckBox selected="{shareid}" select="handleAccessPressed"/>-->
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<!--<IconTabFilter id="Processflow" key="IconTabBarMileStone" text="{i18n>milestone}" icon="sap-icon://complete">-->
+					<!--	<Toolbar id="notesTypeToolBar" class="customtoolBarClass" visible="true">-->
+					<!--		<ToolbarSpacer/>-->
+					<!--		<Button visible="true" id="AddNotes" icon="sap-icon://add" tooltip="{i18n>Add}" type="Transparent" press="addNewNotes" enabled="true"/>-->
+					<!--			<Button class="Export" id="downloadButtonIDmilestone" icon="sap-icon://download" text=""-->
+					<!--					tooltip="{i18n>downloadTextFormilestone}" press="onExport" type="Emphasized" iconFirst="true"-->
+					<!--					visible="true"/>-->
+					<!--		<Button visible="true" id="Processflowbtn" icon="sap-icon://display-more" tooltip="{i18n>DisplayMore}" type="Transparent"-->
+					<!--			press="OnToggleDeletePress" enabled="true"/>-->
+					<!--	</Toolbar>-->
+					<!--	<suite:Timeline id="idTimeline" enableDoubleSided="false" groupBy="HireDate" growingThreshold="0" filterTitle="Job Title"-->
+					<!--		sortOldestFirst="false" sort="false" showSort="false" select="ToggleProcessflowView" content="{milestones/}" showFilterBar="false">-->
+					<!--		<suite:content>-->
+					<!--			<suite:TimelineItem id="idTemplateItem" dateTime="{startDate_M} {i18n>To} {endDate_M}" title="{milestoneName}" userNameClickable="false"-->
+					<!--				text="{milestonedes}" userName="{milestoneName}" icon="sap-icon://add-activity" status="{status}"></suite:TimelineItem>-->
+					<!--		</suite:content>-->
+					<!--	</suite:Timeline>-->
+					<!--	<suite:ChartContainer id="chartContainer" showPersonalization="false" showLegend="true" showFullScreen="true" showZoom="true">-->
+					<!--		<suite:content>-->
+								<!--<suite:ChartContainerContent icon="sap-icon://process" title="{i18nModel>chartContainerPRGraphIconTooltip}">-->
+					<!--				<suite:ChartContainerContent>-->
+					<!--				<suite:content>-->
+					<!--					<suite:ProcessFlow id="processflow" scrollable="false" foldedCorners="true" nodePress="onNodePress" nodes="{processFlowModel>/nodes}"-->
+					<!--						lanes="{processFlowModel>/lanes}">-->
+					<!--						<suite:nodes>-->
+					<!--							<suite:ProcessFlowNode laneId="{processFlowModel>lane}" nodeId="{processFlowModel>id}"-->
+					<!--								title="{processFlowModel>taskName} ( {processFlowModel>assignedTeamMember} )"-->
+					<!--								titleAbbreviation="{processFlowModel>taskdesp} : {processFlowModel>assignedTo}" children="{processFlowModel>children}"-->
+					<!--								state="{path:'processFlowModel>taskStatus',formatter:'.formatter.getStatusForNodes'}" stateText="{processFlowModel>taskStatus}"-->
+					<!--								texts="{processFlowModel>startDate} - {processFlowModel>endDate}" highlighted="false" focused="true"/>-->
+					<!--						</suite:nodes>-->
+					<!--						<suite:lanes>-->
+					<!--							<suite:ProcessFlowLaneHeader laneId="{processFlowModel>id}"-->
+					<!--								iconSrc="{path:'processFlowModel>taskStatus',formatter:'.formatter.getIconForLanes'}" text="{processFlowModel>label}"-->
+					<!--								position="{processFlowModel>position}"/>-->
+					<!--						</suite:lanes>-->
+					<!--					</suite:ProcessFlow>-->
+					<!--				</suite:content>-->
+					<!--			</suite:ChartContainerContent>-->
+					<!--		</suite:content>-->
+					<!--		<suite:customIcons>-->
+					<!--			<core:Icon id="customIcon1" class="marginclass" src="sap-icon://decline" press="ToggleProcessflowView"-->
+					<!--				tooltip="Back to Milestone"></core:Icon>-->
+					<!--		</suite:customIcons>-->
+					<!--	</suite:ChartContainer>-->
+					<!--	<Table id="milestoneDeleteTab" items="{path:'milestones/'}" visible="false" mode="None">-->
+							<!--<headerToolbar>-->
+							<!--	<Toolbar design="Transparent">-->
+							<!--		<ToolbarSpacer/>-->
+							<!--		<Button type="Transparent" press="deleteMileStone" icon="sap-icon://delete"/>-->
+							<!--	</Toolbar>-->
+							<!--</headerToolbar>-->
+					<!--		<columns>-->
+					<!--			<Column>-->
+					<!--				<Text text="{i18n>milestonesname}"/>-->
+					<!--			</Column>-->
+					<!--			<Column>-->
+					<!--				<Text text="{i18n>milestonedes}"/>-->
+					<!--			</Column>-->
+					<!--			<Column>-->
+					<!--				<Text text="{i18n>start_date}"/>-->
+					<!--			</Column>-->
+					<!--			<Column>-->
+					<!--				<Text text="{i18n>end_date}"/>-->
+					<!--			</Column>-->
+								<!--<Column>-->
+								<!--	<Text text="{i18n>status}"/>-->
+								<!--</Column>-->
+					<!--			<Column>-->
+					<!--				<Text text="{i18n>Action}"/>-->
+					<!--			</Column>-->
+								<!--	<Column>-->
+								<!--	<Text text=""/>-->
+								<!--</Column>-->
+					<!--		</columns>-->
+					<!--		<items>-->
+					<!--			<ColumnListItem type="Navigation" press="OnMileStoneEditPress">-->
+					<!--				<cells>-->
+					<!--					<Text text="{milestoneName}"/>-->
+					<!--					<Text text="{milestonedes}"/>-->
+					<!--					<Text text="{startDate_M}"/>-->
+					<!--					<Text text="{endDate_M}"/>-->
+										<!--<Text text="{status}"/>-->
+					<!--					<Button type="Transparent" press="deleteMileStone" icon="sap-icon://delete"/>-->
+					<!--				</cells>-->
+					<!--			</ColumnListItem>-->
+					<!--		</items>-->
+					<!--	</Table>-->
+					<!--</IconTabFilter>-->
+					<!--				<IconTabFilter text="{i18n>timeline}" icon="sap-icon://timesheet">-->
+					<!--<IconTabFilter text="{i18n>attachments}" icon="sap-icon://attachment">-->
+					<!--	<upload:UploadSet id="UploadSet" instantUpload="true" showIcons="true" uploadEnabled="false" terminationEnabled="true"-->
+					<!--		fileTypes="txt,doc,png" maxFileNameLength="30" maxFileSize="200" mediaTypes="text/plain,application/msword,image/jpeg"-->
+					<!--		uploadUrl="../../../../upload" items="{path:'documents/'}" >-->
+					<!--		<upload:toolbar>-->
+					<!--			<OverflowToolbar>-->
+					<!--				<SearchField liveChange="onSearch" id="userSearchId" width="auto"/>-->
+					<!--				<Button text="Add Documents" iconFirst="true" icon="sap-icon://add" press="handleDocumentUpload"/>-->
+					<!--			</OverflowToolbar>-->
+					<!--		</upload:toolbar>-->
+					<!--		<upload:items>-->
+					<!--			<upload:UploadSetItem fileName="{fileName}" mediaType="mediaType" url="url" removePressed="onDeleteDoc">-->
+					<!--				<upload:attributes>-->
+					<!--					<ObjectAttribute title="Keyword" text="{keyword}"/>-->
+					<!--					<ObjectAttribute title="Short Description" text="{shortDescription}"/>-->
+					<!--					<ObjectAttribute title="Category" text="{Category}"/>-->
+					<!--				</upload:attributes>-->
+									<!--<upload:markers>-->
+									<!--	<ObjectMarker-->
+									<!--			type="{type}"-->
+									<!--			visibility="{visibility}"/>-->
+									<!--</upload:markers>-->
+					<!--				<upload:statuses>-->
+					<!--					<ObjectStatus title="Task " text="{LinkedTask}" state="None" icon="" active=""/>-->
+					<!--				</upload:statuses>-->
+					<!--			</upload:UploadSetItem>-->
+					<!--		</upload:items>-->
+					<!--	</upload:UploadSet>-->
+					<!--</IconTabFilter>-->
+					<!--				</IconTabFilter>-->
+					<!--<IconTabFilter text="{i18n>attachments}" icon="sap-icon://attachment">-->
+					<!--	<u:FileUploader-->
+					<!--					change="collectFileData"-->
+					<!--					name="myFileUpload"-->
+					<!--					uploadUrl="upload/"-->
+					<!--					tooltip="Upload your file to the local server"-->
+					<!--					uploadComplete="handleUploadComplete"/>-->
+					<!--</IconTabFilter>-->
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press="onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction id="enterFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="fullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction id="exitFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="exitFullScreen"/>
+		</semantic:exitFullScreenAction>
+		<semantic:footerCustomActions>
+			<Button type="Transparent" text="{i18n>edit}" id="editButtonId" press="openEditProject" iconFirst="true" icon="sap-icon://edit"
+				visible="{DetailDetailView>/isCRUDBtnsVisible}"/>
+			<Button type="Transparent" text="{i18n>delete}" id="deleteButtonId" press="openDeleteProject" iconFirst="true" icon="sap-icon://delete"
+				visible="{DetailDetailView>/isCRUDBtnsVisible}"/>
+			<Button id="Archivedid" text="{i18n>Archiveproject}" press="openArchiveProgram" tooltip="{i18n>Archiveproject}" iconFirst="true"
+				icon="sap-icon://toaster-down" visible="{DetailDetailView>/isProjectArchived}"/>
+			<Button id="Cancelledid" text="{i18n>Cancelproject}" press="openCancelProgram" tooltip="{i18n>Cancelproject}" iconFirst="true"
+				icon="sap-icon://cancel" visible="{DetailDetailView>/isProjectCancelled}"/>
+			<Button id="Retrivedid" text="{i18n>Retriveproject}" press="openRetriveProgram" tooltip="{i18n>Retriveproject}" iconFirst="true"
+				icon="sap-icon://cancel" visible="{DetailDetailView>/isRetriveVisible}"/>
+		</semantic:footerCustomActions>
+	</semantic:SemanticPage>
+	<VBox id="vBxReport" class="sapUiSmallMarginBeginEnd">
+		<!--Report header-->
+		<HBox height="3rem" justifyContent="SpaceBetween" class="blackThickBorder sapUiSmallMarginTop sapUiSmallMarginBottum">
+			<VBox>
+				<Image class="sapUiSmallMarginBegin sapUiSmallMarginTop" height="15%" src="image/vasppLogo1.png" alt="logo"/>
+				<!--class="sapUiSmallMarginEnd"-->
+			</VBox>
+			<VBox class="sapUiSmallMarginTop">
+				<!--<Title text="{i18n>ProjectReport}"/>-->
+				<Text text=""/>
+				<Title text="MDG"/>
+			</VBox>
+			<VBox class="sapUiSmallMarginEnd">
+				<Image src="" alt="logo" width="8rem" height="1rem"/>
+				<Text text="{ProgramsName} "/>
+				<Text text=" {Description}"/>
+				<!--<Text text=" {ProgramsModel>/description} "/>-->
+				<Text text="{_id}"/>
+			</VBox>
+		</HBox>
+		<!--<VBox alignContent="SpaceAround" class="blackThickBorder">-->
+		<!--	<VBox width="100%" class="sapUiSmallMarginBegin">-->
+				<!--<Text text="{i18n>ProjectDetails} :" class="sapUiTinyMarginTopBottom boldAndUnderlineText"/>-->
+		<!--		<Text text="{i18n>ID}: {Projects/id}" class="sapUiTinyMarginTopBottom"/>-->
+		<!--		<Text text="{i18n>ProjectName}: {projectname}" class="sapUiTinyMarginTopBottom"/>-->
+		<!--		<Text text="{i18n>StartDate} : {path:'startdate',formatter:'.formatter.formattingDate'}"-->
+		<!--			class="sapUiTinyMarginTopBottom"/>-->
+		<!--		<Text text="{i18n>EstimatedEndDate} : {path:'enddate',formatter:'.formatter.formattingDate'}"-->
+		<!--			class="sapUiTinyMarginTopBottom"/>-->
+		<!--		<Text text="{i18n>Status} : {path:'status', formatter:'.formatter.getAssessmentStatus'}"-->
+		<!--			class="sapUiTinyMarginTopBottom"/>-->
+		<!--	</VBox>-->
+		<!--</VBox>-->
+		<VBox class="blackThickBorder">
+			<!--<List headerText="{ProgramsModel>/name} {ProgramsModel>/description} {ProgramsModel>/status} " items="{path: '/Equipments/', templateShareable:false}">-->
+			<!--	<StandardListItem title="{Ausstattungstyp}  in {locationId} -{Interne_Nr} " description=""  info="Working"/>-->
+			<!--</List>-->
+			<VBox class="blackBorder">
+				<!--<VBox width="100%" class="sapUiSmallMarginBegin">-->
+				<!--	<Text text="{ProgramsModel>equipmentCategory} :" class="sapUiTinyMarginTopBottom boldAndUnderlineText"/>-->
+				<!--</VBox>-->
+				<Table items="{path:'tasktable/'}" noDataText=" " inset="false">
+					<!--<headerToolbar>-->
+					<!--	<OverflowToolbar>-->
+					<!--<Text design="Bold" text="{ProgramsModel>equipmentCategory} :" class="sapUiTinyMarginTopBottom boldAndUnderlineText"/>-->
+					<!--	<Label text=" {ProgramsModel>summaryText} :"  design="Bold"  class="sapUiTinyMarginTopBottom boldAndUnderlineText"/>-->
+					<!--	</OverflowToolbar>-->
+					<!--</headerToolbar>-->
+					<columns >
+						<!--<Column>-->
+						<!--	<Text text=" " width="2rem"/>-->
+						<!--</Column>-->
+						<Column width="29rem">
+							<Text text="{i18n>Tasks}:" class="sapUiTinyMarginTopBottom boldAndUnderlineText"/>
+						</Column>
+						<!--<Column >-->
+						<!--	<Text text=" "/>-->
+						<!--</Column>-->
+						<Column >
+							<Text text=" "/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem >
+							<cells>
+								<!--<Text text="" width="2rem" />-->
+								<Text text="- {taskName} : {taskdesp}"/>
+								<Text text="{path:'taskStatus'}"/>
+								<Text text=" {assignedTeamMember}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</VBox>
+		<!--<Text text="{i18n>declarations}" class="sapUiSmallMarginBegin"/>-->
+	</VBox>
+</mvc:View>

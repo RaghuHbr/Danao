@@ -1,0 +1,307 @@
+<mvc:View controllerName="MDG.Help.controller.demoTest" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.uxap" xmlns:m="sap.m"
+	xmlns:core="sap.ui.core" xmlns:forms="sap.ui.layout.form" height="100%">
+	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Quotation Details"/>
+				</expandedHeading>
+				<snappedHeading>
+					<m:HBox>
+						<m:VBox>
+							<m:Title text="Robot Arm Series 9"/>
+							<m:Label text="PO-48865"/>
+						</m:VBox>
+					</m:HBox>
+				</snappedHeading>
+				<expandedContent>
+					<m:Label text="PO-48865"/>
+				</expandedContent>
+				<actions>
+					<m:Button text="Edit" type="Emphasized"/>
+					<m:Button text="Delete"/>
+					<m:Button text="Simulate Assembly"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true">
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:VBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Quotation ID:" class="sapUiTinyMarginEnd"/>
+						<m:Text text=" {QuotationDataModel>/0/id}"/>
+						<m:Label text="Total Quantity:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{QuotationDataModel>/0/dQuotation_Item_Quantity}"/>
+						<m:Label text="Created Date:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{path: 'QuotationDataModel>/0/createdAt', formatter:'.formatter.dateFormatter'}"/>
+					</m:VBox>
+					<m:VBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Quotation ID:" class="sapUiTinyMarginEnd"/>
+						<m:Text text=" {QuotationDataModel>/0/id}"/>
+						<m:Label text="Total Quantity:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{QuotationDataModel>/0/dQuotation_Item_Quantity}"/>
+						<m:Label text="Created Date:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{path: 'QuotationDataModel>/0/createdAt', formatter:'.formatter.dateFormatter'}"/>
+					</m:VBox>
+				</m:VBox>
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:Title text="Status" class="sapUiTinyMarginBottom"/>
+					<m:ObjectStatus text="{QuotationDataModel>/0/DQuotation_Status}" state="Success" class="sapMObjectStatusLarge"/>
+				</m:VBox>
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:Title text="Grand Total" class="sapUiTinyMarginBottom"/>
+					<m:ObjectStatus text="{QuotationDataModel>/0/dQuotation_Item_Price}" class="sapMObjectStatusLarge"/>
+				</m:VBox>
+				<!--	<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:Title text="Assembly Option" class="sapUiTinyMarginBottom"/>
+					<m:ObjectStatus text="To Be Selected" state="Error" class="sapMObjectStatusLarge"/>
+				</m:VBox>-->
+				<!--<m:VBox class="sapUiLargeMarginEnd">
+					<m:Title text="Monthly Leasing Instalment" class="sapUiTinyMarginBottom"/>
+					<m:ObjectNumber number="379.99" unit="USD" emphasized="false" class="sapMObjectNumberLarge"/>
+				</m:VBox>-->
+			</m:FlexBox>
+		</headerContent>
+		<sections>
+			<ObjectPageSection titleUppercase="false" title="General Information">
+				<subSections>
+					<ObjectPageSubSection title="Order Details">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+								<core:Title text="Order Details"/>
+								<m:Label text="Order ID"/>
+								<m:Text text="589946637"/>
+								<m:Label text="Cotract"/>
+								<m:Link text="10045876"/>
+								<m:Label text="Transaction Date:"/>
+								<m:Text text="May 6, 2018"/>
+								<m:Label text="Expected Delivery Date"/>
+								<m:Text text="June 23, 2018"/>
+								<m:Label text="Factory"/>
+								<m:Text text="Orlando, FL"/>
+								<m:Label text="Supplier"/>
+								<m:Text text="Robotech"/>
+								<core:Title text="Configuration Accounts"/>
+								<m:Label text="Model"/>
+								<m:Text text="Robot Arm Series 9"/>
+								<m:Label text="Color"/>
+								<m:Text text="White (default)"/>
+								<m:Label text="Socket"/>
+								<m:Text text="Default Socket 10"/>
+								<m:Label text="Leasing Instalment"/>
+								<m:Text text="379.99 USD per month"/>
+								<m:Label text="Axis"/>
+								<m:Text text="6 Axis"/>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="">
+						<blocks>
+							<m:Table items="{path:'QuotationDataModel>/'}" class="sapUxAPObjectPageSubSectionAlignContent" width="auto">
+								<m:headerToolbar>
+									<m:OverflowToolbar>
+										<m:Title text="Products" level="H2"/>
+										<m:ToolbarSpacer/>
+										<m:SearchField width="17.5rem"/>
+										<m:OverflowToolbarButton tooltip="Sort" text="Sort" icon="sap-icon://sort"/>
+										<m:OverflowToolbarButton tooltip="Filter" text="Filter" icon="sap-icon://filter"/>
+										<m:OverflowToolbarButton tooltip="Group" text="Group" icon="sap-icon://group-2"/>
+										<m:OverflowToolbarButton tooltip="Settings" text="Settings" icon="sap-icon://action-settings"/>
+									</m:OverflowToolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column>
+										<m:Text text="Thumbnail"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Item Name"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Created Date"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="SKU"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Finish"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Fabric"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Quantity"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Price"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Total Price"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem>
+										<m:Link text="10223882001820"/>
+										<m:Text text="Jologa"/>
+										<m:Text text="{path: 'QuotationDataModel>createdAt', formatter:'.formatter.dateFormatter'}"/>
+										<m:Text text="11/15/19"/>
+										<m:Text text="12,897.00 EUR"/>
+										<m:Text text="Jologa"/>
+										<m:Text text="{QuotationDataModel>/0/dQuotation_Item_Quantity}"/>
+										<m:Text text="{QuotationDataModel>dQuotation_Item_Price}"/>
+										<m:Text text="12,897.00 EUR"/>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection titleUppercase="false" title="Contact Information">
+				<subSections>
+					<ObjectPageSubSection title="Contact Information">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+								<core:Title text="Phone Numbers"/>
+								<m:Label text="Home"/>
+								<m:Text text="+ 1 415-321-1234"/>
+								<m:Label text="Office phone"/>
+								<m:Text text="+ 1 415-321-5555"/>
+								<core:Title text="Social Accounts"/>
+								<m:Label text="LinkedIn"/>
+								<m:Text text="/DeniseSmith"/>
+								<m:Label text="Twitter"/>
+								<m:Text text="@DeniseSmith"/>
+								<core:Title text="Addresses"/>
+								<m:Label text="Home Address"/>
+								<m:Text text="2096 Mission Street"/>
+								<m:Label text="Mailing Address"/>
+								<m:Text text="PO Box 32114"/>
+								<core:Title text="Mailing Address"/>
+								<m:Label text="Work"/>
+								<m:Text text="DeniseSmith@sap.com"/>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+	</ObjectPageLayout>
+</mvc:View>
+
+<!--<mvc:View controllerName="MDG.Help.controller.quotationDetail" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core" xmlns="sap.uxap">
+	<ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false"
+		headerContentPinnable="true" showFooter="true" isChildPage="true" upperCaseAnchorBar="false">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Quotation Details" wrapping="true" class="sapUiSmallMarginEnd"/>
+				</expandedHeading>
+				<snappedHeading>
+					<m:ObjectStatus title="" text=""/>
+				</snappedHeading>
+				<expandedContent>
+					<m:ObjectStatus title="" text=""/>
+				</expandedContent>
+				<navigationActions>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" id="closeColumn" press="onCloseDetailPress" tooltip="Close column"/>
+				</navigationActions>
+				<actions>
+					<m:ObjectStatus title="Grand Total" text="{QuotationDataModel>/0/dQuotation_Item_Price}"/>
+					<m:ObjectStatus title="Status" text="{QuotationDataModel>/0/DQuotation_Status}"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:FlexBox wrap="Wrap">
+					<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+						<m:ObjectStatus title="Quotation ID" text="{QuotationDataModel>/0/id}"/>
+						<m:ObjectStatus title="Total Quantity" text="{QuotationDataModel>/0/dQuotation_Item_Quantity}"/>
+						<m:ObjectStatus title="Created Date" text="{path: 'QuotationDataModel>/0/createdAt', formatter:'.formatter.dateFormatter'}"/>
+					</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:ObjectStatus title="Customer Name" text="{QuotationCustomerModel>/0/dCustomerName}"/>
+					<m:ObjectStatus title="Email" text="{QuotationCustomerModel>/0/dWebsite}"/>
+					<m:ObjectStatus title="Phone Number" text="{QuotationCustomerModel>/0/dBillingAddress}"/>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<m:ObjectStatus title="Grand Total" text="{QuotationDataModel>/0/dQuotation_Item_Price}"/>
+					<m:ObjectStatus title="Status" text="{QuotationDataModel>/0/DQuotation_Status}"/>
+				</layout:VerticalLayout>
+			</m:FlexBox>
+		</headerContent>
+		<sections>
+			<ObjectPageSection >
+				<subSections>
+					<ObjectPageSubSection >
+						<blocks>
+							<m:Table items="{path:'QuotationDataModel>/'}" class="sapUxAPObjectPageSubSectionAlignContent" width="auto">
+								<m:headerToolbar>
+									<m:OverflowToolbar>
+										<m:Title text="Products" level="H2"/>
+										<m:ToolbarSpacer/>
+										<m:SearchField width="17.5rem"/>
+										<m:OverflowToolbarButton tooltip="Sort" text="Sort" icon="sap-icon://sort"/>
+										<m:OverflowToolbarButton tooltip="Filter" text="Filter" icon="sap-icon://filter"/>
+										<m:OverflowToolbarButton tooltip="Group" text="Group" icon="sap-icon://group-2"/>
+										<m:OverflowToolbarButton tooltip="Settings" text="Settings" icon="sap-icon://action-settings"/>
+									</m:OverflowToolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column>
+										<m:Text text="Thumbnail"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Item Name"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Created Date"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="SKU"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Finish"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Fabric"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Quantity"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Price"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Total Price"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem>
+										<m:Link text="10223882001820"/>
+										<m:Text text="Jologa"/>
+										<m:Text text="{path: 'QuotationDataModel>createdAt', formatter:'.formatter.dateFormatter'}"/>
+										<m:Text text="11/15/19"/>
+										<m:Text text="12,897.00 EUR"/>
+										<m:Text text="Jologa"/>
+										<m:Text text="{QuotationDataModel>/0/dQuotation_Item_Quantity}"/>
+										<m:Text text="{QuotationDataModel>dQuotation_Item_Price}"/>
+										<m:Text text="12,897.00 EUR"/>
+									</m:ColumnListItem>
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer/>
+				<m:Button id="submitId" text="Submit" press="handleSubmitPress" type="Emphasized"
+					visible="{= ${appView>/status} === 'Draft' ? true : false}"/>
+				<m:Button id="editid" text="Download" press="downloadPDF" type="Emphasized" iconFirst="true" icon="sap-icon://download" visible="false"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>-->

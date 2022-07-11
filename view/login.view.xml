@@ -1,0 +1,63 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" controllerName="MDG.Help.controller.login" displayBlock="true" xmlns:a="sap.f">
+<!--	<App id="LoginApp" >
+		<pages>-->
+			<Page showHeader="false" class="loginPageClass">
+				<content>
+					<VBox fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+						<items>
+							<f:SimpleForm id="signInForm" class="siginInClass" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3"
+								labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+								columnsL="1" columnsM="1" singleContainerFullSize="false">
+								<f:content>
+									<Label class="welcomeTitleClass" text="Welcome to Danao Estimator" />
+									<Text/>
+									
+									<core:Title text="Sign-in to continue"/>
+									<Image src="image/UserLogin.jpg" class="avatar sapUiSmallMarginBottom"/>
+									<Label required="true" text="Email"/>
+									<Input id="emailId" placeholder="email@domain.com" type="Email" value="" liveChange="Onemailpress"/>
+									<Label required="true" text="Password"/>
+									<Input type="Password" id="password" value=""/>
+									<Button type="Emphasized" class="sapUiSmallMarginTop" id="passwordId" press="handleLoginButtonPress" text="Login"></Button>
+									<Label text=""/>
+									<FlexBox alignItems="Center" justifyContent="Center">
+										<Link   text="New User, Sign Up" press="handleSignUpPress"/>
+									</FlexBox>
+								</f:content>
+							</f:SimpleForm>
+							<f:SimpleForm visible="false" id="signUpForm" class="siginInClass" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3"
+								labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+								columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+								<f:content>
+									<Label class="welcomeTitleClass" text="Welcome to Estimator Tool, Sign Up to continue"/>
+									<Text/>
+									<Label required="true" text="First Name"/>
+									<Input id="firstname" liveChange="Onemailpress"/>
+									<Label required="true" text="Last Name"/>
+									<Input id="lastname" value=""/>
+									<Label required="true" text="Email"/>
+									<Input id="email" value="" change="HandleEmail"/>
+									<Label required="true" text="Contact Number"/>
+									<Input id="contactnumber" value="" change="HandleContactNumber"/>
+									<Label required="true" text="Password"/>
+									<Input type="Password" id="password1" value=""/>
+									<Label required="true" text="Confirm Password"/>
+									<Input type="Password" id="confirmpassword" value="" change="PasswordHandle"/>
+									<Label required="true" text="Company Name"/>
+									<Input id="companyname" value=""/>	
+									<Label text="Sales User Type" required="true"/>
+									<ComboBox items="{SalesUserType>/data}" id="salesType" valueStateText="Select Customer Type" placeholder="Select Sales User Type">
+										<core:Item text="{SalesUserType>attributes/dSales_User_Type}" key="{SalesUserType>id}"/>
+									</ComboBox>
+									<Button type="Emphasized" class="sapUiSmallMarginTop" id="passwordId2" press="handleSignUpButtonPress" text="Sign Up"></Button>
+									<Button type="Reject" class="sapUiSmallMarginTop" id="Cancel" press="handleCancelButtonPress" text="Cancel"></Button>
+								</f:content>
+							</f:SimpleForm>
+						</items>
+					</VBox>
+				</content>
+			</Page>
+	<!--	</pages>
+	</App>-->
+</mvc:View>

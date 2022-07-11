@@ -1,0 +1,76 @@
+	<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+	<Dialog class="QuotationClass" title="Product Details" contentWidth="80%" contentHeight="80%">
+		<content>
+			<Bar>
+				<contentLeft>
+					<Label text="Select Collection"/>
+					<ComboBox items="{collectionModel>/}"  selectionChange="handleSelectCollection" valueStateText="Select the Collection"
+						placeholder="Enter the Collection">
+						<core:Item text="{collectionModel>DCollection_Name}" key="{collectionModel>id}"/>
+					</ComboBox>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="Select Category"/>
+					<ComboBox items="{categoryModel>/}" selectionChange="handleSelectCategory" valueStateText="Select the Category" placeholder="Enter the Category">
+						<core:Item text="{categoryModel>DProduct_Type}" key="{categoryModel>id}"/>
+					</ComboBox>
+				</contentMiddle>
+				<contentRight>
+					<Button text="Go" type="Emphasized" press="onPressGo"/>
+				</contentRight>
+			</Bar>
+			<Panel  accessibleRole="Region" backgroundDesign="Transparent" class="sapUiNoContentPadding">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Products" level="H3" titleStyle="H2" class="sapUiMediumMarginTopBottom"/>
+						<!--<ToolbarSpacer></ToolbarSpacer>
+						<Button icon="sap-icon://cart" press="handleCartSelectedItems"/>-->
+					</Toolbar>
+				</headerToolbar>
+			<l:BlockLayout background="Dashboard">
+				<!--<l:BlockLayoutRow id="viewedRow" content="{collectionModel>/}">
+					<l:content>
+						<l:BlockLayoutCell width="5" class="sapUiContentPadding">
+							<l:Grid defaultSpan="XL12 L12 M12 S12" vSpacing="0" hSpacing="0">
+								<FlexBox height="3.5rem" renderType="Bare">
+									<l:VerticalLayout>
+										<ObjectIdentifier title="{collectionModel>DCollection_Name}" tooltip="{i18n>openProductDetails} {view>Product/Name}" titleActive="true"
+											titlePress=".onSelectProduct" class="sapUiTinyMarginBottom"/>
+										<ObjectStatus text="{ path : 'view>Product/Status', formatter : '.formatter.statusText' }"
+											state="{ path : 'view>Product/Status', formatter : '.formatter.statusState'}"/>
+									</l:VerticalLayout>
+								</FlexBox>
+								<FlexBox renderType="Bare" justifyContent="Center">
+									<Image src="https://www.danaoliving.com/wp-content/uploads/lounge-chair-hudson-thumb-420x236.jpg" press=".onSelectProduct"
+										tooltip="{i18n>openProductDetails} {view>Product/Name}" alt="{i18n>alternativeImageText} {view>Product/Name}"/>
+								</FlexBox>
+								<Button tooltip="{i18n>addToCart}" press=".onAddToCart" icon="sap-icon://cart-3" type="Emphasized">
+									<layoutData>
+										<l:GridData span="XL4 L4 M4 S4"/>
+									</layoutData>
+								</Button>
+								<ObjectListItem class="welcomePrice"
+									number="799"
+									numberUnit="EUR">
+									<layoutData>
+										<l:GridData span="XL8 L8 M8 S8"/>
+									</layoutData>
+								</ObjectListItem>
+							</l:Grid>
+						</l:BlockLayoutCell>
+						
+					</l:content>
+					
+				</l:BlockLayoutRow>-->
+			
+			</l:BlockLayout>
+			</Panel>
+		</content>
+		<beginButton>
+			<Button iconFirst="true" press="handleCartSelectedItems" icon="sap-icon://cart-4" type="Transparent"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCloseQuotation"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

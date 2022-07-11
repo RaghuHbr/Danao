@@ -1,0 +1,570 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "MDG.Help",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "ui5template.basicSAPUI5ApplicationProject",
+            "version": "1.40.12"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "MDG.Help.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "MDG.Help.i18n.i18n"
+                }
+            },
+            "customerInfo": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "/DanaoStrapi/api/d-customers?populate=*",
+                "preload": false
+            },
+            "Quotation": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "/DanaoStrapi/api/d-customer-projects?populate=*",
+                "preload": true
+            },
+            "QuotationMasterModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": true,
+                "uri": "d-customer-quotations?populate=*"
+            },
+            "browseByData": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "/DanaoStrapi/api/d-customer-projects?populate=*",
+                "preload": false
+            },
+            "customer": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "model/customerModel.json",
+                "preload": false
+            },
+            "DetailProjectsModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "DetailContactModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "customerModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "customerProjectName": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "detail": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "projectNewModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "contactNameModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "productNameModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false,
+                "uri": "/DanaoStrapi/api/d-collections?populate=*"
+            },
+            "proSpecModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false,
+                "uri": "/DanaoStrapi/api/d-collections?populate=*"
+            },
+            "SalesUserType": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "/DanaoStrapi/api/d-sales-user-types?populate=*",
+                "preload": true
+            },
+            "quotationItemsDetial": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "quotationItemFinishes": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "UserNameModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "/DanaoStrapi/api/Users?populate=*",
+                "preload": false
+            },
+            "fabricModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "imageModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "QuotaionDetails": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "uri": "/DanaoStrapi/api/d-customers?populate=*&filters[id][$eq]=8",
+                "preload": true
+            },
+            "quotationModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "QuotationProductModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false,
+                "uri": ""
+            },
+            "customerQuotModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "DetailCustomerTypeModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "qCustomerTypeModels": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "newContactModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "QuotaionDetailsModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "QuotaionContactModel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                },
+                {
+                    "uri": "css/avatar.css"
+                }
+            ],
+            "js": [
+                {
+                    "uri": "js/jspdf.debug.js"
+                },
+                {
+                    "uri": "js/jspdf.js"
+                },
+                {
+                    "uri": "js/html2Pdf.js"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.f.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "MDG.Help.view",
+                "controlAggregation": "beginColumnPages",
+                "controlId": "layout",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "Help",
+                    "pattern": "Help",
+                    "target": [
+                        "Help"
+                    ]
+                },
+                {
+                    "name": "login",
+                    "pattern": "",
+                    "target": [
+                        "login"
+                    ]
+                },
+                {
+                    "name": "Master",
+                    "pattern": "Master",
+                    "target": [
+                        "Master"
+                    ]
+                },
+                {
+                    "name": "Detail",
+                    "pattern": "Detail/{id}/{moduleIndex}/{newprojectId}",
+                    "target": [
+                        "Master",
+                        "Detail"
+                    ]
+                },
+                {
+                    "name": "AddNewCustomer",
+                    "pattern": "AddNewCustomer/{AddCust}",
+                    "target": [
+                        "Master",
+                        "Detail",
+                        "AddNewCustomer"
+                    ]
+                },
+                {
+                    "name": "addNewProject",
+                    "pattern": "addNewProject/{AddPro}/{mode}/{projectId}",
+                    "target": [
+                        "Master",
+                        "Detail",
+                        "addNewProject"
+                    ]
+                },
+                {
+                    "name": "AddNewQuotation",
+                    "pattern": "AddNewQuotation/{AddCust}",
+                    "target": [
+                        "projectDetail",
+                        "AddNewQuotation"
+                    ]
+                },
+                {
+                    "name": "Collection",
+                    "pattern": "Collection/{AddCust}/{quotationId}",
+                    "target": [
+                        "Collection"
+                    ]
+                },
+                {
+                    "name": "DetailQuotation",
+                    "pattern": "DetailQuotation/{AddCust}/{sPath}",
+                    "target": [
+                        "DetailQuotation"
+                    ]
+                },
+                {
+                    "pattern": "Home/{test}",
+                    "name": "Home",
+                    "target": [
+                        "Home",
+                        "AddProduct"
+                    ]
+                },
+                {
+                    "pattern": "category/{category}",
+                    "name": "category",
+                    "target": [
+                        "category",
+                        "Product"
+                    ]
+                },
+                {
+                    "name": "detailDetail",
+                    "pattern": "detailDetail/{id}/{ProjectId}",
+                    "target": [
+                        "masterList",
+                        "detailList",
+                        "detailDetail"
+                    ]
+                },
+                {
+                    "name": "UsersData",
+                    "pattern": "UsersData",
+                    "target": [
+                        "UsersData"
+                    ]
+                },
+                {
+                    "name": "projectDetail",
+                    "pattern": "projectDetail/{id}/{newPro}/{projectId}",
+                    "target": [
+                        "projectDetail"
+                    ]
+                },
+                {
+                    "name": "quotationDetail",
+                    "pattern": "quotationDetail/{id}/{customerId}/{ModuleIndex}/{QuotationId}",
+                    "target": [
+                        "Master",
+                        "quotationDetail"
+                    ]
+                },
+                {
+                    "name": "MasterUser",
+                    "pattern": "MasterUser",
+                    "target": [
+                        "MasterUser"
+                    ]
+                },
+                {
+                    "name": "DetailUser",
+                    "pattern": "DetailUser/{id}/{module}",
+                    "target": [
+                        "MasterUser",
+                        "DetailUser"
+                    ]
+                },
+                {
+                    "name": "quotationFragmentView",
+                    "pattern": "quotationFragmentView/{selectedId}",
+                    "target": [
+                        "Master",
+                        "quotationFragmentView"
+                    ]
+                },
+                {
+                    "name": "quotationDetailAlone",
+                    "pattern": "quotationDetailAlone/{id}/{projectId}/{ModuleIndex}/{QuotationId}",
+                    "target": [
+                        "quotationDetailAlone"
+                    ]
+                },
+                {
+                    "name": "quotationDetailProject",
+                    "pattern": "quotationDetailProject/{id}/{customerId}/{ModuleIndex}/{QuotationId}",
+                    "target": [
+                        "quotationDetailProject"
+                    ]
+                },
+                {
+                    "name": "MasterQuotaion",
+                    "pattern": "MasterQuotaion",
+                    "target": [
+                        "MasterQuotaion"
+                    ]
+                }
+            ],
+            "targets": {
+                "Help": {
+                    "viewType": "XML",
+                    "controlAggregation": "beginColumnPages",
+                    "viewId": "Help",
+                    "viewName": "Help"
+                },
+                "Master": {
+                    "viewType": "XML",
+                    "controlAggregation": "beginColumnPages",
+                    "viewId": "Master",
+                    "viewName": "Master"
+                },
+                "Detail": {
+                    "viewType": "XML",
+                    "controlAggregation": "midColumnPages",
+                    "viewId": "Detail",
+                    "viewName": "Detail"
+                },
+                "AddNewCustomer": {
+                    "viewType": "XML",
+                    "viewName": "AddNewCustomer",
+                    "viewId": "AddNewCustomer",
+                    "controlAggregation": "midColumnPages"
+                },
+                "addNewProject": {
+                    "viewType": "XML",
+                    "viewName": "addNewProject",
+                    "viewId": "addNewProject",
+                    "controlAggregation": "midColumnPages"
+                },
+                "AddNewQuotation": {
+                    "viewType": "XML",
+                    "viewName": "AddNewQuotation",
+                    "viewId": "AddNewQuotation",
+                    "controlAggregation": "midColumnPages"
+                },
+                "Collection": {
+                    "viewType": "XML",
+                    "viewName": "Collection",
+                    "viewId": "Collection",
+                    "controlAggregation": "midColumnPages"
+                },
+                "DetailQuotation": {
+                    "viewType": "XML",
+                    "viewName": "DetailQuotation",
+                    "viewId": "DetailQuotation",
+                    "controlAggregation": "midColumnPages"
+                },
+                "AddProduct": {
+                    "viewType": "XML",
+                    "viewName": "AddProduct",
+                    "viewId": "AddProduct",
+                    "controlAggregation": "midColumnPages"
+                },
+                "Home": {
+                    "viewType": "XML",
+                    "viewName": "Home",
+                    "controlAggregation": "beginColumnPages",
+                    "viewId": "Home"
+                },
+                "category": {
+                    "viewType": "XML",
+                    "viewName": "Category",
+                    "controlAggregation": "beginColumnPages",
+                    "viewId": "category"
+                },
+                "Product": {
+                    "viewType": "XML",
+                    "viewName": "Product",
+                    "viewId": "Product",
+                    "controlAggregation": "midColumnPages"
+                },
+                "detailDetail": {
+                    "viewType": "XML",
+                    "viewName": "detailDetail",
+                    "controlAggregation": "endColumnPages"
+                },
+                "login": {
+                    "viewType": "XML",
+                    "viewName": "login",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "UsersData": {
+                    "viewType": "XML",
+                    "viewName": "UsersData",
+                    "controlAggregation": "midColumnPages"
+                },
+                "projectDetail": {
+                    "viewType": "XML",
+                    "viewName": "projectDetail",
+                    "controlAggregation": "midColumnPages"
+                },
+                "quotationCreate": {
+                    "viewType": "XML",
+                    "viewName": "quotationCreate"
+                },
+                "SearchBar": {
+                    "viewType": "XML",
+                    "viewName": "SearchBar"
+                },
+                "MasterApproval": {
+                    "viewType": "XML",
+                    "viewName": "MasterApproval"
+                },
+                "DetailApproval": {
+                    "viewType": "XML",
+                    "viewName": "DetailApproval"
+                },
+                "MasterUser": {
+                    "viewType": "XML",
+                    "viewName": "MasterUser",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "DetailUser": {
+                    "viewType": "XML",
+                    "viewName": "DetailUser",
+                    "controlAggregation": "midColumnPages"
+                },
+                "quotationDetail": {
+                    "viewType": "XML",
+                    "viewName": "quotationDetail",
+                    "controlAggregation": "midColumnPages"
+                },
+                "test": {
+                    "viewType": "XML",
+                    "viewName": "test"
+                },
+                "quotationFragmentView": {
+                    "viewType": "XML",
+                    "viewName": "quotationFragmentView",
+                    "controlAggregation": "midColumnPages"
+                },
+                "quotationDetailAlone": {
+                    "viewType": "XML",
+                    "viewName": "quotationDetail",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "quotationDetailProject": {
+                    "viewType": "XML",
+                    "viewName": "quotationDetail",
+                    "controlAggregation": "midColumnPages"
+                },
+                "MasterQuotaion": {
+                    "viewType": "XML",
+                    "viewName": "MasterQuotaion",
+                    "controlAggregation": "beginColumnPages"
+                }
+            }
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "webapp",
+        "_version": "1.1.0"
+    }
+}

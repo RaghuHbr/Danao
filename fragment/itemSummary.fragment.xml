@@ -1,0 +1,69 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Dialog contentHeight="60rem" contentWidth="60rem" title="Item Summary" showHeader="true" class="sapUiSizeCompact">
+		<endButton>
+			<Button type="Emphasized" text="Cancel" press="handleCancelItemSummaryPress"/>
+		</endButton>
+		<beginButton>
+			<Button type="Accept" text="Save" press="handleDraftItemSummaryPress"/>
+		</beginButton>
+		<Panel class="itemSummaryPanel" content="{cartItemSummary>/}">
+			<FlexBox alignItems="Start" justifyContent="SpaceBetween">
+				<HBox>
+					<Image width="100px" height="60px" src="{cartItemSummary>itemDetails/DProduct_Image/data/0/attributes/name}"
+						class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/>
+					<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+						<Title text="{cartItemSummary>itemDetails/DProduct_Name}"/>
+						<Text text="Product Number : {cartItemSummary>itemDetails/DProduct_Number}"/>
+						<Text text="Grade : {cartItemSummary>grade}"/>
+						<Text text="SKU : {cartItemSummary>SKU}"/>
+						<HBox>
+							<Text text="Fabric Type : {cartItemSummary>fabricName}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+							<Avatar src="{cartItemSummary>imageUrl}" size="S" class="sapUiSmallMarginEnd"/>
+						</HBox>
+						<HBox>
+							<Text text="Accent : {cartItemSummary>accent}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+							<Avatar src="{cartItemSummary>accentImage}" size="S" class="sapUiSmallMarginEnd"/>
+						</HBox>
+						<!--<Button class="sapUiSMallMarginTop" text="Save For Later" type="Transparent"/>-->
+					</VBox>
+				</HBox>
+				<!--<HBox >-->
+				<!--</HBox>-->
+				<VBox>
+					<!--number="{=${cartItemSummary>itemDetails/DProduct_Price_Grade_A} == 'Grade A' ? {cartItemSummary>itemDetails/DProduct_Price_Grade_A} : {cartItemSummary>itemDetails/DProduct_Price_GradeB}}"-->
+					<!--<ObjectListItem number="${parts:['cartItemSummary>dProduct_UnitPrice','appView>/discountPrice'],formatter:'.formatter.getDiscountPrice'}"-->
+					<!--numberUnit=""/>-->
+					<ObjectListItem number="${cartItemSummary>dProduct_UnitPrice}" numberUnit=""/>
+					<Label text="Qty : {cartItemSummary>Qty}"/>
+					<HBox>
+						<Label text="Straps Type : {cartItemSummary>straps}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+						<Avatar src="{cartItemSummary>strapImage}" size="S" class="sapUiSmallMarginEnd"/>
+					</HBox>
+					<Label text="Frame Type : {cartItemSummary>frame}"/>
+					<HBox>
+						<Label text="Frame Color : {cartItemSummary>frameColor}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+						<Avatar src="{cartItemSummary>frameImage}" size="S" class="sapUiSmallMarginEnd"/>
+					</HBox>
+					<HBox class="sapUiSmallMarginEnd">
+						<Button icon="sap-icon://edit" type="Transparent" press="onPressEditItem"/>
+						<Button icon="sap-icon://decline" type="Transparent" press="onPressDeleteItem" class="sapUiSmallMarginEnd"/>
+					</HBox>
+				</VBox>
+			</FlexBox>
+		</Panel>
+		<FlexBox alignItems="Start" justifyContent="End">
+			<!--	<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+				adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="Total Amount"/>
+					<Text text="4"/>
+				</f:content>
+			</f:SimpleForm>-->
+			<HBox class="sapUiLargeMarginEnd">
+				<Label text="Total Amount : "/>
+				<Text text="${appView>/totalAmount}"/>
+			</HBox>
+		</FlexBox>
+	</Dialog>
+</core:FragmentDefinition>

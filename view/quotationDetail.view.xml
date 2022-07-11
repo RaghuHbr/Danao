@@ -1,0 +1,214 @@
+<mvc:View controllerName="MDG.Help.controller.quotationDetail" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.uxap" xmlns:m="sap.m"
+	xmlns:core="sap.ui.core" xmlns:forms="sap.ui.layout.form" height="100%">
+	<ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false" showFooter="true" useTwoColumnsForLargeScreen="true">
+		<headerTitle>
+			<ObjectPageDynamicHeaderTitle>
+				<expandedHeading>
+					<m:Title text="Quotation Details"/>
+				</expandedHeading>
+				<snappedHeading>
+					<m:HBox>
+						<m:VBox>
+							<m:Title text="Quotation Details"/>
+						</m:VBox>
+					</m:HBox>
+				</snappedHeading>
+				<expandedContent>
+					<m:Label text=""/>
+				</expandedContent>
+				<navigationActions>
+					<m:OverflowToolbarButton type="Transparent" icon="sap-icon://decline" id="closeColumn" press="onCloseDetailPress" tooltip="Close column"/>
+				</navigationActions>
+				<actions>
+					<m:Button text="Send Quotation"/>
+				</actions>
+			</ObjectPageDynamicHeaderTitle>
+		</headerTitle>
+		<headerContent>
+			<m:FlexBox wrap="Wrap" fitContainer="true">
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Quotation ID:" class="sapUiTinyMarginEnd"/>
+						<m:Text text=" {QuotationDataModel>/0/id}"/>
+					</m:HBox>
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Total Quantity:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{QuotationDataModel>/0/dQuotation_Item_Quantity}"/>
+					</m:HBox>
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Created Date:" class="sapUiTinyMarginEnd"/>
+						<m:Text text="{path: 'QuotationDataModel>/0/createdAt', formatter:'.formatter.dateFormatter'}"/>
+					</m:HBox>
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Customer Name: " class="sapUiTinyMarginEnd"/>
+						<m:Text text="{customerProjectInfo>/0/dCustomerName}"/>
+					</m:HBox>
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Website: " class="sapUiTinyMarginEnd"/>
+						<m:Text text="{customerProjectInfo>/0/dWebsite}"/>
+					</m:HBox>
+					<m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+						<m:Label text="Phone Number: " class="sapUiTinyMarginEnd"/>
+						<m:Text text="{customerProjectInfo>/0/dOfficePhone}"/>
+					</m:HBox>
+				</m:VBox>
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:Title text="Status: " class="sapUiTinyMarginBottom"/>
+					<m:ObjectStatus text="{QuotationDataModel>/0/DQuotation_Status}"
+						state="{path:'QuotationDataModel>/0/DQuotation_Status', formatter:'.formatter.getQuotationState'}" class="sapMObjectStatusLarge"/>
+				</m:VBox>
+				<m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+					<m:Title text="Grand Total: " class="sapUiTinyMarginBottom"/>
+					<m:ObjectNumber class="sapMObjectNumberLarge" id="Grand_Total_Price"
+						number="{ parts: [{path: 'cartItemSummary>/0/dProduct_Total_Price'}, {path: 'USD'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+						unit="USD" state="Success"/>
+				</m:VBox>
+			</m:FlexBox>
+		</headerContent>
+		<sections>
+			<ObjectPageSection titleUppercase="false" title="General Information">
+				<subSections>
+					<ObjectPageSubSection title="">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+								<m:Label text="Ship To"/>
+								<m:Text text="{customerProjectInfo>/0/dBillingAddress}"/>
+								<m:Label text="Bill To"/>
+								<m:Text text="{customerProjectInfo>/0/dBillingAddress}"/>
+								<m:Label text="Address"/>
+								<m:Text text="{customerProjectInfo>/0/dBillingAddress}"/>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+					<ObjectPageSubSection title="">
+						<blocks>
+							<m:Table items="{cartItemSummary>/}" fixedLayout="Strict" alternateRowColors="true" class="sapUxAPObjectPageSubSectionAlignContent"
+								width="auto" id="tableItemsId">
+								<m:headerToolbar>
+									<m:OverflowToolbar>
+										<m:Title text="Products" level="H2"/>
+										<m:ToolbarSpacer/>
+										<m:SearchField liveChange="onSearch" id="userSearchId" width="17.5rem"/>
+										<m:OverflowToolbarButton tooltip="Sort" text="Sort" icon="sap-icon://sort"/>
+										<m:OverflowToolbarButton tooltip="Filter" text="Filter" icon="sap-icon://filter"/>
+										<m:OverflowToolbarButton tooltip="Group" text="Group" icon="sap-icon://group-2"/>
+										<m:OverflowToolbarButton tooltip="Add" icon="sap-icon://add" press="onPressAdd"/>
+									</m:OverflowToolbar>
+								</m:headerToolbar>
+								<m:columns>
+									<m:Column width="2rem">
+										<m:Text text=""/>
+									</m:Column>
+									<m:Column>
+										<m:Text text="Thumbnail"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Item Name"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Created Date"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="SKU"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Finish"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Fabric"/>
+									</m:Column>
+									<m:Column minScreenWidth="Tablet" demandPopin="true">
+										<m:Text text="Quantity"/>
+									</m:Column>
+									<m:Column width="7rem" demandPopin="true">
+										<m:Text text="Unit Price"/>
+									</m:Column>
+									<m:Column width="7rem" demandPopin="true">
+										<m:Text text="Total Price"/>
+									</m:Column>
+								</m:columns>
+								<m:items>
+									<m:ColumnListItem type="Navigation" press="onPressAddtoCart">
+										<m:Button type="Transparent" icon="sap-icon://delete" press="onPressDeleteItem"/>
+										<m:Avatar src="{cartItemSummary>dProduct_Thumbnail}" id="productImage"/>
+										<m:Text text="{cartItemSummary>dProduct_Name}" id="productName"/>
+										<m:Text text="{path: 'cartItemSummary>createdAt', formatter:'.formatter.dateFormatter'}" id="createdAt"/>
+										<m:Text text="{cartItemSummary>SKU}" id="dProduct_SKU"/>
+										<m:Text text="{cartItemSummary>frame}" id="d_frames"/>
+										<m:Text text="{cartItemSummary>grade}" id="d_fabric_grades"/>
+										<m:Text text="{cartItemSummary>Qty}" id="dProduct_Quantity"/>
+										<m:ObjectNumber class="sapMObjectNumberLarge" id="dProduct_UnitPrice"
+											number="{ parts: [{path: 'cartItemSummary>dProduct_UnitPrice'}, {path: 'USD'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+											unit="USD" state="Success"/>
+										<m:ObjectNumber class="sapMObjectNumberLarge" id="dProduct_Total_Price"
+											number="{ parts: [{path: 'cartItemSummary>dProduct_Total_Price'}, {path: 'USD'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+											unit="USD" state="Success"/>
+									</m:ColumnListItem>
+									<!--	<m:ColumnListItem type="Navigation" press="onPressAddtoCart">
+										<m:Button type="Transparent" icon="sap-icon://delete"
+											press="handleDeleteQuotationPress"/>
+										<m:Avatar src="{QuotationProductModel>productImage}" id="productImage"/>
+										<m:Text text="{QuotationProductModel>productName}" id="productName"/>
+										<m:Text text="{path: 'QuotationProductModel>createdAt', formatter:'.formatter.dateFormatter'}" id="createdAt"/>
+										<m:Text text="{QuotationProductModel>dProduct_SKU}" id="dProduct_SKU"/>
+										<m:Text text="{QuotationProductModel>d_frames}" id="d_frames"/>
+										<m:Text text="{QuotationProductModel>d_fabric_grades}" id="d_fabric_grades"/>
+										<m:Text text="{QuotationProductModel>dProduct_Quantity}" id="dProduct_Quantity"/>
+										<m:ObjectNumber class="sapMObjectNumberLarge" id="dProduct_UnitPrice"
+											number="{ parts: [{path: 'QuotationProductModel>dProduct_UnitPrice'}, {path: 'USD'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+											unit="USD" state="Success"/>
+										<m:ObjectNumber class="sapMObjectNumberLarge" id="dProduct_Total_Price"
+											number="{ parts: [{path: 'QuotationProductModel>dProduct_Total_Price'}, {path: 'USD'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+											unit="USD" state="Success"/>
+									</m:ColumnListItem>-->
+								</m:items>
+							</m:Table>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection titleUppercase="false" title="Contact Information">
+				<subSections>
+					<ObjectPageSubSection title="Customer Contacts">
+						<blocks>
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="4">
+								<m:Label text="Name"/>
+								<m:Text text="{QuotaionContactsModel>/0/dCustomerContact_Name}"/>
+								<m:Label text="Email"/>
+								<m:Text text="{QuotaionContactsModel>/0/dCustomer_ContactEmail}"/>
+								<m:Label text="Phone Number"/>
+								<m:Text text="{QuotaionContactsModel>/0/dCustomer_Conact_DirectPhone}"/>
+								<m:Label text="Mobile Number"/>
+								<m:Text text="{QuotaionContactsModel>/0/dCustomer_ContactMobile}"/>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+			<ObjectPageSection titleUppercase="false" title="`.">
+				<subSections>
+					<ObjectPageSubSection title="Comments">
+						<blocks>
+							<!--<FeedInput post="onPost" icon="sap-icon://customer" class="sapUiSmallMarginTopBottom"/>-->
+							<!--<List showSeparators="Inner" items="{/EntryCollection}">-->
+							<!--	<FeedListItem sender="{Author}" icon="sap-icon://customer" senderPress="onSenderPress" iconPress="onIconPress" iconDensityAware="false"-->
+							<!--		info="{Type}" timestamp="{Date}" text="{Text}" convertLinksToAnchorTags="All"/>-->
+							<!--			</List>-->
+							<forms:SimpleForm class="sapUxAPObjectPageSubSectionAlignContent">
+								<!--<m:Button icon="sap-icon://customer"/>-->
+								<m:TextArea placeholder="Post your comment here" growing="true" growingMaxLines="7" width="100%"/>
+							</forms:SimpleForm>
+						</blocks>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+		</sections>
+		<footer>
+			<m:OverflowToolbar>
+				<m:ToolbarSpacer/>
+				<m:Button type="Accept" text="Save" press="handleDraftItemSummaryPress"/>
+				<m:Button type="Reject" text="Cancel" press="onCloseDetailPress"/>
+			</m:OverflowToolbar>
+		</footer>
+	</ObjectPageLayout>
+</mvc:View>

@@ -1,0 +1,312 @@
+{
+	"data": [{
+		"id": 7,
+		"attributes": {
+			"dCustomerName": "Test Customer Name",
+			"dWebsite": "www.testwebsite.com",
+			"dOfficePhone": "3216549873",
+			"dBillingAddress": "Josef-Reiert Str 4\n69190 Walldorf Germany",
+			"createdAt": "2022-05-16T17:09:29.637Z",
+			"updatedAt": "2022-05-23T13:34:15.017Z",
+			"publishedAt": "2022-05-16T17:09:29.634Z",
+			"d_customer_projects": {
+				"data": [{
+					"id": 1,
+					"attributes": {
+						"dCustomer_ProjectName": "Hotel Lobby Restructuring",
+						"dProject_CompletionDate": "2022-06-30",
+						"dProject_Add_Notes": "Change the interiors and furniture at the lobby and waiting areas.",
+						"dProject_Probability": "Warm",
+						"dProject_Expected_CloseDate": "2022-06-22",
+						"createdAt": "2022-05-20T07:54:44.445Z",
+						"updatedAt": "2022-05-23T11:14:35.636Z",
+						"publishedAt": "2022-05-20T08:08:52.941Z",
+						"DProject_Type": "Made_To_Order",
+						"DProject_Sales_Stage": "Specifiers_Quote",
+						"DProject_Category": "Multifamily",
+						"dProject_ExpectedStartDate": "2022-05-31",
+						"dProject_Shipto_ldDock": true
+					}
+				}]
+			},
+			"d_customer_type": {
+				"data": {
+					"id": 1,
+					"attributes": {
+						"dCustomer_TypeCode": "CMGT",
+						"dCustomerType_Description": "Contract Management Companies/Corporate Hotels /Corporations (Example: Marriott International, Cortland partners, Club Corp )",
+						"dCustomer_Type_DiscStructure": 55,
+						"createdAt": "2022-05-16T12:44:15.934Z",
+						"updatedAt": "2022-05-16T12:44:17.207Z",
+						"publishedAt": "2022-05-16T12:44:17.204Z"
+					}
+				}
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 8,
+		"attributes": {
+			"dCustomerName": "Höffner Möbelgesellschaft GmbH & Co. KG",
+			"dWebsite": "https://www.hoeffner.de/",
+			"dOfficePhone": "3216543213",
+			"dBillingAddress": "Mannheimer Landstraße 62-64,\nNavi-Adresse: Zündholzstraße\n68723 Schwetzingen",
+			"createdAt": "2022-05-16T17:14:08.071Z",
+			"updatedAt": "2022-05-23T11:48:17.375Z",
+			"publishedAt": "2022-05-16T17:14:08.067Z",
+			"d_customer_projects": {
+				"data": [{
+					"id": 3,
+					"attributes": {
+						"dCustomer_ProjectName": "Bedroom Refurbishing",
+						"dProject_CompletionDate": "2022-05-11",
+						"dProject_Add_Notes": "Repair Activities",
+						"dProject_Probability": "Draft",
+						"dProject_Expected_CloseDate": "2022-05-21",
+						"createdAt": "2022-05-20T08:14:38.148Z",
+						"updatedAt": "2022-05-23T11:35:28.441Z",
+						"publishedAt": "2022-05-20T08:14:41.609Z",
+						"DProject_Type": "Made_To_Order",
+						"DProject_Sales_Stage": "Proposal_Price_Quote",
+						"DProject_Category": "Office",
+						"dProject_ExpectedStartDate": "2022-05-23",
+						"dProject_Shipto_ldDock": true
+					}
+				}]
+			},
+			"d_customer_type": {
+				"data": {
+					"id": 2,
+					"attributes": {
+						"dCustomer_TypeCode": "CARD",
+						"dCustomerType_Description": "Contract Architect / Designer (Example : Gensler, Meyer Davis, Wilson and Associates )",
+						"dCustomer_Type_DiscStructure": 55,
+						"createdAt": "2022-05-16T12:44:40.221Z",
+						"updatedAt": "2022-05-16T12:44:44.127Z",
+						"publishedAt": "2022-05-16T12:44:44.124Z"
+					}
+				}
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 9,
+		"attributes": {
+			"dCustomerName": "IKEA Deutschland GmbH & Co. KG",
+			"dWebsite": "www.ikea.com",
+			"dOfficePhone": "123456788",
+			"dBillingAddress": "Josef-Reiert-Str. 9\n69190 Walldorf",
+			"createdAt": "2022-05-16T17:15:05.544Z",
+			"updatedAt": "2022-05-23T11:31:18.689Z",
+			"publishedAt": "2022-05-16T17:15:05.541Z",
+			"d_customer_projects": {
+				"data": [{
+					"id": 2,
+					"attributes": {
+						"dCustomer_ProjectName": "Pool Area refurbising",
+						"dProject_CompletionDate": "2022-05-18",
+						"dProject_Add_Notes": "Steam Analyzer",
+						"dProject_Probability": "In progress",
+						"dProject_Expected_CloseDate": "2022-05-19",
+						"createdAt": "2022-05-20T08:09:44.058Z",
+						"updatedAt": "2022-05-23T10:08:31.888Z",
+						"publishedAt": "2022-05-20T08:35:15.708Z",
+						"DProject_Type": "Model_Room_Samples",
+						"DProject_Sales_Stage": "Specifiers_Quote",
+						"DProject_Category": "Healthcare",
+						"dProject_ExpectedStartDate": null,
+						"dProject_Shipto_ldDock": null
+					}
+				}]
+			},
+			"d_customer_type": {
+				"data": {
+					"id": 3,
+					"attributes": {
+						"dCustomer_TypeCode": "CLAN",
+						"dCustomerType_Description": "Contract landscape Architects (Example: Burton Landscape, Mission Landscape)",
+						"dCustomer_Type_DiscStructure": 55,
+						"createdAt": "2022-05-16T12:45:04.383Z",
+						"updatedAt": "2022-05-16T12:45:05.134Z",
+						"publishedAt": "2022-05-16T12:45:05.131Z"
+					}
+				}
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 13,
+		"attributes": {
+			"dCustomerName": "James Carter",
+			"dWebsite": "www.google.com",
+			"dOfficePhone": "383494",
+			"dBillingAddress": "34f3d",
+			"createdAt": "2022-05-23T06:52:31.052Z",
+			"updatedAt": "2022-05-23T06:52:31.052Z",
+			"publishedAt": "2022-05-23T06:52:30.279Z",
+			"d_customer_projects": {
+				"data": []
+			},
+			"d_customer_type": {
+				"data": null
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 16,
+		"attributes": {
+			"dCustomerName": "John Yui",
+			"dWebsite": "www.google.com",
+			"dOfficePhone": "3939309",
+			"dBillingAddress": "address",
+			"createdAt": "2022-05-23T06:58:49.531Z",
+			"updatedAt": "2022-05-23T06:58:49.531Z",
+			"publishedAt": "2022-05-23T06:58:38.940Z",
+			"d_customer_projects": {
+				"data": []
+			},
+			"d_customer_type": {
+				"data": null
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 17,
+		"attributes": {
+			"dCustomerName": "Test",
+			"dWebsite": "www.google.com",
+			"dOfficePhone": "7339017109",
+			"dBillingAddress": "ABC(Ho), XYZ (po).",
+			"createdAt": "2022-05-23T13:09:14.030Z",
+			"updatedAt": "2022-05-23T13:09:14.030Z",
+			"publishedAt": "2022-05-23T13:09:09.688Z",
+			"d_customer_projects": {
+				"data": []
+			},
+			"d_customer_type": {
+				"data": null
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 18,
+		"attributes": {
+			"dCustomerName": "James Bond",
+			"dWebsite": "www.google.com",
+			"dOfficePhone": "7339017109",
+			"dBillingAddress": "ABC(Ho), XYZ (po).",
+			"createdAt": "2022-05-23T15:22:31.534Z",
+			"updatedAt": "2022-05-23T15:22:31.534Z",
+			"publishedAt": "2022-05-23T15:22:14.938Z",
+			"d_customer_projects": {
+				"data": []
+			},
+			"d_customer_type": {
+				"data": null
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 19,
+		"attributes": {
+			"dCustomerName": "Hellen Bond",
+			"dWebsite": "www.google.com",
+			"dOfficePhone": "7339017109",
+			"dBillingAddress": "ABC(Ho), XYZ (po).",
+			"createdAt": "2022-05-23T15:23:52.557Z",
+			"updatedAt": "2022-05-23T15:23:52.557Z",
+			"publishedAt": "2022-05-23T15:23:48.507Z",
+			"d_customer_projects": {
+				"data": []
+			},
+			"d_customer_type": {
+				"data": null
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 20,
+		"attributes": {
+			"dCustomerName": "Test  Customer 2",
+			"dWebsite": "www.google.com",
+			"dOfficePhone": "9865432187",
+			"dBillingAddress": "abc colony",
+			"createdAt": "2022-05-23T15:32:42.168Z",
+			"updatedAt": "2022-05-23T15:32:42.168Z",
+			"publishedAt": "2022-05-23T15:32:38.074Z",
+			"d_customer_projects": {
+				"data": []
+			},
+			"d_customer_type": {
+				"data": null
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 21,
+		"attributes": {
+			"dCustomerName": "Test Customer 3",
+			"dWebsite": "www.google.com",
+			"dOfficePhone": "96745634241",
+			"dBillingAddress": "Höffner Möbelgesellschaft GmbH & Co. KG",
+			"createdAt": "2022-05-23T16:01:22.710Z",
+			"updatedAt": "2022-05-23T16:01:22.710Z",
+			"publishedAt": "2022-05-23T16:01:19.528Z",
+			"d_customer_projects": {
+				"data": []
+			},
+			"d_customer_type": {
+				"data": null
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}, {
+		"id": 22,
+		"attributes": {
+			"dCustomerName": "Test 4",
+			"dWebsite": "www.google.com",
+			"dOfficePhone": "7339017109",
+			"dBillingAddress": "ABC(Ho), XYZ (po).",
+			"createdAt": "2022-05-23T16:05:13.779Z",
+			"updatedAt": "2022-05-23T16:05:13.779Z",
+			"publishedAt": "2022-05-23T16:05:10.647Z",
+			"d_customer_projects": {
+				"data": []
+			},
+			"d_customer_type": {
+				"data": null
+			},
+			"d_customer_contacts": {
+				"data": []
+			}
+		}
+	}],
+	"meta": {
+		"pagination": {
+			"page": 1,
+			"pageSize": 25,
+			"pageCount": 1,
+			"total": 11
+		}
+	}
+}

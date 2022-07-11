@@ -1,0 +1,21 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="MDG.Help.controller.MasterUser"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="userMaster" title="{i18n>users}" class="textSize" showNavButton="true" navButtonPress="onNavBack">
+		<subHeader>
+			<Toolbar>
+				<SearchField liveChange="onSearch" id="userSearchId" width="100%"/>
+				<!--<Button press="handleSortfragment" icon="sap-icon://sort" type="Transparent"/>-->
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List items="{path: 'UserNameModel>/', sorter: {path: 'UserNameModel>id', descending: true}}" id="itemlistId" class="deptObjListItemClass" selectionChange="handleUsersListPress"
+				mode="SingleSelectMaster">
+				<items>
+					<StandardListItem title="{UserNameModel>firstName} {UserNameModel>lastName}" info="{UserNameModel>status}"  description="{UserNameModel>company}" type="Navigation"
+						activeIcon="sap-icon://activate"  infoState="{path:'UserNameModel>status', formatter:'.formatter.getuserShowStatus'}" press="SingleSelectMaster" >
+					</StandardListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

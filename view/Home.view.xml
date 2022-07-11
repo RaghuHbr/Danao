@@ -1,0 +1,88 @@
+<mvc:View controllerName="MDG.Help.controller.Home" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+	<Page id="page" title="{i18n>Product Catalog}" backgroundDesign="Solid">
+		<landmarkInfo>
+			<PageAccessibleLandmarkInfo rootRole="Region" rootLabel="{i18n>homeTitle} {i18n>Home_rootLabel}" subHeaderRole="Search"
+				subHeaderLabel="{i18n>Home_subHeaderLabel}" contentRole="Navigation" contentLabel="{i18n>Home_contentLabel}" headerRole="Region"
+				headerLabel="{i18n>Home_headerLabel}"/>
+		</landmarkInfo>
+		<headerContent>
+			<Button icon="sap-icon://home" press=".onBack" visible="{appView>/smallScreenMode}"/>
+		</headerContent>
+		<subHeader>
+			<Toolbar id="searchBar33343">
+				<SearchField id="searchField" liveChange=".onSearch" placeholder="{i18n>Search Product}" tooltip="{i18n>Search Product}" width="100%"></SearchField>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh=".onRefresh"/>
+			<!-- This list shows the search results -->
+			<!--<List-->
+			<!--	visible="false"-->
+			<!--	id="productList"-->
+			<!--	mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"-->
+			<!--	selectionChange=".onProductListSelect"-->
+			<!--	noDataText="{i18n>homeNoData}"-->
+			<!--	busyIndicatorDelay="0"-->
+			<!--	items="{-->
+			<!--		path : '/Products',-->
+			<!--		sorter : {-->
+			<!--			path : 'Name',-->
+			<!--			descending : false-->
+			<!--		}-->
+			<!--	}">-->
+			<!--	<items itemPress="onCategoryListItemPress">-->
+			<!--		<ObjectListItem-->
+			<!--			type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"-->
+			<!--			icon="{-->
+			<!--				path : 'PictureUrl',-->
+			<!--				formatter : '.formatter.pictureUrl'-->
+			<!--			}"-->
+			<!--			title="{Name}"-->
+			<!--			number="{-->
+			<!--				path : 'Price',-->
+			<!--				formatter : '.formatter.price'-->
+			<!--			}"-->
+			<!--			numberUnit="EUR"-->
+			<!--			press=".onProductListItemPress"-->
+			<!--			iconDensityAware="false">-->
+			<!--			<attributes>-->
+			<!--				<ObjectAttribute text="{SupplierName}"/>-->
+			<!--			</attributes>-->
+			<!--			<firstStatus>-->
+			<!--				<ObjectStatus-->
+			<!--					text="{-->
+			<!--						path : 'Status',-->
+			<!--						formatter : '.formatter.statusText'-->
+			<!--					}"-->
+			<!--					state="{-->
+			<!--						path : 'Status',-->
+			<!--						formatter : '.formatter.statusState'-->
+			<!--					}"/>-->
+			<!--			</firstStatus>-->
+			<!--		</ObjectListItem>-->
+			<!--	</items>-->
+			<!--</List>-->
+			<!-- This list shows the product categories -->
+			<List id="categoryList" headerText="{i18n>Products}" mode="SingleSelectMaster" selectionChange="onCategoryListItemPress"
+				busyIndicatorDelay="0">
+				<items>
+					<StandardListItem title="Sofa" type="Active" counter="4" press="onCategoryListItemPress"/>
+					<StandardListItem title="Coffee Table" type="Active" counter="12" press="onCategoryListItemPress"/>
+					<StandardListItem title="Side Tables" type="Active" counter="8" press="onCategoryListItemPress"/>
+					<StandardListItem title="Bar Tables" type="Active" counter="5" press="onCategoryListItemPress"/>
+					<StandardListItem title="Dining Tables" type="Active" counter="15" press="onCategoryListItemPress"/>
+				</items>
+			</List>
+			<List id="categoryList1" headerText="{i18n>Collections}" selectionChange="onCategoryListItemPress" busyIndicatorDelay="0"
+				mode="SingleSelectMaster">
+				<items>
+					<StandardListItem title="Hudson" type="Active" counter="14" press="onCategoryListItemPress"/>
+					<StandardListItem title="Hopper" type="Active" counter="9" press="onCategoryListItemPress"/>
+					<StandardListItem title="Chester" type="Active" counter="13" press="onCategoryListItemPress"/>
+					<StandardListItem title="Topanga" type="Active" counter="7" press="onCategoryListItemPress"/>
+					<StandardListItem title="Rami" type="Active" counter="3" press="onCategoryListItemPress"/>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

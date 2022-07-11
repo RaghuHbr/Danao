@@ -1,0 +1,145 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout">
+	<Dialog title="{quotationItemsDetial>/0/DProduct_Name}" contentWidth="80%" contentHeight="80%" class="sapUiSizeCompact">
+		<beginButton>
+			<Button text="Add To Cart" type="Emphasized" press="handleAddCartPress"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" press="onCloseCart"/>
+		</endButton>
+		<l:BlockLayout background="Dashboard">
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell title="" titleAlignment="Center">
+					<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="6" labelSpanL="6" labelSpanM="6" labelSpanS="6"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+						singleContainerFullSize="false" class="simpleFormCartClass">
+						<f:content>
+							<core:Title text="Specifications"/>
+							<Label text="Product Number"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Number}"/>
+							<Label text="Description"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/DESCRIPTION}"/>
+							<Label text="Height"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/HEIGHT}"/>
+							<Label text="Width"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/WIDTH}"/>
+							<Label text="Length or Depth"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/LENGTH OR DEPTH}"/>
+							<Label text="Seat Height"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/SEAT HEIGHT}"/>
+							<Label text="Arm Height"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/ARM HEIGHT}"/>
+							<Label text="Unit Weight"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/UNIT WEIGHT}"/>
+							<Label text="Nest"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/NEST}"/>
+							<Label text="Shipping Carton"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/SHIPPING CARTON}"/>
+							<Label text="Cube"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/CUBE}"/>
+							<Label text="Units Per Carton"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/UNITS PER CARTON}"/>
+							<Label text="Com Yeild"/>
+							<Text text="{quotationItemsDetial>/0/DProduct_Specifications/COM YIELD}"/>
+						</f:content>
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell title="">
+					<Title text="Product Image"/>
+					<Carousel showPageIndicator="false" loop="true" pageChanged=".onCarouselPageChanged" visible="{=!${device>/system/phone}}"
+						tooltip="{i18n>welcomeDescription}">
+						<VBox alignItems="Center" renderType="Div">
+							<Image src="{quotationItemsDetial>/0/DProduct_Image/data/0/attributes/name}" decorative="true" densityAware="false" class="sapUiSmallMargin"
+								width="100%" height="100%"/>
+						</VBox>
+					</Carousel>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+		<l:BlockLayout>
+			<l:BlockLayoutRow>
+				<l:BlockLayoutCell>
+					<!--<VBox class="sapUiSmallMargin">-->
+					<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="6" labelSpanS="4"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+						singleContainerFullSize="false" class="simpleFormCartClass">
+						<f:content>
+							<core:Title class="titleClass" text="Configure Your Items"/>
+							<Label text=""/>
+							<Text text=""/>
+							<Label text="Select Frames" labelFor="groupB"/>
+							<RadioButtonGroup buttons="{framesModel>/}" selectedIndex="0" valueState="Success">
+								<RadioButton text="{framesModel>DFrame_Material_Name}"/>
+							</RadioButtonGroup>
+							<Label text=""/>
+							<Text text=""/>
+							<Label text="Select Quantity" wrapping="true"/>
+							<StepInput value="0" displayValuePrecision="{displayValuePrecision}" min="0" width="60%" step="1"/>
+							<Label text=""/>
+							<Text text=""/>
+							<Label text="Select Straps"/>
+							<RadioButtonGroup buttons="{strapsModel>/}" selectedIndex="0" valueState="Success">
+								<RadioButton text="{strapsModel>DFrame_Straps_Name}"/>
+							</RadioButtonGroup>
+							<Label text=""/>
+							<Text text=""/>
+							<Label text="Select Accent"/>
+							<RadioButtonGroup buttons="{accentModel>/}" selectedIndex="0" valueState="Success">
+								<RadioButton text="{accentModel>DAccent_Name}"/>
+							</RadioButtonGroup>
+							<Label text=""/>
+							<Text text=""/>
+							<Label text="Select BatyLines" visible="true"/>
+							<RadioButtonGroup buttons="{batyLineModel>/}" selectedIndex="0" valueState="Success">
+								<RadioButton text="{batyLineModel>DBatyline_Name}"/>
+							</RadioButtonGroup>
+							<Label text=""/>
+							<Text text=""/>
+							<Label text="Select Grade"/>
+							<RadioButtonGroup select="handleGradeButtonSelect" buttons="{quotationItemFinishes>/}" valueState="Success">
+								<RadioButton text="{quotationItemFinishes>DFabric_Grade}"/>
+							</RadioButtonGroup>
+							<Label text="Fabric Grades" visible="false"/>
+						</f:content>
+					</f:SimpleForm>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="6" labelSpanS="4"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+						singleContainerFullSize="false" class="simpleFormCartClass">
+						<f:content>
+							<core:Title class="titleClass" text="Selection Display(Frames)"/>
+							<HBox items="{framesImageModel>/}" wrap="Wrap">
+								<VBox>
+									<Avatar src="{framesImageModel>name}" class="sapUiSmallMarginTop sapUiSmallMarginEnd" press="handleFrameSelection"/>
+									<Text text="{framesImageModel>DFrameColor}" class="sapUiSmallMarginTop sapUiSmallMarginEnd sapUiSmallMarginBottom"/>
+								</VBox>
+							</HBox>
+							<core:Title class="titleClass" text="Selection Display(Straps)"/>
+							<HBox items="{frameStrapModel>/}" wrap="Wrap">
+								<VBox>
+									<Avatar src="{frameStrapModel>url}" class="sapUiSmallMarginTop sapUiSmallMarginEnd" press="handleStrapSelection"/>
+									<Text text="{frameStrapModel>DFrame_Straps_Name}" class="sapUiSmallMarginTop sapUiSmallMarginEnd sapUiSmallMarginBottom"/>
+								</VBox>
+							</HBox>
+							<core:Title class="titleClass" text="Selection Display(Accent)"/>
+							<HBox items="{framesAccentModel>/}" wrap="Wrap">
+								<VBox>
+									<Avatar src="{framesAccentModel>Image}" class="sapUiSmallMarginTop sapUiSmallMarginEnd" press="handleAccentSelection"/>
+									<Text text="{framesAccentModel>DAccent_Name}" class="sapUiSmallMarginTop sapUiSmallMarginEnd sapUiSmallMarginBottom"/>
+								</VBox>
+							</HBox>
+							<core:Title class="titleClass" text="Selection Display(Finishes)"/>
+							<HBox items="{fabricModel>/}" wrap="Wrap">
+								<VBox>
+									<Avatar src="{fabricModel>imageUrl}" class="sapUiSmallMarginTop sapUiSmallMarginEnd" press="handleFabricSelection"/>
+									<Text text="{fabricModel>DFabric_Name}" class="sapUiSmallMarginTop sapUiSmallMarginEnd sapUiSmallMarginBottom"/>
+								</VBox>
+							</HBox>
+						</f:content>
+					</f:SimpleForm>
+					<!--</VBox>-->
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+	</Dialog>
+</core:FragmentDefinition>

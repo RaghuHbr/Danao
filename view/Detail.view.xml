@@ -1,0 +1,226 @@
+<mvc:View controllerName="MDG.Help.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.f.semantic" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" height="100%" xmlns:suite="sap.suite.ui.commons"
+	xmlns:upload="sap.m.upload">
+	<semantic:SemanticPage id="detailPage" showFooter="true" class="detailPageClass">
+		<semantic:titleHeading>
+			<Title text="{i18n>Customer Details}"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<ObjectHeader class="objHeaderClass" title="{/dCustomerName}">
+				<attributes id="id24">
+					<ObjectAttribute title="Contact Name" text="{DetailContactModel>/0/DCustomerContact_type/dCustomerContact_Name}"/>
+				</attributes>
+			</ObjectHeader>
+		</semantic:headerContent>
+		<semantic:content>
+			<IconTabBar id="itb1" selectedKey="key3" upperCase="false" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="{i18n>generalinfo}" icon="sap-icon://business-card" class="tabWidthClass">
+						<l:VerticalLayout id="containerLayout" width="100%">
+							<l:BlockLayout id="BlockLayout" background="Dashboard">
+								<l:BlockLayoutRow >
+									<l:BlockLayoutCell width="2" title="{i18n>General}">
+										<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+											adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+											singleContainerFullSize="false" visible="true" class="removeTitle">
+											<f:content>
+												<core:Title text="Customer Details"/>
+												<Label text="Customer Name"/>
+												<Text text="{/dCustomerName} "></Text>
+												<Label text="Website"/>
+												<Text text="{/dWebsite}"></Text>
+												<Label text="{i18n>Phone}"/>
+												<Text text="{/dOfficePhone}"></Text>
+												<Label text="Address"/>
+												<Text text="{/dBillingAddress}"></Text>
+												<Label text="Customer Type"/>
+												<Text id="customerTypeId" text=""/>
+											</f:content>
+										</f:SimpleForm>
+									</l:BlockLayoutCell>
+								</l:BlockLayoutRow>
+							</l:BlockLayout>
+						</l:VerticalLayout>
+					</IconTabFilter>
+					<IconTabFilter text="Contacts" icon="sap-icon://contacts">
+						<Toolbar>
+							<ToolbarSpacer></ToolbarSpacer>
+							<Button icon="sap-icon://add" press="handleAddContact" tooltip="Add Contact"/>
+						</Toolbar>
+						<Table items="{path:'DetailContactModel>/'}" id="addNewTableID" growing="true" growingThreshold="10">
+							<columns>
+								<Column>
+									<Text text="{i18n>Contact Name}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Contact Email}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Contact Phone}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Contact Type}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Contact Mobile}"/>
+								</Column>
+								<Column>
+									<Label text=""/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{DetailContactModel>DCustomerContact_type/dCustomerContact_Name}"/>
+										<Text text="{DetailContactModel>DCustomerContact_type/dCustomer_ContactEmail}"/>
+										<Text text="{DetailContactModel>DCustomerContact_type/dCustomer_Conact_DirectPhone}"/>
+										<Text text="{DetailContactModel>DCustomerContact_type/d_customer_contact_type/data/attributes/DCustomerContact_type}"/>
+										<Text text="{DetailContactModel>DCustomerContact_type/dCustomer_ContactMobile}"/>
+										<Button type="Transparent" icon="sap-icon://delete" press="handleDeleteContact"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="Projects" icon="sap-icon://workflow-tasks">
+						<Table items="{path:'CustomerProjectsModel>/'}" id="addNewProjectID" growing="true" growingThreshold="10">
+							<columns>
+								<Column>
+									<Text text="Project Name"/>
+								</Column>
+								<Column>
+									<Text text="Project Type"/>
+								</Column>
+								<Column>
+									<Text text="Project Category"/>
+								</Column>
+								<Column>
+									<Text text="Sales Type"/>
+								</Column>
+								<Column>
+									<Text text="Expected Start Date"/>
+								</Column>
+								<Column>
+									<Text text="Expected End Date"/>
+								</Column>
+								<Column>
+									<Label text=""/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Navigation" press="onPress">
+									<cells>
+										<Text text="{CustomerProjectsModel>dCustomer_ProjectName}"/>
+										<Text text="{CustomerProjectsModel>d_project_type/data/attributes/DProject_Type}"/>
+										<Text text="{CustomerProjectsModel>d_project_category/data/attributes/DProject_Category}"/>
+										<Text text="{CustomerProjectsModel>d_project_sales_stage/data/attributes/DProject_Sales_Stage}"/>
+										<Text text="{path:'CustomerProjectsModel>dProject_ExpectedStartDate', formatter:'.formatter.dateFormatter'}"/>
+										<Text text="{path:'CustomerProjectsModel>dProject_Expected_CloseDate', formatter:'.formatter.dateFormatter'}"/>
+										<Button type="Transparent" id="prodeleteButtonId" press="handleDeleteProjectPress" iconFirst="true" icon="sap-icon://delete"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="Quotations" icon="sap-icon://activity-items">
+						<Table id="CustomersTable" items="{customerModel>/}">
+							<headerToolbar>
+								<Toolbar design="Transparent">
+									<SearchField liveChange="onSearchQuotation" id="quotId" width="100%"/>
+									<!--<ToolbarSpacer/>-->
+									<!--<Button type="Transparent" icon="sap-icon://add" press="addQuotation"/>-->
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="Quotaion No."/>
+								</Column>
+								<Column>
+									<Text text="Created Date"/>
+								</Column>
+								<Column>
+									<Text text="Quantity"/>
+								</Column>
+								<Column>
+									<Text text="Price"/>
+								</Column>
+								<Column>
+									<Text text="Status"/>
+								</Column>
+								<Column width="3rem">
+									<Label text=""/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem type="Navigation" press="onPressQuotation">
+									<cells>
+										<Text text="{customerModel>id}"/>
+										<Text text="{path:'customerModel>createdAt',formatter:'.formatter.dateFormatter'}"/>
+										<Text text="{customerModel>dQuotation_Item_Quantity}"/>
+										<ObjectNumber class="sapMObjectNumberLarge"
+											number="{ parts: [{path: 'customerModel>dQuotation_Item_Price'}, {path: 'USD'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+											unit="USD" state="Success"/>
+										<ObjectStatus text="{customerModel>DQuotation_Status}"
+											state="{path:'customerModel>DQuotation_Status', formatter:'.formatter.getQuotationState'}"/>
+										<Button type="Transparent" id="QuodeleteButtonId" press="handleDeleteQuotationPress" iconFirst="true" icon="sap-icon://delete"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</IconTabFilter>
+					<IconTabFilter text="{i18n>documents}" icon="sap-icon://add-document">
+						<upload:UploadSet id="UploadSet" instantUpload="true" showIcons="true" uploadEnabled="false" terminationEnabled="true"
+							fileTypes="txt,doc,png" maxFileNameLength="30" maxFileSize="200" mediaTypes="text/plain,application/msword,image/jpeg"
+							items="{path:'/documents',templateShareable: false}" afterItemRemoved="afterItemRemoved">
+							<upload:toolbar>
+								<OverflowToolbar>
+									<SearchField liveChange="onSearch" id="userSearchId" width="auto"/>
+									<ToolbarSpacer/>
+									<Button text="Add Documents" iconFirst="true" icon="sap-icon://add" press="handleDocumentUpload"/>
+								</OverflowToolbar>
+							</upload:toolbar>
+							<upload:items>
+								<upload:UploadSetItem id="agrigation" removePressed="onDeleteItem" fileName="{fileName}" mediaType="{mediaType}" url="{url}">
+									<upload:attributes>
+										<ObjectAttribute title="Keyword " text="{keyword}"/>
+										<ObjectAttribute title="Short Description " text="{shortDescription}"/>
+										<ObjectAttribute title="Category" text="{Category}"/>
+									</upload:attributes>
+									<!--<upload:markers>-->
+									<!--	<ObjectMarker-->
+									<!--			type="{type}"-->
+									<!--			visibility="{visibility}"/>-->
+									<!--</upload:markers>-->
+									<!--<upload:statuses>-->
+									<!--	<ObjectStatus-->
+									<!--			title="{title}"-->
+									<!--			text="{text}"-->
+									<!--			state="{state}"-->
+									<!--			icon="{icon}"-->
+									<!--			active="{active}"/>-->
+									<!--</upload:statuses>-->
+								</upload:UploadSetItem>
+							</upload:items>
+						</upload:UploadSet>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press="onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:fullScreenAction>
+			<semantic:FullScreenAction id="enterFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="fullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction id="exitFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="exitFullScreen"/>
+		</semantic:exitFullScreenAction>
+		<semantic:footerCustomActions>
+			<Button type="Transparent" text="Add Project" id="addButtonId" visible="true" press="handlenewProject" icon="sap-icon://add"/>
+			<Button type="Transparent" text="{i18n>edit}" id="editButtonId" press="handleEditUserPress" iconFirst="true" icon="sap-icon://edit"/>
+			<Button type="Transparent" text="{i18n>delete}" id="deleteButtonId" press="handleDeleteUserPress" iconFirst="true" icon="sap-icon://delete"/>
+		</semantic:footerCustomActions>
+	</semantic:SemanticPage>
+</mvc:View>

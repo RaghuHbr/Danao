@@ -1,0 +1,512 @@
+{
+    "resources": [
+        {
+            "name": "image/V55.PNG"
+        },
+        {
+            "name": "model/browseBy.json"
+        },
+        {
+            "name": "model/UserDataModel.json"
+        },
+        {
+            "name": "model/Quotation.json"
+        },
+        {
+            "name": "model/Customerinfo.json"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "model/customerModel.json"
+        },
+        {
+            "name": "util/formatter.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "js/jspdf.js"
+        },
+        {
+            "name": "js/jspdf.debug.js"
+        },
+        {
+            "name": "js/html2Pdf.js"
+        },
+        {
+            "name": "controller/quotationFragmentView.controller.js"
+        },
+        {
+            "name": "controller/quotationDetail.controller.js"
+        },
+        {
+            "name": "controller/projectDetail.controller.js"
+        },
+        {
+            "name": "controller/login.controller.js"
+        },
+        {
+            "name": "controller/detailDetail.controller.js"
+        },
+        {
+            "name": "controller/addNewProject.controller.js"
+        },
+        {
+            "name": "controller/UsersData.controller.js"
+        },
+        {
+            "name": "controller/MasterUser.controller.js"
+        },
+        {
+            "name": "controller/MasterQuotaion.controller.js"
+        },
+        {
+            "name": "controller/Master.controller.js"
+        },
+        {
+            "name": "controller/Home.controller.js"
+        },
+        {
+            "name": "controller/Help.controller.js"
+        },
+        {
+            "name": "controller/DetailUser.controller.js"
+        },
+        {
+            "name": "controller/DetailQuotation.controller.js"
+        },
+        {
+            "name": "controller/Detail.controller.js"
+        },
+        {
+            "name": "controller/Collection.controller.js"
+        },
+        {
+            "name": "controller/Category.controller.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/AddProduct.controller.js"
+        },
+        {
+            "name": "controller/AddNewCustomer.controller.js"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "controller/Master-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "util/formatter-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "js/jspdf-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "js/jspdf.debug-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "js/html2Pdf-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/quotationFragmentView-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/quotationDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/projectDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/login-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/detailDetail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/addNewProject-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/UsersData-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MasterUser-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/MasterQuotaion-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Home-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Help-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/DetailUser-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/DetailQuotation-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Detail-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Collection-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Category-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/App-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/AddProduct-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/AddNewCustomer-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "../../sap-ui-version.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "view/wwlogin.view.html"
+        },
+        {
+            "name": "view/quotationFragmentView.view.xml"
+        },
+        {
+            "name": "view/quotationDetail.view.xml"
+        },
+        {
+            "name": "view/projectDetail.view.xml"
+        },
+        {
+            "name": "view/login.view.xml"
+        },
+        {
+            "name": "view/detailDetail.view.xml"
+        },
+        {
+            "name": "view/addNewProject.view.xml"
+        },
+        {
+            "name": "view/UsersData.view.xml"
+        },
+        {
+            "name": "view/MasterUser.view.xml"
+        },
+        {
+            "name": "view/MasterQuotaion.view.xml"
+        },
+        {
+            "name": "view/Master.view.xml"
+        },
+        {
+            "name": "view/Home.view.xml"
+        },
+        {
+            "name": "view/Help.view.xml"
+        },
+        {
+            "name": "view/DetailUser.view.xml"
+        },
+        {
+            "name": "view/DetailQuotation.view.xml"
+        },
+        {
+            "name": "view/Detail.view.xml"
+        },
+        {
+            "name": "view/Collection1.view.xml"
+        },
+        {
+            "name": "view/Collection.view.xml"
+        },
+        {
+            "name": "view/Category.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/AddProduct.view.xml"
+        },
+        {
+            "name": "view/AddNewCustomer.view.xml"
+        },
+        {
+            "name": "image/topanga-collection-danao-03.jpg"
+        },
+        {
+            "name": "image/sofa-hudon-thumb-420x236.jpg"
+        },
+        {
+            "name": "image/sofa-3p-chester-danao-420x236.jpg"
+        },
+        {
+            "name": "image/sofa-3.jpg"
+        },
+        {
+            "name": "image/sofa-2.jpg"
+        },
+        {
+            "name": "image/sofa-1.jpg"
+        },
+        {
+            "name": "image/side-3.jpg"
+        },
+        {
+            "name": "image/side-2.jpg"
+        },
+        {
+            "name": "image/side-1.jpg"
+        },
+        {
+            "name": "image/round-dining-table-47-hudson-thumb.jpg"
+        },
+        {
+            "name": "image/rectangular-coffee-table-hudson-thumb-420x236.jpg"
+        },
+        {
+            "name": "image/rectangular-coffee-table-chester-thumb-4-420x236.jpg"
+        },
+        {
+            "name": "image/rami-collection-14.jpg"
+        },
+        {
+            "name": "image/mr2-collection-1.jpg"
+        },
+        {
+            "name": "image/low-chair-oka-thumb-420x236.jpg"
+        },
+        {
+            "name": "image/low-chair-cushion-oka-thumb-420x236.jpg"
+        },
+        {
+            "name": "image/lounge-chair-hopper-danao-thumb-420x236.jpg"
+        },
+        {
+            "name": "image/logo.png"
+        },
+        {
+            "name": "image/imge.jpg"
+        },
+        {
+            "name": "image/img2.jpg"
+        },
+        {
+            "name": "image/img1.jpg"
+        },
+        {
+            "name": "image/img-3.jpg"
+        },
+        {
+            "name": "image/download.jpg"
+        },
+        {
+            "name": "image/cuff-collection-danao-16.jpg"
+        },
+        {
+            "name": "image/coffee-table-mozia-thumb-420x236.jpg"
+        },
+        {
+            "name": "image/bar-3.jpg"
+        },
+        {
+            "name": "image/bar-2.jpg"
+        },
+        {
+            "name": "image/bar-1.jpg"
+        },
+        {
+            "name": "image/White.PNG"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "image/V53.PNG"
+        },
+        {
+            "name": "image/UserLogin.jpg"
+        },
+        {
+            "name": "image/Space_Grey.PNG"
+        },
+        {
+            "name": "image/Regatta.PNG"
+        },
+        {
+            "name": "image/Natural.PNG"
+        },
+        {
+            "name": "image/LoginUser.png"
+        },
+        {
+            "name": "image/HT-8000.jpg"
+        },
+        {
+            "name": "image/Grey_Italian.PNG"
+        },
+        {
+            "name": "image/Grey.PNG"
+        },
+        {
+            "name": "image/Granite.PNG"
+        },
+        {
+            "name": "image/Fern.PNG"
+        },
+        {
+            "name": "image/Durango_All_Weather.PNG"
+        },
+        {
+            "name": "image/D43.PNG"
+        },
+        {
+            "name": "image/D32.PNG"
+        },
+        {
+            "name": "image/D30.PNG"
+        },
+        {
+            "name": "image/D29.PNG"
+        },
+        {
+            "name": "image/D07.PNG"
+        },
+        {
+            "name": "image/D05.PNG"
+        },
+        {
+            "name": "image/Coal.PNG"
+        },
+        {
+            "name": "image/Black.PNG"
+        },
+        {
+            "name": "image/AirBlue.PNG"
+        },
+        {
+            "name": "image/4-seater-sofa-s2-danao-thumb-420x236.jpg"
+        },
+        {
+            "name": "fragment/valueHelpForProjectContact.fragment.xml"
+        },
+        {
+            "name": "fragment/valueHelpForCustomerContact.fragment.xml"
+        },
+        {
+            "name": "fragment/valueHelpForCollections.fragment.xml"
+        },
+        {
+            "name": "fragment/valueHelpForCategories.fragment.xml"
+        },
+        {
+            "name": "fragment/valueHelpForCatalogs.fragment.xml"
+        },
+        {
+            "name": "fragment/valueHelpForApproveRequest.fragment.xml"
+        },
+        {
+            "name": "fragment/sortQuotation.fragment.xml"
+        },
+        {
+            "name": "fragment/sortCustomer.fragment.xml"
+        },
+        {
+            "name": "fragment/product.fragment.xml"
+        },
+        {
+            "name": "fragment/itemSummary.fragment.xml"
+        },
+        {
+            "name": "fragment/filterQuotation.fragment.xml"
+        },
+        {
+            "name": "fragment/detailQuotation.fragment.xml"
+        },
+        {
+            "name": "fragment/createQuotationOld.fragment.xml"
+        },
+        {
+            "name": "fragment/createQuotation.fragment.xml"
+        },
+        {
+            "name": "fragment/browseProducts.fragment.xml"
+        },
+        {
+            "name": "fragment/Collection.fragment.xml"
+        },
+        {
+            "name": "fragment/AddtoqCart.fragment.xml"
+        },
+        {
+            "name": "fragment/AddtoCart.fragment.xml"
+        },
+        {
+            "name": "fragment/AddTask.fragment.xml"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "css/avatar.css"
+        },
+        {
+            "name": "index.html"
+        }
+    ]
+}

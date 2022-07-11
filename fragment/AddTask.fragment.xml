@@ -1,0 +1,74 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified">
+	<Dialog title="{i18n>Product Description}" contentWidth="38%" class="sapUiSizeCompact">
+		<endButton>
+			<Button text="{i18n>Cancel}" press="handleAddUserCancelPress"/>
+		</endButton>
+		<beginButton>
+			<Button text="{i18n>Add}" press="handleAddTaskOkPress"/>
+		</beginButton>
+		<!--<VBox class="sapUiSmallMargin">-->
+		<!--	<f:Form id="FormDisplay354" editable="false">-->
+		<!--		<f:layout>-->
+		<!--			<f:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4"-->
+		<!--				emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>-->
+		<!--		</f:layout>-->
+		<!--		<f:formContainers>-->
+		<!--			<f:FormContainer>-->
+		<!--				<f:formElements>-->
+		<!--					<f:FormElement label=" Product Name">-->
+		<!--						<f:fields>-->
+		<!--							<Text text="{/productName}" id="nameText"/>-->
+		<!--						</f:fields>-->
+		<!--					</f:FormElement>-->
+		<!--					<f:FormElement label="Material">-->
+		<!--						<f:fields>-->
+		<!--							<Text text="{/material}"/>-->
+		<!--						</f:fields>-->
+		<!--					</f:FormElement>-->
+		<!--					<f:FormElement label="Load Capacity">-->
+		<!--						<f:fields>-->
+		<!--							<Text text="{/loadCapacity}"/>-->
+		<!--						</f:fields>-->
+		<!--					</f:FormElement>-->
+		<!--					<f:FormElement label="Model Number">-->
+		<!--						<f:fields>-->
+		<!--							<Text text="{/modelNumber}" id="countryText"/>-->
+		<!--						</f:fields>-->
+		<!--					</f:FormElement>-->
+		<!--					<f:FormElement label="Dimension">-->
+		<!--						<f:fields>-->
+		<!--							<Text text="{/dimension}"/>-->
+		<!--						</f:fields>-->
+		<!--					</f:FormElement>-->
+		<!--				</f:formElements>-->
+		<!--			</f:FormContainer>-->
+		<!--		</f:formContainers>-->
+		<!--	</f:Form>-->
+		<!--</VBox>-->
+		<f:SimpleForm minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+			emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" class="editableForm">
+			<f:content>
+				<Label text="Product Name"/>
+				<Text text="{/productName}"/>
+				<Label text="Material"/>
+				<Text text="{/material}"/>
+				<Label text="Load Capacity"/>
+				<Text text="{/loadCapacity}"/>
+				<Label text="Model Number"/>
+				<Text text="{/modelNumber}"/>
+				<Label text="Dimension"/>
+				<Text text="{/dimension}"/>
+				<Label text="{i18n>Select Fabric}"/>
+				<Select items="" width="100%" enabled="true">
+					<items>
+						<core:Item text="white" key="white"/>
+						<core:Item text="Black" key="Black"/>
+						<core:Item text="Brown" key="Brown"/>
+					</items>
+				</Select>
+				<Label text=" Add Quantity"/>
+				<StepInput value="0" step="1" min="1" max="4" textAlign="Center"></StepInput>
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

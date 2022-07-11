@@ -1,0 +1,40 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="MDG.Help.controller.Master"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="page" title="{i18n>customers}" class="textSize" showNavButton="true" navButtonPress="onNavBack">
+		<subHeader>
+			<Toolbar>
+				<SearchField liveChange="onSearch" id="userSearchId" width="100%"/>
+				<Button press="handleSortfragment" icon="sap-icon://sort" type="Transparent"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List items="{customerModel>/}" id="itemlistId" class="deptObjListItemClass" mode="SingleSelectMaster"
+				selectionChange="handleUsersListPress">
+				<items>
+					<ObjectListItem title="{customerModel>dCustomerName}" type="Active" number="{customerModel>projectCount}" numberUnit="Ongoing Projects">
+						<attributes>
+							<ObjectAttribute title="{customerModel>dCustomerContact_Name}" />
+						</attributes>
+						<!--<firstStatus>-->
+						<!--	<ObjectStatus title="{customerModel> dCustomer_ProjectName}" -->
+						<!--		state="None"/>-->
+						<!--</firstStatus>-->
+						<!--<firstStatus>-->
+						<!--	<ObjectStatus-->
+						<!--		text="{customerModel>projectCount}"-->
+						<!--		state="Success" />-->
+						<!--</firstStatus>-->
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="addid" press="openAddNewCustomer" text="{i18n>AddCustomers}" iconFirst="true" icon="sap-icon://add"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
+

@@ -1,0 +1,322 @@
+{
+	"Catalogs": [{
+		"title": "Hudson",
+		"Items": [{
+			"title": "Hudson Longue Chair",
+			"CartProducts": [{
+				"title": "Hudson Longue Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/lounge-chair-hudson-thumb-420x236.jpg",
+				"price": "$211"
+			}, {
+				"title": " Hudson Dining Arm Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/dining-side-chair-hudson-thumb-420x236.jpg",
+				"price": "$45"
+			}, {
+				"title": "Hudson Longue Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/dining-side-chair-hudson-thumb-420x236.jpg",
+				"price": "$210"
+			}, {
+				"title": "Hudson Dining Side Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/bar-table-hudson-thumb-420x236.jpg",
+				"price": "$150"
+			}]
+		}, {
+			"title": "Hudson Sofa",
+			"CartProducts": [{
+				"title": "Hudson 3 Seat Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/sofa-hudon-thumb-420x236.jpg",
+				"price": "$234"
+			}, {
+				"title": " Hudson Dining Arm Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/dining-side-chair-hudson-thumb-420x236.jpg",
+				"price": "$444"
+			}, {
+				"title": "Hudson Longue Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/dining-side-chair-hudson-thumb-420x236.jpg",
+				"price": "$21"
+			}, {
+				"title": "Hudson Dining Side Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/bar-table-hudson-thumb-420x236.jpg",
+				"price": "$233"
+			}]
+		}, {
+			"title": "Hudson Armless Chaise Longue",
+			"CartProducts": [{
+				"title": "Hudson Chaise Lounge",
+				"src": "https://www.danaoliving.com/wp-content/uploads/chaise-lounge-hudson-thumb-420x236.jpg",
+				"price": "$433"
+			}, {
+				"title": "Hudson Armless Lounge",
+				"src": "https://www.danaoliving.com/wp-content/uploads/armless-chaise-lounge-hudson-thumb-420x236.jpg",
+				"price": "$232"
+			}]
+		}, {
+			"title": "Hudson Table",
+			"CartProducts": [{
+				"title": "Hudson Rectangular Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/rectangular-coffee-table-hudson-thumb-420x236.jpg",
+				"price": "$133"
+			}, {
+				"title": "Hudson Rectangular Side Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/rectangular-table-hudson-thumb-420x236.jpg",
+				"price": "$45"
+			}, {
+				"title": "Hudson Round Large Side Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/large-round-table-hudson-thumb-420x236.jpg",
+				"price": "$210"
+			}, {
+				"title": "Hudson Rectangular Dining Table 84″",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/rectangular-dining-table-94-hudson-thumb-420x236.jpg",
+				"price": "$150"
+			}]
+		}]
+	}, {
+		"title": "S2",
+		"Items": [{
+			"title": "S2 Stools",
+			"CartProducts": [{
+				"title": "S2 Lounge Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/lounge-chair-s2-thumb-2.jpg",
+				"price": "$456"
+			}, {
+				"title": "S2 Arm Dining Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/dining-chair-s2-danao-thumb-ok-420x236.jpg",
+				"price": "$454"
+			}, {
+				"title": "S2 Dinning side chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/dining-chair-s2-danao-thumb-ok-420x236.jpg",
+				"price": "$211"
+			}, {
+				"title": "S2 Ottoman Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/ottoman-s2-thumb-420x236.jpg",
+				"price": "$345"
+			}]
+		}, {
+			"title": "S2 Sofa",
+			"CartProducts": [{
+				"title": "S2 95' Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/sofa-s2-thumb-420x236.jpg",
+				"price": "$210"
+			}, {
+				"title": "S2 4 Seat Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/coffee-table-51-s2-thumb-420x236.jpg",
+				"price": "$350"
+			}]
+		}, {
+			"title": "S2 Table",
+			"CartProducts": [{
+				"title": "S2 71″ Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/coffee-table-71-s2-thumb-420x236.jpg",
+				"price": "$67"
+			}, {
+				"title": "S2 51″ Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/coffee-table-51-s2-thumb-420x236.jpg",
+				"price": "$234"
+			}, {
+				"title": "S2 Side Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/side-table-s2-thumb-420x236.jpg",
+				"price": "$345"
+			}, {
+				"title": "S2 51″ Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/84-dining-table-s2-thumb-okk-420x236.jpg",
+				"price": "$543"
+			}]
+		}]
+	}],
+	"Catrgories": [{
+		"title": "Lounge Chairs",
+		"Items": [{
+			"title": "Oka Chairs",
+			"CartProducts": [{
+				"title": "Oka Low Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/low-chair-oka-thumb-420x236.jpg",
+				"price": "$256"
+			}, {
+				"title": "Oka Low Chair W/Cushion",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/low-chair-cushion-oka-thumb-420x236.jpg",
+				"price": "$390"
+			}, {
+				"title": "Hopper Lounge Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/lounge-chair-hopper-danao-thumb-420x236.jpg",
+				"price": "$210"
+			}, {
+				"title": "S2 Lounge Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/lounge-chair-s2-thumb-2.jpg",
+				"price": "$450"
+			}]
+		}, {
+			"title": "Cuff Chair",
+			"CartProducts": [{
+				"title": "Cuff Lounge Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/high-back-chair-cuff-thumb-420x236.jpg",
+				"price": "$256"
+			}, {
+				"title": "Topanga Lounge Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/lounge-chair-cuff-thumb-2.jpg",
+				"price": "$390"
+			}]
+		}, {
+			"title": "Greenwich Chair",
+			"CartProducts": [{
+				"title": "Greenwich Lounge Chair Luxe",
+				"src": "https://www.danaoliving.com/wp-content/uploads/lounge-chair-luxe-mr3-thumb-420x236.jpg",
+				"price": "$180"
+			}, {
+				"title": "Greenwich Lounge Chair Cocktail",
+				"src": "https://www.danaoliving.com/wp-content/uploads/lounge-chair-cocktail-mr3-thumb-420x236.jpg",
+				"price": "$99"
+			}, {
+				"title": "Greenwich Desert Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/lounge-chair-og-desert-thumb-2.jpg",
+				"price": "$99"
+			}, {
+				"title": "Greenwich Jagger Chair",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/lounge-chair-jagger-thumb-420x236.jpg",
+				"price": "$99"
+			}]
+		}]
+	}, {
+		"title": "Sofas",
+		"Items": [{
+			"title": "S2 Sofa",
+			"CartProducts": [{
+				"title": "S2 4 Seat Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/4-seater-sofa-s2-danao-thumb-420x236.jpg",
+				"price": "$180"
+			}, {
+				"title": "Greenwich 3 Seat Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/sofa-3s-mr3-thumb-420x236.jpg",
+				"price": "$99"
+			}, {
+				"title": "Cuff Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/sofa-cuff-thumb-420x236.jpg",
+				"price": "$99"
+			}, {
+				"title": "Mozia 3 Seat Sofa 1 Armrest",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/3-seat-sofa-mozia-thumb-420x236.jpg",
+				"price": "$99"
+			}]
+		}, {
+			"title": "3 Seat Sofa",
+			"CartProducts": [{
+				"title": "Mozia 3 Seat Sofa 1 Armrest",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/3-seat-sofa-mozia-thumb-420x236.jpg",
+				"price": "$180"
+			}, {
+				"title": "Topanga 3 Seat Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/3-seat-sofa-topanga-thumb.jpg",
+				"price": "$99"
+			}, {
+				"title": "Hudson 3 Seat Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/sofa-hudon-thumb-420x236.jpg",
+				"price": "$99"
+			}, {
+				"title": "Cuff Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/sofa-cuff-thumb-420x236.jpg",
+				"price": "$99"
+			}]
+		}, {
+			"title": "Desert Sofa",
+			"CartProducts": [{
+				"title": "Desert 55″ Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/55-sofa-desert-danao-thumb-1-420x236.jpg",
+				"price": "$180"
+			}, {
+				"title": "Desert 72″ Sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/sofa-og-desert-thumb-420x236.jpg",
+				"price": "$99"
+			}, {
+				"title": "Desert 3 seat sofa",
+				"src": "https://www.danaoliving.com/wp-content/uploads/3-seat-sofa-topanga-thumb.jpg",
+				"price": "$99"
+			}, {
+				"title": "Mozia 3 Seat Sofa 1 Armrest",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/3-seat-sofa-mozia-thumb-420x236.jpg",
+				"price": "$99"
+			}]
+		}]
+	}, {
+		"title": "Coffee Table",
+		"Items": [{
+			"title": "Hudson Coffee Table",
+			"CartProducts": [{
+				"title": "Hudson Rectangular Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/square-coffee-table-topanga-thumb-420x236.jpg",
+				"price": "$199"
+			}, {
+				"title": "S2 51″ Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/coffee-table-51-s2-thumb-420x236.jpg",
+				"price": "$399"
+			}, {
+				"title": "S2 71″ Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/coffee-table-71-s2-thumb-420x236.jpg",
+				"price": "$209"
+			}, {
+				"title": "Desert Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/coffee-table-desert-thumb-420x236.jpg",
+				"price": "$267"
+			}]
+		}, {
+			"title": "S2 Coffee Table",
+			"CartProducts": [{
+				"title": "Hudson Rectangular Side Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/rectangular-table-hudson-thumb-420x236.jpg",
+				"price": "$453"
+			}, {
+				"title": "Topanga Square Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/square-coffee-table-topanga-thumb-420x236.jpg",
+				"price": "$234"
+			}, {
+				"title": "Desert Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/public/coffee-table-desert-thumb-420x236.jpg",
+				"price": "$99"
+			}, {
+				"title": "Cuff Coffee Table",
+				"src": "https://www.danaoliving.com/wp-content/uploads/coffee-table-cuff-thumb-3-420x236.jpg",
+				"price": "$199"
+			}]
+		}]
+	}],
+	"itemSummary": [],
+	"UserData": [{
+		"FirstName": "Henriques",
+		"LastName": "Sikl",
+		"EmailId": "Henriques@gmail.com",
+		"PhoneNo": "8949499494",
+		"CompanyName": "SLK Softwares",
+		"DiscountValue": "21%",
+		"Status": "Approved"
+	}, {
+		"FirstName": "Gleem",
+		"LastName": "Smith",
+		"EmailId": "smit@gmail.com",
+		"PhoneNo": "987757575",
+		"CompanyName": "Toshiba solutions",
+		"DiscountValue": "-",
+		"Status": "Pending"
+	}, {
+		"FirstName": "John Daniel",
+		"LastName": "Andy",
+		"EmailId": "andy@gmail.com",
+		"PhoneNo": "9484874844",
+		"CompanyName": "Iexceded Technologies",
+		"DiscountValue": "-",
+		"Status": "Rejected"
+	}, {
+		"FirstName": "SamCurran",
+		"LastName": "Nami",
+		"EmailId": "nami@gmail.com",
+		"PhoneNo": "7848478474",
+		"CompanyName": "BHJ Consultancies",
+		"DiscountValue": "17%",
+		"Status": "Approved"
+	}, {
+		"FirstName": "Vadim",
+		"LastName": "Barishoke",
+		"EmailId": "Barishoke@gmail.com",
+		"PhoneNo": "7839930033",
+		"CompanyName": "HP Technologies",
+		"DiscountValue": "-",
+		"Status": "Pending"
+	}]
+}

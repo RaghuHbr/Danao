@@ -1,0 +1,60 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:semantic="sap.f.semantic"
+	xmlns:l="sap.ui.layout">
+	<Dialog contentWidth="1050px" contentHeight="1050px" title="Item Summary" showHeader="true" class="sapUiSizeCompact">
+		<semantic:SemanticPage id="detailPage" showFooter="true" class="detailPageClass">
+			<semantic:content>
+				<l:VerticalLayout id="containerLayout" width="100%">
+					<l:BlockLayout id="BlockLayout" background="Dashboard">
+						<l:BlockLayoutRow >
+							<l:BlockLayoutCell width="2" title="">
+								<f:SimpleForm editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="4"
+									adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+									singleContainerFullSize="false" visible="true" class="removeTitle">
+									<f:content>
+										<core:Title text=""/>
+										<Label text="Product"/>
+										<Text text="{/DProduct_Name}" id="proName"></Text>
+										<Label text="SKU"/>
+										<Text text=""></Text>
+										<Label text="Select Finishes"/>
+										<RadioButton text="Aluminium" selected="true"/>
+										<Label text="Select Quantity"/>
+										<StepInput displayValuePrecision="0" width="120px" editable="true" textAlign="Center"/>
+										<Label text="Select Fabrics"/>
+										<RadioButtonGroup>
+											<RadioButton text="Grade A" selected="true"/>
+											<RadioButton text="Grade B"/>
+										</RadioButtonGroup>
+										<Label text="Select Frames"/>
+										<RadioButtonGroup>
+											<RadioButton text="Color 1" selected="true"/>
+											<RadioButton text="Color 2"/>
+										</RadioButtonGroup>
+										<Label text="Select Straps"/>
+										<RadioButtonGroup>
+											<RadioButton text="Straps" selected="true"/>
+										</RadioButtonGroup>
+									</f:content>
+								</f:SimpleForm>
+							</l:BlockLayoutCell>
+						</l:BlockLayoutRow>
+					</l:BlockLayout>
+				</l:VerticalLayout>
+			</semantic:content>
+			<semantic:closeAction>
+				<semantic:CloseAction id="closeColumn" press="onCloseDetailPress"/>
+			</semantic:closeAction>
+			<semantic:fullScreenAction>
+				<semantic:FullScreenAction id="enterFullScreen"
+					visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="fullScreen"/>
+			</semantic:fullScreenAction>
+			<semantic:exitFullScreenAction>
+				<semantic:ExitFullScreenAction id="exitFullScreen"
+					visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}" press="exitFullScreen"/>
+			</semantic:exitFullScreenAction>
+			<semantic:footerCustomActions>
+				<Button text="Add to Cart" icon="sap-icon://cart" press="OnpressCartButton"/>
+			</semantic:footerCustomActions>
+		</semantic:SemanticPage>
+	</Dialog>
+</core:FragmentDefinition>
